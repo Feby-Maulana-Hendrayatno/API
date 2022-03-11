@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\ApiLoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,3 +33,15 @@ Route::get('/data_rumah', [TransactionController::class, 'index']);
 Route::resource('/transaction', TransactionController::class)->except(['create', 'edit']);
 
 // except supaya link tidak bisa diakses
+
+
+//api login
+
+// salah
+// Route::group(['middleware' => [auth:api]], function()) {
+//     Route::get('user/data-rahasia', function ($id) {
+//         return "ini rahasia";
+//     });
+// }
+
+Route::post('login', [ApiLoginController::class, "login"] );
