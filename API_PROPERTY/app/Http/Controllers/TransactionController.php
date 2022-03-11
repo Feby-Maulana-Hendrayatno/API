@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Transaction;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -38,11 +39,11 @@ class TransactionController extends Controller
         'title' => ['required'],
         'amount' => ['required', 'numeric'] ,
         'type' => ['required', 'in:expense,revenue']
-    
+
         ]);
-        
+
         if ($validator->fails()) {
-            return response()->json($validator->errors(), 
+            return response()->json($validator->errors(),
             Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
@@ -59,7 +60,7 @@ class TransactionController extends Controller
                 'message' => "Failed" . $e->errorInfo
             ]);
         }
-    
+
     }
 
     /**
@@ -95,21 +96,21 @@ class TransactionController extends Controller
             'title' => ['required'],
             'amount' => ['required', 'numeric'] ,
             'type' => ['required', 'in:expense,revenue']
-        
+
             ]);
-            
+
             if ($validator->fails()) {
                 return response()->json($validator->errors(),
                 Response::HTTP_UNPROCESSABLE_ENTITY);
             }
-    
+
             try{
                 $transactions->update($request->all());
                 $response = [
                     'message' => 'Transaction update',
                     'data' => $transactions
                 ];
-    
+
                 return response()->json($response, Response::HTTP_OK);
             } catch (QueryException $e) {
                 return response()->json([
@@ -127,14 +128,14 @@ class TransactionController extends Controller
     public function destroy($id)
     {
         $transactions = Transaction::findOrFail($id);
-    
+
             try{
                 $transactions->delete();
 
                 $response = [
                     'message' => 'Transaction deleted'
                 ];
-    
+
                 return response()->json($response, Response::HTTP_OK);
             } catch (QueryException $e) {
                 return response()->json([
