@@ -10,5 +10,6 @@ class Transaction extends Model
 {
     use HasFactory;
 
-    protected $fillable =  [ 'title', 'amount', 'type'];
+    protected $table = 'transaksi';
+    protected $fillable =  ['harga', 'metode_bayar', 'bukti_bayar'];
 }

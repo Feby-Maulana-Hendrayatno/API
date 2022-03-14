@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\RumahController;
 use App\Http\Controllers\TransactionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +25,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/data_rumah', [TransactionController::class, 'index']);
-// Route::post('/transaction', [TransactionController::class, 'store']);
+Route::get('/data_rumah', [RumahController::class, 'index']);
+Route::get('/transaksi', [TransactionController::class, 'index']);
+// Route::post('/php transaction', [TransactionController::class, 'store']);
 // Route::get('/transaction/{id}', [TransactionController::class, 'show']);
 // Route::put('/transaction/{id}', [TransactionController::class, 'update']);
 // Route::delete('/transaction/{id}', [TransactionController::class, 'destroy']);

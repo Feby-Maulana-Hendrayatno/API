@@ -17,9 +17,9 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        $transactions = Transaction::orderBy('time', 'DESC')->get();
+        $transactions = Transaction::orderBy('id_transaksi', 'DESC')->get();
         $response = [
-            'masage' => 'List transaction by time',
+            'masage' => 'List transaction by id',
             'data' => $transactions
         ];
 
@@ -36,9 +36,8 @@ class TransactionController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-        'title' => ['required'],
-        'amount' => ['required', 'numeric'] ,
-        'type' => ['required', 'in:expense,revenue']
+        'harga' => ['required'],
+        'metode_bayar' => ['required', 'in:cash,kredit']
 
         ]);
 
@@ -93,9 +92,8 @@ class TransactionController extends Controller
     {
         $transactions = Transaction::findOrFail($id);
         $validator = Validator::make($request->all(), [
-            'title' => ['required'],
-            'amount' => ['required', 'numeric'] ,
-            'type' => ['required', 'in:expense,revenue']
+            'harga' => ['required'],
+            'metode_bayar' => ['required', 'in:cash,kredit']
 
             ]);
 

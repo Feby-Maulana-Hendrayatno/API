@@ -13,7 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('transaksi', function (Blueprint $table) {
+            $table->id();
+            $table->string('harga');
+            $table->enum('metode_bayar', ['cash', 'kredit']);
+            $table->string('bukti_bayar');
+            $table->timestamp('time')->default(now());
+            // $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        //
     }
 };

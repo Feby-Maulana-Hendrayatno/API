@@ -13,7 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('rumah', function (Blueprint $table) {
+            $table->id();
+            $table->text("deskripsi");
+            $table->string("harga");
+            $table->string("alamat");
+            $table->string("kontak");
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        //
     }
 };
