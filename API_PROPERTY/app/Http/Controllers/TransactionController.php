@@ -17,7 +17,7 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        $transactions = Transaction::orderBy('id_transaksi', 'DESC')->get();
+        $transactions = Transaction::orderBy('id', 'DESC')->get();
         $response = [
             'masage' => 'List transaction by id',
             'data' => $transactions
@@ -30,14 +30,14 @@ class TransactionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
         'harga' => ['required'],
-        'metode_bayar' => ['required', 'in:cash,kredit']
+        'metode_bayar' => ['required', 'cash,kredit']
 
         ]);
 

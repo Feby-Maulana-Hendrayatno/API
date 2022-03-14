@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\RumahController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,11 +28,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/data_rumah', [RumahController::class, 'index']);
 Route::get('/transaksi', [TransactionController::class, 'index']);
+Route::get('/user', [UserController::class, 'index']);
 // Route::post('/php transaction', [TransactionController::class, 'store']);
 // Route::get('/transaction/{id}', [TransactionController::class, 'show']);
 // Route::put('/transaction/{id}', [TransactionController::class, 'update']);
 // Route::delete('/transaction/{id}', [TransactionController::class, 'destroy']);
 
-Route::resource('/transaction', TransactionController::class)->except(['create', 'edit']);
+// Route::resource('/transaction', TransactionController::class)->except(['create', 'edit']);
 
 // except supaya link tidak bisa diakses

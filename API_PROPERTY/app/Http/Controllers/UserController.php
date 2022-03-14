@@ -2,22 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
-
-use App\Models\Rumah;
-
-class RumahController extends Controller
+class UserController extends Controller
 {
     public function index()
     {
-        $rumah = Rumah::orderBy('id', 'DESC')->get();
+        $users = User::orderBy('nama', 'DESC')->get();
         $response = [
             'message' => 'List coba order by id',
-            'data' => $rumah
+            'data' => $users
         ];
 
         return response()->json($response, 200);
-        // return response()->json($response, Response::HTTP_OK);
     }
 }
