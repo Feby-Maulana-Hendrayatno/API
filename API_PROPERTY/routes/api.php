@@ -2,7 +2,11 @@
 
 use App\Http\Controllers\RumahController;
 use App\Http\Controllers\TransactionController;
+<<<<<<< HEAD
 use App\Http\Controllers\UserController;
+=======
+use App\Http\Controllers\ApiLoginController;
+>>>>>>> 8507a26a7e9a0bfa1e4222c674d322f7ee00c8e3
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -37,3 +41,15 @@ Route::get('/user', [UserController::class, 'index']);
 // Route::resource('/transaction', TransactionController::class)->except(['create', 'edit']);
 
 // except supaya link tidak bisa diakses
+
+
+//api login
+
+// salah
+// Route::group(['middleware' => [auth:api]], function()) {
+//     Route::get('user/data-rahasia', function ($id) {
+//         return "ini rahasia";
+//     });
+// }
+
+Route::post('login', [ApiLoginController::class, "login"] );
