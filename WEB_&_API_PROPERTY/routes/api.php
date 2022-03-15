@@ -2,13 +2,10 @@
 
 use App\Http\Controllers\RumahController;
 use App\Http\Controllers\TransactionController;
-<<<<<<< HEAD
 use App\Http\Controllers\UserController;
-=======
-use App\Http\Controllers\ApiLoginController;
->>>>>>> 8507a26a7e9a0bfa1e4222c674d322f7ee00c8e3
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApiLoginController;
 
 
 /*
