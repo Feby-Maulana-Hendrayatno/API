@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiLoginController;
+use App\Http\Controllers\ApiUserController;
 
 
 /*
@@ -49,4 +50,16 @@ Route::get('/user', [UserController::class, 'index']);
 //     });
 // }
 
+// Route::post('login', [ApiLoginController::class, "login"] );
+// Route::group(['middleware' => ['throttle:60,1', 'LogVisits']], function () {
+//     Route::group(['middleware' => ['auth:api']], function () {
+//         Route::get('user', 'ApiUserController@index');
+//     });
+//     Route::post('login' , 'ApiLoginController@login');
+// });
+
+//api login
 Route::post('login', [ApiLoginController::class, "login"] );
+
+//api daftar
+Route::post('/user', [ApiUserController::class, 'store']);
