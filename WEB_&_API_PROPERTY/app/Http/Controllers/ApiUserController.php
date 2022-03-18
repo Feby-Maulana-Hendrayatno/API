@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 class ApiUserController extends Controller
 {
-    
+
     public function index(Request $request)
     {
-        \App\UserHit::simpan();
+        \App\Http\Controllers\User::simpan();
         $respon = "Selamat Datang, " . \Auth::user()->name;
         return [
             'success' => true,
@@ -33,16 +33,16 @@ class ApiUserController extends Controller
         $user->password     = $request->password;
         $user->tanggal_lahir= $request->tanggal_lahir;
         $user->save();
-        
+
         return response()->json(
         [
-            'success' => true, 
-            'data' => $user, 
+            'success' => true,
+            'data' => $user,
             'pesan' => 'Data berhasil disimpan'
         ],200
         );
-        
-    
+
+
     }
 
 }
