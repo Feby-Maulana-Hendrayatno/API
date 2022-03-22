@@ -3,17 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ApiUserController extends Controller
 {
-    
+
     public function index(Request $request)
     {
-        \App\UserHit::simpan();
+<<<<<<< HEAD
+        \App\Http\Controllers\User::simpan();
         $respon = "Selamat Datang, " . \Auth::user()->name;
+=======
+        $data = \App\Models\User::get();
+>>>>>>> 270f89e0e59bbf3e917998e02015796f56e847f1
         return [
             'success' => true,
-            'data' => $respon,
+            'data' => $data,
             'pesan' => 'Ok'
         ];
     }
@@ -33,16 +38,16 @@ class ApiUserController extends Controller
         $user->password     = $request->password;
         $user->tanggal_lahir= $request->tanggal_lahir;
         $user->save();
-        
+
         return response()->json(
         [
-            'success' => true, 
-            'data' => $user, 
+            'success' => true,
+            'data' => $user,
             'pesan' => 'Data berhasil disimpan'
         ],200
         );
-        
-    
+
+
     }
 
 }
