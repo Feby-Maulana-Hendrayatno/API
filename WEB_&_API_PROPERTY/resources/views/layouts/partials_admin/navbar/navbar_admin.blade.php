@@ -1,10 +1,10 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
+    {{-- <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
         <img src="/template/dist/img/SanggarTari.png" alt="SanggarTari" class="brand-image img-circle elevation-3"
             style="opacity: .8" width="35" height="40">
         <span class="brand-text font-weight-light">Grand Savira</span>
-    </a>
+    </a> --}}
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -71,7 +71,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('/admin/pelatih/') }}" class="nav-link">
+                            <a href="{{ url('pelatih/') }}" class="nav-link">
                                 <i class="fa fa-user-plus" aria-hidden="true"></i>
                                 <p>Pemilik</p>
                             </a>
