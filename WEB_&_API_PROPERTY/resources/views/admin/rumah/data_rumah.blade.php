@@ -50,8 +50,9 @@ Data Rumah
                         <tr>
                             <th class="text-center">Id</th>
                             <!-- <th class="text-center">Deskripsi</th> -->
+                            <th class="text-center">nama</th>
                             <th class="text-center">alamat</th>
-                            <th class="text-center">nohp</th>
+                            <th class="text-center">kontak</th>
                             <th class="text-center">harga</th>
                             <th class="text-center">Aksi</th>
                         </tr>
@@ -63,7 +64,7 @@ Data Rumah
                             <td class="text-center">{{ ++$id }}.</td>
                             <td class="text-center">{{ $rumah->id_rumah }}</td>
                             <td class="text-center">
-                                <a href="{{ url('/pelatih/data_rumah/edit') }}/{{ $rumah->id }}" class="btn btn-warning btn-sm">
+                                <a href="{{ url('/rumah/data_rumah/edit') }}/{{ $rumah->id }}" class="btn btn-warning btn-sm">
                                     <span class="fa fa-edit"></span>
                                 </a>
                                 <form method="POST" action="{{ url('/rumah/data_rumah/hapus') }}" style="display: inline;">
