@@ -10,12 +10,7 @@ class ApiUserController extends Controller
 
     public function index(Request $request)
     {
-<<<<<<< HEAD
-        \App\Http\Controllers\User::simpan();
-        $respon = "Selamat Datang, " . \Auth::user()->name;
-=======
         $data = \App\Models\User::get();
->>>>>>> 270f89e0e59bbf3e917998e02015796f56e847f1
         return [
             'success' => true,
             'data' => $data,
