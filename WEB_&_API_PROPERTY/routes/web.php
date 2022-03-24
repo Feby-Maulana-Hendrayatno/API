@@ -42,7 +42,7 @@ Route::prefix("admin")->group(function () {
         Route::post("/hapus", [PelatihController::class, "destroy"]);
         Route::post("/update", [PelatihController::class, "update"]);
     });
-
+//route
     // Route::prefix("rumah")->group(function () {
     //     Route::get("/", [RumahController::class, "index"]);
     //     Route::post("/store", [RumahController::class, "store"]);
