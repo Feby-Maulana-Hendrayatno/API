@@ -43,14 +43,15 @@ Route::prefix("admin")->group(function () {
         Route::post("/update", [PelatihController::class, "update"]);
     });
 
-    // Route::prefix("rumah")->group(function () {
-    //     Route::get("/", [RumahController::class, "index"]);
-    //     Route::post("/store", [RumahController::class, "store"]);
-    //     Route::get("/tambah_rumah" . [RumahController::class, "tambah_data"]);
-    //     Route::get("/edit/{id}", [RumahController::class, "edit_rumah"]);
-    //     Route::post("/hapus", [RumahController::class, "destroy"]);
-    //     Route::post("/update", [RumahController::class, "update"]);
-    // });
+    Route::prefix("rumah")->group(function () {
+        Route::get("/", [RumahController::class, "index"]);
+        Route::post("/store", [RumahController::class, "store"]);
+        Route::get("/tambah_rumah" , [RumahController::class, "tambah_data"]);
+        Route::get("/edit/{id}", [RumahController::class, "edit_rumah"]);
+        Route::post("/hapus", [RumahController::class, "destroy"]);
+        Route::post("/update", [RumahController::class, "update"]);
+    });
 });
 
 // });
+//
