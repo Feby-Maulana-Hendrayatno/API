@@ -13,7 +13,6 @@ class PelatihController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -45,8 +44,6 @@ class PelatihController extends Controller
     {
         return view("/admin/pelatih/addpelatih");
     }
-    
-
     /**
      * Store a newly created resource in storage.
      *
@@ -94,7 +91,6 @@ class PelatihController extends Controller
             "edit" => Pelatih::where("id", $id)->first()
         ];
         return view("/admin/pelatih/edit_pelatih", $data);
-
     }
 
     public function detail($id)
@@ -104,7 +100,6 @@ class PelatihController extends Controller
         ];
 
         return view("/admin/pelatih/detail_pelatih", $data);
-
     }
 
     /**
