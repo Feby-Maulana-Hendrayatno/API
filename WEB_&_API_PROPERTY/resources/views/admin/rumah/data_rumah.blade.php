@@ -49,11 +49,11 @@ Data Rumah
                     <thead>
                         <tr>
                             <th class="text-center">Id</th>
+                            <th class="text-center">Nama</th>
                             <!-- <th class="text-center">Deskripsi</th> -->
-                            <th class="text-center">nama</th>
-                            <th class="text-center">alamat</th>
-                            <th class="text-center">kontak</th>
-                            <th class="text-center">harga</th>
+                            <th class="text-center">Alamat</th>
+                            <th class="text-center">Nohp</th>
+                            <th class="text-center">Harga</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -64,7 +64,11 @@ Data Rumah
                             <td class="text-center">{{ ++$id }}.</td>
                             <td class="text-center">{{ $rumah->id_rumah }}</td>
                             <td class="text-center">
+<<<<<<< HEAD:WEB_&_API_PROPERTY/resources/views/admin/rumah/data_rumah.blade.php
                                 <a href="{{ url('/rumah/data_rumah/edit') }}/{{ $rumah->id }}" class="btn btn-warning btn-sm">
+=======
+                                <a href="{{ url('/rumah/data_rumah/edit') }}/{{ $rumah->id }}" class="btn btn-primary btn-sm">
+>>>>>>> 0abbd9901aa146e55f427c12800b0acea7fb3faa:WEB_&_API_PROPERTY/resources/views/admin/rumah/data_rumah.php
                                     <span class="fa fa-edit"></span>
                                 </a>
                                 <form method="POST" action="{{ url('/rumah/data_rumah/hapus') }}" style="display: inline;">
