@@ -39,7 +39,7 @@ class ApiUserController extends Controller
             'success' => true,
             'data' => $user,
             'pesan' => 'Data berhasil disimpan'
-        ],200
+        ],201
         );
 
 
