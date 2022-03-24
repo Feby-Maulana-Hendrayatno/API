@@ -19,7 +19,7 @@ class RumahController extends Controller
                 //     'data' => $rumah
             ];
 
-        return view("App/Models/Rumah", $rumah);
+        return view("admin/rumah/data_rumah", $rumah);
         // return response()->json($response, 200);
         // return response()->json($response, Response::HTTP_OK);
     }
@@ -36,12 +36,12 @@ class RumahController extends Controller
             "data_rumah" => Rumah::all()
         ];
 
-        return view("App/Models/addrumah/index", $rumah);
+        return view("admin/rumah/data_rumah", $rumah);
     }
 
     public function tambah_data()
     {
-        return view("");
+        return view("admin/rumah/tambah_rumah");
     }
 
     /**
@@ -73,8 +73,8 @@ class RumahController extends Controller
         //     "password" => bcrypt("admin"),
         //     "id_role" => 2
         // ]);
-        
-        return redirect("/admin/Rumah")->with("tambah", "Data Berhasil di Tambahkan");
+
+        return redirect("/admin/rumah/tambah_data")->with("tambah", "Data Berhasil di Tambahkan");
     }
 
     /**
@@ -88,17 +88,17 @@ class RumahController extends Controller
         $data = [
             "edit" => Rumah::where("id", $id)->first()
         ];
-        return view("/admin/Rumah/edit_Rumah", $data);
+        return view("/admin/rumah/edit_Rumah", $data);
     }
 
-    public function detail($id)
-    {
-        $data = [
-            "deskripsi" => Rumah::where("id", $id)->first()
-        ];
+    // public function detail($id)
+    // {
+    //     $data = [
+    //         "deskripsi" => Rumah::where("id", $id)->first()
+    //     ];
 
-        return view("/admin/Rumah/detail_Rumah", $data);
-    }
+    //     return view("/admin/rumah/data_rumah", $data);
+    // }
 
     /**
      * Update the specified resource in storage.
@@ -129,7 +129,7 @@ class RumahController extends Controller
 
         Rumah::where("id", $request->id)->update($validateData);
 
-        return redirect("/admin/Rumah")->with("update", "Data Berhasil di update");
+        return redirect("/admin/rumah")->with("update", "Data Berhasil di update");
     }
 
     /**
