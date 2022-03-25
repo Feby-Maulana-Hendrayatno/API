@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Facade;
+Laravel\Passport\PassportServiceProvider::class;
 
 return [
 
