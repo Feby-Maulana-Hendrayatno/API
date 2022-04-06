@@ -1,14 +1,14 @@
 @extends("layouts.template")
 
 @section('title')
-Data Rumah
+  Data Role
 @stop
 
 @section("content")
 
 <div class="row">
     <div class="col-md-4">
-        <form method="POST" action="{{ url('/rumah/data_rumah/tambah/') }}">
+        <form method="POST" action="{{ url('/admin/role/tambah/') }}">
             {{ csrf_field() }}
             <div class="card card-info">
                 <div class="card-header">
@@ -18,9 +18,17 @@ Data Rumah
                 </div>
                 <div class="card-body">
                     <div class="form-group row">
-                        <label for="data_rumah" class="col-sm-2 col-form-label">Rumah</label>
+                        <label for="nama_role" class="col-sm-2 col-form-label">Role</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="data_rumah" name="data_rumah" placeholder="Kategori Tari">
+                            <input type="text" class="form-control" id="nama_role" name="nama_role" placeholder="Role">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label for="value" class="col-sm-2 col-form-label">value</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="id_role" name="id_role" placeholder="id_role">
                         </div>
                     </div>
                 </div>
@@ -45,31 +53,29 @@ Data Rumah
                 </h3>
             </div>
             <div class="card-body">
-                <table class="table table-bordered table-striped">
+                <table  class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th class="text-center">Id</th>
-                            <th class="text-center">Nama</th>
-                            <!-- <th class="text-center">Deskripsi</th> -->
-                            <th class="text-center">Alamat</th>
-                            <th class="text-center">Nohp</th>
-                            <th class="text-center">Harga</th>
+                            <th class="text-center">No</th>
+                            <th class="text-center">Role</th>
+                            <th class="text-center">Value</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @php $id = 0 @endphp
-                        @foreach($data_rumah as $rumah)
+                        @php $no = 0 @endphp
+                        @foreach($data_role as $role)
                         <tr>
-                            <td class="text-center">{{ ++$id }}.</td>
-                            <td class="text-center">{{ $rumah->id_rumah }}</td>
+                            <td class="text-center">{{ ++$no }}.</td>
+                            <td class="text-center">{{ $role->nama_role }}</td>
+                            <td class="text-center">{{ $role->id_role }}</td>
                             <td class="text-center">
-                                <a href="{{ url('/rumah/data_rumah/edit') }}/{{ $rumah->id }}" class="btn btn-primary btn-sm">
+                                <a href="{{ url('/admin/role/edit') }}/{{ $role->id }}" class="btn btn-warning btn-sm">
                                     <span class="fa fa-edit"></span>
                                 </a>
-                                <form method="POST" action="{{ url('/rumah/data_rumah/hapus') }}" style="display: inline;">
+                                <form method="POST" action="{{ url('/admin/role/hapus') }}" style="display: inline;">
                                     {{ csrf_field() }}
-                                    <input type="hidden" name="id" value="{{ $rumah->id }}">
+                                    <input type="hidden" name="id_role" value="{{ $role->id_role }}">
                                     <button onclick="return confirm('Ingin di Hapus ?')" type="submit" class="btn btn-danger btn-sm">
                                         <span class="fa fa-trash"></span>
                                     </button>
