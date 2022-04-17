@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PROYEK2</title>
 
-  @include("layouts.partials_admin.css.style_css")
-
+  @include("layouts.partials_owner.css.style_css")
   @yield("ajax_calendar_css")
 
 </head>
@@ -19,11 +18,11 @@
     </div>
 
     <!-- Navbar -->
-    @include("layouts.partials_admin.navbar.navbar_header")
+    @include("layouts.partials_owner.navbar.navbar_header")
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    @include("layouts.partials_admin.navbar.navbar_admin")
+    @include("layouts.partials_owner.navbar.navbar_owner")
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -41,7 +40,7 @@
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="float-right d-none d-sm-inline-block">
-      <b>Sanggar Tari Melati</b> Kelompok3
+      <b>Sanggar Tari Melati</b> Kelompok1
     </div>
   </footer>
 
@@ -54,7 +53,7 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-@include("layouts.partials_admin.js.style_js")
+@include("layouts.partials_owner.js.style_js")
 
 @yield("ajax_calendar_js")
 
