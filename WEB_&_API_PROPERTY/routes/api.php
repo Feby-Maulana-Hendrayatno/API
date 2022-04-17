@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiLoginController;
 use App\Http\Controllers\ApiUserController;
 use App\Http\Controllers\ApiSyaratController;
+use App\Http\Controllers\PropertyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,9 +46,9 @@ Route::get('/user', [ApiUserController::class, 'index']);
 // Route::post('login', [ApiLoginController::class, "login"] );
 // Route::group(['middleware' => ['throttle:60,1', 'LogVisits']], function () {
 //     Route::group(['middleware' => ['auth:api']], function () {
-//         Route::get('user', 'ApiUserController@index');
+//         Route::get('user', 'ApiUserController::class, "index');
 //     });
-//     Route::post('login' , 'ApiLoginController@login');
+//     Route::post('login' , 'ApiLoginController::class, "login');
 // });
 
 
@@ -79,3 +80,28 @@ Route::post('/user', [ApiUserController::class, 'store']);
 //         Route::resource('/syarat', ApiSyaratController::class,);
 //     });
 // });
+
+Route::post('/login', [ApiLoginController::class, "login"] );
+
+Route::get('/propertys', [PropertyController::class, "showAllProperty"]);
+
+Route::get('/propertys/{id}', [PropertyController::class, "showOneProperty"]);
+
+Route::post('/propertys', [PropertyController::class, "create"]);
+
+Route::delete('/propertys/{id}', [PropertyController::class, "delete"]);
+
+Route::put('/propertys/{id}', [PropertyController::class, "update"]);
+
+$router->group(['prefix' => 'api'], function () use ($router) {
+
+    $router->get('property', ['uses' => 'PropertyController@showAllPropertys']);
+
+    $router->get('property/{id}', ['uses' => 'PropertyController@showOnePropertys']);
+
+    $router->post('property', ['uses' => 'PropertyController@create']);
+
+    $router->delete('property/{id}', ['uses' => 'PropertyController@delete']);
+
+    $router->put('property/{id}', ['uses' => 'PropertyController@update']);
+});

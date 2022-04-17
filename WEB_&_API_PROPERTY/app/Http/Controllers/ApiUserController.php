@@ -24,14 +24,15 @@ class ApiUserController extends Controller
                 'name' => 'required|min:2|max:100',
                 'email' => 'required|min:2|max:100',
                 'password' => 'required|min:2|max:100',
-                'tanggal_lahir' => 'required|date',
+                // 'tanggal_lahir' => 'required|date',
             ]
         );
         $user               = new \App\Models\User();
         $user->name         = $request->name;
         $user->email        = $request->email;
+        $user->id_role        = $request->id_role;
         $user->password     = bcrypt($request->password);
-        $user->tanggal_lahir= $request->tanggal_lahir;
+        // $user->tanggal_lahir= $request->tanggal_lahir;
         $user->save();
 
         return response()->json(
