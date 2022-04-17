@@ -79,3 +79,11 @@ Route::post('/user', [ApiUserController::class, 'store']);
 //         Route::resource('/syarat', ApiSyaratController::class,);
 //     });
 // });
+
+Route::get('/rumah', [ApiRumahController::class, 'index']);
+Route::get('/rumah/tambah', [ApiRumahController::class, 'create']);
+Route::post('/rumah', [ApiRumahController::class, 'store']);
+Route::get('/rumah/{id}/edit', [ApiRumahController::class, 'edit']);
+Route::put('/rumah/{id}', [ApiRumahController::class, 'show']);
+Route::put('/rumah/{id}', [ApiRumahController::class, 'update']);
+Route::delete('/rumah/{id}', [ApiRumahController::class, 'destroy']);
