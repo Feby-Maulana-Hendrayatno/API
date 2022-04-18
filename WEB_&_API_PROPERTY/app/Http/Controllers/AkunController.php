@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-// use App\Models\Murid;
-// use App\Models\Pelatih;
 
 class AkunController extends Controller
 {
@@ -27,7 +25,7 @@ class AkunController extends Controller
             "password" => bcrypt($request->password)
         ]);
 
-        return redirect()->back();
+        return redirect("/login");
     }
 
     public function hapus(Request $request)
@@ -57,6 +55,6 @@ class AkunController extends Controller
 
         ]);
 
-        return redirect("/admin/users");
+        return redirect("/users");
     }
 }

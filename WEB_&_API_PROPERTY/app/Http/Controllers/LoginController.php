@@ -18,22 +18,15 @@ class LoginController extends Controller
 
             if ($data == 2) {
 
-                echo "2";
-                //return redirect("/page/bph/dashboard")->with("sukses", "Anda Berhasil Login");
+                return redirect("/owner/dashboard")->with("sukses", "Anda Berhasil Login");
 
             } else if ($data == 1) {
                 return redirect("/admin/dashboard")->with("sukses", "Anda Berhasil Login");
 
-            } else if ($data == 3) {
-
-                echo "3";
-                //return redirect("/")->with("sukses", "Anda Berhasil Login");
-
-            }
+            } 
             
         } else {
-            echo "4";
-            //return redirect()->back();
+            return redirect()->back();
         }
         
     }

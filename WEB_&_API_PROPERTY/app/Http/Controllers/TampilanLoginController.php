@@ -14,7 +14,7 @@ class TampilanLoginController extends Controller
 
     public function TampilanRegistrasi()
     {
-        return view("/auth/register");
+        return view("auth.register");
     }
 
 }
