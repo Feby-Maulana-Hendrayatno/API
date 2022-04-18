@@ -59,7 +59,7 @@ class RumahController extends Controller
             "harga" => "required",
             "alamat" => "required",
             "kontak" => "required",
-            "foto" => "image"
+            "foto" => "image_url"
         ]);
 
         if ($request->file("foto")) {
@@ -73,7 +73,7 @@ class RumahController extends Controller
         //     "password" => bcrypt("admin"),
         //     "id_role" => 2
         // ]);
-        
+
         return redirect("/admin/Rumah")->with("tambah", "Data Berhasil di Tambahkan");
     }
 
