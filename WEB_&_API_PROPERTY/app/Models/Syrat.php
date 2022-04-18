@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Syrat extends Model
 {
     use HasFactory;
+    protected $table = "syarat";
+    protected $guarded = [""];
+
+    public $timestamps = false;
 }
