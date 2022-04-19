@@ -6,7 +6,7 @@ use App\Models\data;
 use App\Models\Rumah;
 use Illuminate\Http\Request;
 
-class ApidataController extends Controller
+class ApiRumahController extends Controller
 {
     public function index()
     {

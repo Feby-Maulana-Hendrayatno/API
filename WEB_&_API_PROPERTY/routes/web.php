@@ -131,18 +131,10 @@ Route::prefix("rumah")->group(function () {
     //     Route::post("/simpan", [AkunController::class, "simpan"]);
     // });
 
-    Route::group(["middleware" => ["guest"]], function() {
-
-        Route::prefix("admin")->group(function() {
-
-            Route::get("/login", [LoginController::class, "login"]);
-
-            Route::post("/post_login", [LoginController::class, "post_login"] );
+    Route::get("/login", [LoginController::class, "login"]);
+    Route::post("/post_login", [LoginController::class, "post_login"] );
 
         });
-
-    });
-});
 
 Route::prefix("owner")->group(function() {
     Route::get("/dashboard", [OwnerController::class, "dashboard"]);
