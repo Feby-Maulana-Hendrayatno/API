@@ -14,6 +14,7 @@ class AkunController extends Controller
             "data_akun" => User::orderBy("name", "ASC")->get(),
             "data_role" => Role::orderBy("nama_role", "DESC")->get(),
         ];
+        
 
         return view("/admin/users/akun", $data);
     }

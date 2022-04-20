@@ -79,7 +79,16 @@
                         <td>{{ ++$no }}</td>
                         <td>{{ $akun->name }}</td>
                         <td>{{ $akun->email }}</td>
-                        <td>{{ $akun->getRole->nama_role }}
+                        <td>
+                            @if (empty($akun->getRole->nama_role))
+                                <b>
+                                    <i>
+                                        NULL
+                                    </i>
+                                </b>
+                            @else
+                            $akun->getRole->nama_role
+                            @endif
                         </td>
                         <td>
                             <a href="{{ url('/admin/users/edit') }}/{{ $akun->id }}" class="btn btn-warning btn-sm">
