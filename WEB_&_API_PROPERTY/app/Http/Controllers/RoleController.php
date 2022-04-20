@@ -43,8 +43,7 @@ class RoleController extends Controller
     public function simpan(Request $request)
     {
         Role::where("id_role", $request->id_role)->update([
-            "nama_role" => $request->nama_role,
-            "id_role" => $request->id_role
+            "nama_role" => $request->nama_role
         ]);
 
         return redirect("/admin/role");

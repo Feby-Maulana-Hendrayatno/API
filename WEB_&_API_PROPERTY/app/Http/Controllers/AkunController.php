@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Role;
 
 class AkunController extends Controller
 {
     public function index()
     {
         $data = [
-            "data_akun" => User::orderBy("name", "ASC")->get()
+            "data_akun" => User::orderBy("name", "ASC")->get(),
+            "data_role" => Role::orderBy("nama_role", "DESC")->get(),
         ];
 
         return view("/admin/users/akun", $data);
@@ -21,7 +23,7 @@ class AkunController extends Controller
         User::create([
             "name" => $request->name,
             "email" => $request->email,
-            "id_role" => 1,
+            "id_role" => $request->id_role,
             "password" => bcrypt($request->password)
         ]);
 
@@ -39,7 +41,8 @@ class AkunController extends Controller
     {
         $data = [
             "edit" => User::where("id", $id)->first(),
-            "data_akun" => User::where("id", "!=", $id)->orderBy("id", "ASC")->get()
+            "data_akun" => User::where("id", "!=", $id)->orderBy("id", "ASC")->get(),
+            // "edit" => Role::where("id_role", $id_role)->first(),
         ];
 
         return view("/admin/users/edit_akun", $data);
@@ -50,8 +53,8 @@ class AkunController extends Controller
         User::where("id", $request->id)->update([
             "name" => $request->name,
             "email" => $request->email,
-            "password" => bcrypt($request->password),
             "id_role" =>  $request->id_role,
+            "password" => bcrypt($request->password),
 
         ]);
 

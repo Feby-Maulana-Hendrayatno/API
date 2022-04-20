@@ -29,9 +29,16 @@
                         <label for="password">Password</label>
                         <input type="text" class="form-control" id="password" name="password" placeholder="Passwords">
                     </div>
-                    <div hidden >
-                        <label for="id_role">Id Role</label>
-                        <input type="text" class="form-control" id="id_role" name="id_role" value="3">
+                    <div class="form-group">
+                        <label for="id_kategori"> Role </label>
+                        <select required class="form-control" style="width: 100%;" name="id_role">
+                            <option value="">- Pilih -</option>
+                            @foreach($data_role as $role)
+                            <option value="{{ $role->id }}">
+                                {{ $role->nama_role }}
+                            </option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="card-footer">
@@ -61,6 +68,7 @@
                             <th class="text-center">No</th>
                             <th class="text-center">Nama Akun</th>
                             <th class="text-center">Email</th>
+                            <th class="text-center">Role</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -71,6 +79,8 @@
                         <td>{{ ++$no }}</td>
                         <td>{{ $akun->name }}</td>
                         <td>{{ $akun->email }}</td>
+                        <td>{{ $akun->getRole->nama_role }}
+                        </td>
                         <td>
                             <a href="{{ url('/admin/users/edit') }}/{{ $akun->id }}" class="btn btn-warning btn-sm">
                                 <span class="fa fa-edit"></span>

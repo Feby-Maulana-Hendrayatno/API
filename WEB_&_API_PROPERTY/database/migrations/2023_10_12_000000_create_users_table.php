@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->integer('id_role');
+            $table->string('id_role');
+            // $table->foreignId('id_role')->nullable()->constrained("tb_penduduk")->cascadeOnUpdate()->nullOnDelete();
             // $table->string('tanggal_lahir')->nullable();
             // $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
