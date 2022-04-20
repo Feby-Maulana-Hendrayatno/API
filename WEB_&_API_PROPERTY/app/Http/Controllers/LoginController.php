@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-<<<<<<< HEAD
     public function login()
     {
         return view("/auth/login");
@@ -17,18 +16,10 @@ class LoginController extends Controller
     {
         if(Auth::attempt(["email" =>$request->email,"password" => $request->password
         ])) {
-=======
-    public function post_login(Request $request)
-    {
-        
-        if (Auth::attempt(["email" => $request->email, "password" => $request->password])) {
-
->>>>>>> 41739cf831c79f4678fbadfe1ca0391c524c78ff
             $request->session()->regenerate();
 
             $data = auth()->user()->id_role;
 
-<<<<<<< HEAD
             if ($data == 1) {
 
                 return redirect("/admin/dashboard");
@@ -51,31 +42,10 @@ class LoginController extends Controller
     }
 
 
-=======
-            if ($data == 2) {
-
-                return redirect("/owner/dashboard")->with("sukses", "Anda Berhasil Login");
-
-            } else if ($data == 1) {
-                return redirect("/admin/dashboard")->with("sukses", "Anda Berhasil Login");
-
-            } 
-            
-        } else {
-            return redirect()->back();
-        }
-        
-    }
-
->>>>>>> 41739cf831c79f4678fbadfe1ca0391c524c78ff
     public function logout()
     {
         Auth::logout();
 
-<<<<<<< HEAD
         return redirect("/admin/login");
-=======
-            return redirect("/login");
->>>>>>> 41739cf831c79f4678fbadfe1ca0391c524c78ff
     }
 }
