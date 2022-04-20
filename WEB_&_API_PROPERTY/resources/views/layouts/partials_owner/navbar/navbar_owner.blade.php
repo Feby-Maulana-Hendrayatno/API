@@ -46,6 +46,59 @@
                             </a>
                         </li>
                         <br>
+                        <li class="nav-header">
+                            Daftar Menu
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-bars"></i>
+                                <p>
+                                    Menu
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url('/admin/form/') }}" class="nav-link">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        <p>Form Pembeli</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('/admin/kategori_tari/') }}" class="nav-link">
+                                        <i class="fas fa-tasks"></i>
+                                        <p>Kategori Rumah</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('pelatih/') }}" class="nav-link">
+                                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                                        <p>Pemilik</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url('/admin/pelatih_kategori_tari/') }}" class="nav-link">
+                                        <i class="fa fa-male" aria-hidden="true"></i>
+                                        <p>Pelatih Kategori Tari</p>
+                                    </a>
+                                </li> 
+                                <li class="nav-item">
+                                    <a href="/admin/murid" class="nav-link">
+                                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                                        <p>Murid</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('/admin/full-calender/') }}" class="nav-link">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                <p>
+                                    Event
+                                </p>
+                            </a>
+                        </li>
+                        <br>
                         <li class="nav-header">Akun</li>
                         <li class="nav-item">
                             <a href="{{ url('/admin/users') }}" class="nav-link">
@@ -55,14 +108,14 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ url('/admin/role/') }}" class="nav-link">
                                 <i class="fa fa-list-alt" aria-hidden="true"></i>
                                 <p>
                                     Role
                                 </p>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

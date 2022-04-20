@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('rumah', function (Blueprint $table) {
-            $table->id();
-            $table->string("image_url");
-            $table->string("nama_rumah");
-            $table->text("deskripsi");
-            $table->string("harga");
-            $table->string("alamat");
-            $table->string("kontak");
+        Schema::create('property', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('description');
+            $table->decimal('price');
+            $table->string('location');
+            $table->string('image');
+            $table->timestamps();
         });
     }
 
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('property');
     }
 };

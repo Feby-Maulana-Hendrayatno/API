@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('rumah', function (Blueprint $table) {
-            $table->id();
-            $table->string("image_url");
-            $table->string("nama_rumah");
-            $table->text("deskripsi");
-            $table->string("harga");
-            $table->string("alamat");
-            $table->string("kontak");
+        Schema::create('role', function (Blueprint $table) {
+            $table->id("id_role");
+            $table->string("nama_role", 100)->nullable();
         });
     }
 
@@ -31,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('role');
     }
 };

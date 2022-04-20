@@ -18,9 +18,20 @@ class AkunController extends Controller
 
     public function tambah(Request $request)
     {
+<<<<<<< HEAD
         User::create($request->all());
 
         return redirect("/")->with("sukses");
+=======
+        User::create([
+            "name" => $request->name,
+            "email" => $request->email,
+            "id_role" => 1,
+            "password" => bcrypt($request->password)
+        ]);
+
+        return redirect("/login");
+>>>>>>> 41739cf831c79f4678fbadfe1ca0391c524c78ff
     }
 
     public function hapus(Request $request)
@@ -50,6 +61,6 @@ class AkunController extends Controller
 
         ]);
 
-        return redirect("/admin/users");
+        return redirect("/users");
     }
 }
