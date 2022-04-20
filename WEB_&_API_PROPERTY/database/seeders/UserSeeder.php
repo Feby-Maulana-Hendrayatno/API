@@ -16,6 +16,18 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+<<<<<<< HEAD
+        $faker = Faker::create('id_ID');
+
+        User::create([
+			"name" => "alan",
+			"email" => "alan@gmail.com",
+			"password" => bcrypt("alanalan")
+		]);
+		
+    }
+}
+=======
     	$faker = Faker::create('id_ID');
 
     	User::create([
@@ -61,3 +73,4 @@ class UserSeeder extends Seeder
 		]);
     }
 }
+>>>>>>> 41739cf831c79f4678fbadfe1ca0391c524c78ff

@@ -30,9 +30,14 @@ class ApiUserController extends Controller
         $user               = new \App\Models\User();
         $user->name         = $request->name;
         $user->email        = $request->email;
+<<<<<<< HEAD
+        $user->password     = bcrypt($request->password);
+        $user->tanggal_lahir= $request->tanggal_lahir;
+=======
         $user->id_role        = $request->id_role;
         $user->password     = bcrypt($request->password);
         // $user->tanggal_lahir= $request->tanggal_lahir;
+>>>>>>> 41739cf831c79f4678fbadfe1ca0391c524c78ff
         $user->save();
 
         return response()->json(

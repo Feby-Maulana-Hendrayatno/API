@@ -8,7 +8,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiLoginController;
 use App\Http\Controllers\ApiUserController;
 use App\Http\Controllers\ApiSyaratController;
+<<<<<<< HEAD
+=======
 use App\Http\Controllers\PropertyController;
+>>>>>>> 41739cf831c79f4678fbadfe1ca0391c524c78ff
 
 /*
 |--------------------------------------------------------------------------
@@ -79,6 +82,9 @@ Route::post('/user', [ApiUserController::class, 'store']);
 //         Route::get('user', 'ApiUserController');
 //         Route::resource('/syarat', ApiSyaratController::class,);
 //     });
+<<<<<<< HEAD
+// });
+=======
 // });
 
 Route::post('/login', [ApiLoginController::class, "login"] );
@@ -105,3 +111,4 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 
     $router->put('property/{id}', ['uses' => 'PropertyController@update']);
 });
+>>>>>>> 41739cf831c79f4678fbadfe1ca0391c524c78ff
