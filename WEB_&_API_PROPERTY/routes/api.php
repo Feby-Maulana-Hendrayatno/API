@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiLoginController;
 use App\Http\Controllers\ApiUserController;
-
+use App\Http\Controllers\ApiSyaratController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,14 +41,6 @@ Route::get('/user', [ApiUserController::class, 'index']);
 // except supaya link tidak bisa diakses
 
 
-//api login
-
-// salah
-// Route::group(['middleware' => [auth:api]], function()) {
-//     Route::get('user/data-rahasia', function ($id) {
-//         return "ini rahasia";
-//     });
-// }
 
 // Route::post('login', [ApiLoginController::class, "login"] );
 // Route::group(['middleware' => ['throttle:60,1', 'LogVisits']], function () {
@@ -58,8 +50,32 @@ Route::get('/user', [ApiUserController::class, 'index']);
 //     Route::post('login' , 'ApiLoginController@login');
 // });
 
+
+
+
+
+
+
+
+
+
 //api login
 Route::post('login', [ApiLoginController::class, "login"] );
 
 //api daftar
 Route::post('/user', [ApiUserController::class, 'store']);
+
+// //api Syarat
+// Route::resource('/syarat', ApiSyaratController::class,);
+
+
+// midleware
+// Route::group(['middleware' => ['throttle:60,1', 'LogVisits']] ,function () {
+//     Route::post('/user', [ApiUserController::class, 'store']);
+//     Route::post('login', [ApiLoginController::class, "login"] );
+
+//     Route::group(['middleware' => ['throttle:60,1', 'LogVisits']] ,function () {
+//         Route::get('user', 'ApiUserController');
+//         Route::resource('/syarat', ApiSyaratController::class,);
+//     });
+// });

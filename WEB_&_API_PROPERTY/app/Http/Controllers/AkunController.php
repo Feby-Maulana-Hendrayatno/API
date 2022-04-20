@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Murid;
-use App\Models\Pelatih;
 
 class AkunController extends Controller
 {
@@ -20,14 +18,9 @@ class AkunController extends Controller
 
     public function tambah(Request $request)
     {
-        User::create([
-            "name" => $request->name,
-            "email" => $request->email,
-            "password" => bcrypt($request->password),
-            "id_role" => 1
-        ]);
+        User::create($request->all());
 
-        return redirect()->back();
+        return redirect("/")->with("sukses");
     }
 
     public function hapus(Request $request)
@@ -52,8 +45,8 @@ class AkunController extends Controller
         User::where("id", $request->id)->update([
             "name" => $request->name,
             "email" => $request->email,
-            "password" => bcrypt($request->password),
             "id_role" =>  $request->id_role,
+            "password" => bcrypt($request->password),
 
         ]);
 

@@ -26,7 +26,7 @@
 <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1 class="m-0"> Rumah </h1>
+            <h1 class="m-0"> Pelatih </h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -34,9 +34,9 @@
                     <a href="{{ url('/admin/dashboard') }}"> Dashboard </a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="{{ url('/admin/data_rumah') }}"> Data Rumah </a>
+                    <a href="{{ url('/admin/data_murid') }}"> Data Murid </a>
                 </li>
-                <li class="breadcrumb-item active"> Edit Data Rumah </li>
+                <li class="breadcrumb-item active"> Edit Data Murid </li>
             </ol>
         </div>
     </div>
@@ -51,39 +51,53 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-					<a href="{{ url('/admin/rumah/') }}">
+					<a href="{{ url('/admin/murid/') }}">
 						<h3 class="card-title">
 							<span class="btn btn-secondary col fileinput-button dz-clickable">
                                 <i class="fa fa-reply"></i>
-								<span >Edit Data Rumah</span>
+								<span >Edit Data Murid</span>
 							</span>
 						</h3>
 					</a>
 				</div>
                 <div class="card-body">
-                    <form method="POST" action="/admin/rumah/update" enctype="multipart/form-data">
+                    <form method="POST" action="/admin/murid/update" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <input type="hidden" name="oldImage" value="{{ $edit->foto }}">
                         <input type="hidden" name="id" value="{{ $edit->id }}">
                         <div class="card-body">
                             <div class="form-group">
-                                <label>Nama Rumah</label>
-                                <input type="" name="nama_rumah" class="form-control" id="" placeholder="Masukan Nama" required value="{{ $edit->nama_rumah }}">
+                                <label>Nama Pelatih</label>
+                                <input type="" name="nama_murid" class="form-control" id="" placeholder="Masukan Nama" required value="{{ $edit->nama_murid }}">
+                            </div>
+                            <div class="form-group">
+                                <label>Jenis Kelamin</label>
+                                <br>
+                                @if($edit->jenis_kelamin == "L")
+                                <input type="radio" name="jenis_kelamin" value="L" checked> Laki-laki
+                                <input type="radio" name="jenis_kelamin" value="P"> Perempuan
+                                @elseif($edit->jenis_kelamin == "Perempuan")
+                                <input type="radio" name="jenis_kelamin" value="L"> Laki-laki
+                                <input type="radio" name="jenis_kelamin" value="P" checked> Perempuan
+                                @else
+                                <input type="radio" name="jenis_kelamin" value="L"> Laki-laki
+                                <input type="radio" name="jenis_kelamin" value="P"> Perempuan
+                                @endif
+                            </div>
+                            <div class="form-group">
+                                <label>Umur</label>
+                                <input type="number" name="umur" class="form-control" id="" placeholder="Umur" value="{{ $edit->umur }}" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Nomer Handphone</label>
+                                <input type="" name="no_hp" class="form-control" id="" placeholder="nomor handphone" value="{{ $edit->no_hp }}" required>
                             </div>
                             <div class="form-group">
                                 <label>Alamat</label>
-                                <input type="text" name="alamat" class="form-control" id="" placeholder="alamat rumah" value="{{ $edit->alamat }}" required>
+                                <input type="" name="alamat" class="form-control" id="" placeholder="Masukan Alamat" value="{{ $edit->alamat }}" required>
                             </div>
                             <div class="form-group">
-                                <label>Kontak</label>
-                                <input type="" name="kontak" class="form-control" id="" placeholder="Masukan Kontak Anda" value="{{ $edit->kontak }}" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Harga</label>
-                                <input type="number" name="harga" class="form-control" id="" placeholder="Harga Rumah" value="{{ $edit->harga }}" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Foto Rumah</label>
+                                <label>Foto Murid</label>
                                 @if($edit->foto)
                                 <img class="img-preview img-fluid mb-3 col-sm-5 d-block" src="{{ url('/storage/'.$edit->foto) }}">
                                 @else
