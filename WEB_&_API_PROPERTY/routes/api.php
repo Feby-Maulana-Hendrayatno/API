@@ -65,6 +65,8 @@ Route::post('login', [ApiLoginController::class, "login"] );
 //api daftar
 Route::post('/user', [ApiUserController::class, 'store']);
 
+
+
 // //api Syarat
 // Route::resource('/syarat', ApiSyaratController::class,);
 

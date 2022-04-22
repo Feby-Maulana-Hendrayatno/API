@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class ApiLoginController extends Controller
 {
@@ -15,9 +16,10 @@ class ApiLoginController extends Controller
             ]
         )) {
             $user = \Auth::user();
-            $token = $user->createToken('user')->accessToken;
+            $user->update([
+                'remember_token' => bin2hex(random_bytes(40))
+            ]);
             $data['user']  = $user;
-            $data['token'] = $token;
             return response()->json(
                 [
                     'success' => true,

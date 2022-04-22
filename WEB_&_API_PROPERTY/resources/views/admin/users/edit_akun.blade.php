@@ -24,12 +24,18 @@
                     </div>
                     <div  class="form-group">
                         <label for="password" >Password</label>
-                        <input type="text" class="form-control" id="password" name="password" >
-                    </div>
-                    <div  class="form-group">
-                        <label for="id_role" >Role</label>
-                        <input type="number" class="form-control" id="id_role" name="id_role" value="{{ $edit->id_role }}">
+                        <input type="text" class="form-control" id="password" name="password"  >
                     </div> 
+                    <div class="form-group">
+                        <label for="id"> Role </label>
+                        <select required class="form-control" style="width: 100%;" name="id_role">
+                            @foreach($data_role as $role)
+                            <option value="{{ $role->id }}">
+                                {{ $role->nama_role }}
+                            </option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
                 <div class="card-footer">
                     <button type="submit" class="btn btn-info btn-sm">
@@ -58,6 +64,7 @@
                             <th class="text-center">No</th>
                             <th class="text-center">Nama</th>
                             <th class="text-center">Email</th>
+                            <th class="text-center">Role</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -68,6 +75,17 @@
                             <td class="text-center">{{ ++$no }}</td>
                             <td class="text-center">{{ $akun->name }}</td>
                             <td class="text-center">{{ $akun->email }}</td>
+                            <td>
+                                @if (empty($akun->getRole->nama_role))
+                                    <b>
+                                        <i>
+                                            NULL
+                                        </i>
+                                    </b>
+                                @else
+                                {{$akun->getRole->nama_role}}
+                                @endif
+                            </td>
                             <td class="text-center">
                                 <a href="{{ url('/admin/users/edit') }}/{{ $akun->id }}" class="btn btn-warning btn-sm">
                                     <span class="fa fa-edit"></span>

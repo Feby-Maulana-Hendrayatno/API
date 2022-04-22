@@ -11,6 +11,7 @@ use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\RegisterController;
 
 
 /*
@@ -29,61 +30,8 @@ Route::get('/', function () {
 });
 
 
-Route::group(["middleware" => ["guest"]], function() {
-
-
-
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-    // Auth::routes();
-
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
-
-
-
-// Route::get('/admin', function () {
-//     return view('/layouts/template');
-// });
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-// Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
-
-
-// Route::group(["middleware" => ["admin"]], function() {
-    Route::get("/login", [TampilanLoginController::class, "TampilanLogin"]);
-    Route::get("/register", [TampilanLoginController::class, "TampilanRegistrasi"]);
-
-Route::get("/login", [TampilanLoginController::class, "TampilanLogin"]);
-Route::get("/register", [TampilanLoginController::class, "TampilanRegistrasi"]);
-
-
-    Route::get("/login", [TampilanLoginController::class, "TampilanLogin"]);
-    Route::get("/register", [TampilanLoginController::class, "TampilanRegistrasi"]);
-    Route::post("/login", [LoginController::class, "post_login"]);
-});
-
 Route::group(["middleware" => ["admin"]], function() {
 
-Route::prefix("admin")->group(function () {
-
-    Route::get("/dashboard", [AdminController::class, "dashboard"]);
-
-
-    Route::prefix("pelatih")->group(function () {
-        Route::get("/", [PelatihController::class, "index"]);
-        Route::post("/store", [PelatihController::class, "store"]);
-        Route::get("/tambah_data", [PelatihController::class, "tambah_data"]);
-        Route::get("/edit/{id}", [PelatihController::class, "edit"]);
-        Route::get("/detail/{id}", [PelatihController::class, "detail"]);
-        Route::post("/hapus", [PelatihController::class, "destroy"]);
-        Route::post("/update", [PelatihController::class, "update"]);
-    });
-});
-
         Route::prefix("users")->group(function() {
             Route::get("/", [AkunController::class, "index"]);
             Route::post("/tambah/", [AkunController::class, "tambah"]);
@@ -92,20 +40,13 @@ Route::prefix("admin")->group(function () {
             Route::post("/simpan", [AkunController::class, "simpan"]);
         });
 
-    });
+});
 
 
-    Route::prefix("users")->group(function() {
-        Route::get("/", [AkunController::class, "index"]);
-        Route::post("/tambah/", [AkunController::class, "tambah"]);
-        Route::post("/hapus", [AkunController::class, "hapus"]);
-        Route::get("/edit/{id_role}", [AkunController::class, "edit"]);
-        Route::post("/simpan", [AkunController::class, "simpan"]);
-    });
 
     Route::get("/login", [TampilanLoginController::class, "TampilanLogin"]);
     Route::get("/register", [TampilanLoginController::class, "TampilanRegistrasi"]);
-    Route::post("/register", [AkunController::class, "tambah"]);
+    Route::post("/register", [RegisterController::class, "tambah"]);
     Route::post("/login", [LoginController::class, "post_login"]);
 
         Route::prefix("users")->group(function() {
@@ -118,29 +59,29 @@ Route::prefix("admin")->group(function () {
 
 
 
-Route::prefix("admin")->group(function() {
+// Route::prefix("admin")->group(function() {
 
-    Route::get("/dashboard", [AdminController::class, "dashboard"]);
+//     Route::get("/dashboard", [AdminController::class, "dashboard"]);
 
-    Route::prefix("pelatih")->group(function() {
-        Route::get("/", [PelatihController::class, "index"]);
-        Route::post("/store", [PelatihController::class, "store"]);
-        Route::get("/tambah_data", [PelatihController::class, "tambah_data"]);
-        Route::get("/edit/{id}", [PelatihController::class, "edit"]);
-        Route::get("/detail/{id}", [PelatihController::class, "detail"]);
-        Route::post("/hapus/", [PelatihController::class, "destroy"]);
-        Route::post("/update", [PelatihController::class, "update"]);
-    });
+//     Route::prefix("pelatih")->group(function() {
+//         Route::get("/", [PelatihController::class, "index"]);
+//         Route::post("/store", [PelatihController::class, "store"]);
+//         Route::get("/tambah_data", [PelatihController::class, "tambah_data"]);
+//         Route::get("/edit/{id}", [PelatihController::class, "edit"]);
+//         Route::get("/detail/{id}", [PelatihController::class, "detail"]);
+//         Route::post("/hapus/", [PelatihController::class, "destroy"]);
+//         Route::post("/update", [PelatihController::class, "update"]);
+//     });
 
-    Route::prefix("users")->group(function() {
+//     Route::prefix("users")->group(function() {
 
-        Route::get("/", [AkunController::class, "index"]);
-        Route::post("/tambah/", [AkunController::class, "tambah"]);
-        Route::post("/hapus", [AkunController::class, "hapus"]);
-        Route::get("/edit/{id_role}", [AkunController::class, "edit"]);
-        Route::post("/simpan", [AkunController::class, "simpan"]);
-    });
-});
+//         Route::get("/", [AkunController::class, "index"]);
+//         Route::post("/tambah/", [AkunController::class, "tambah"]);
+//         Route::post("/hapus", [AkunController::class, "hapus"]);
+//         Route::get("/edit/{id_role}", [AkunController::class, "edit"]);
+//         Route::post("/simpan", [AkunController::class, "simpan"]);
+//     });
+// });
 
 Route::prefix("users")->group(function () {
     Route::get("/", [AkunController::class, "index"]);
@@ -160,42 +101,16 @@ Route::prefix("rumah")->group(function () {
 });
 
     Route::get("/logout", [LoginController::class, "logout"]);
-
-
-// });
-
-// Route::prefix("users")->group(function() {
-    //     Route::get("/", [AkunController::class, "index"]);
-    //     Route::post("/tambah/", [AkunController::class, "tambah"]);
-    //     Route::post("/hapus", [AkunController::class, "hapus"]);
-    //     Route::get("/edit/{id_role}", [AkunController::class, "edit"]);
-    //     Route::post("/simpan", [AkunController::class, "simpan"]);
-    // });
-
     Route::get("/login", [LoginController::class, "login"]);
     Route::post("/post_login", [LoginController::class, "post_login"] );
 
-Route::group(["middleware" => ["admin"]], function() {
-
-
-
-
+    Route::group(["middleware" => ["admin"]], function() {
 
     Route::prefix("admin")->group(function() {
 
-        Route::get("/dashboard", [AdminController::class, "dashboard"]);
-        Route::get("/logout", [LoginController::class, "logout"]);
+    Route::get("/dashboard", [AdminController::class, "dashboard"]);
+    Route::get("/logout", [LoginController::class, "logout"]);
 
-        Route::prefix("pelatih")->group(function() {
-            Route::get("/", [PelatihController::class, "index"]);
-            Route::post("/store", [PelatihController::class, "store"]);
-            Route::get("/tambah_data", [PelatihController::class, "tambah_data"]);
-            Route::get("/edit/{id}", [PelatihController::class, "edit"]);
-            Route::get("/detail/{id}", [PelatihController::class, "detail"]);
-            Route::post("/hapus/", [PelatihController::class, "destroy"]);
-            Route::post("/update", [PelatihController::class, "update"]);
-
-        });
 
         Route::prefix("users")->group(function() {
             Route::get("/", [AkunController::class, "index"]);

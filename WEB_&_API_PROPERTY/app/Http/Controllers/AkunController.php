@@ -21,7 +21,14 @@ class AkunController extends Controller
 
     public function tambah(Request $request)
     {
-        User::create($request->all());
+        User::create([
+            "name" => $request->name,
+            "email" => $request->email,
+            "id_role" => $request->id_role,
+            "password" => bcrypt($request->password)
+        ]);
+
+        return redirect()->back();
 
         return redirect("/")->with("sukses");
     }
@@ -39,6 +46,7 @@ class AkunController extends Controller
             "edit" => User::where("id", $id)->first(),
             "data_akun" => User::where("id", "!=", $id)->orderBy("id", "ASC")->get(),
             // "edit" => Role::where("id_role", $id_role)->first(),
+            "data_role" => Role::orderBy("nama_role", "DESC")->get(),
         ];
 
         return view("/admin/users/edit_akun", $data);

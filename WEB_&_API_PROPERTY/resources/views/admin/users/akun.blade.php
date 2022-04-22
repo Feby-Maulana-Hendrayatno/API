@@ -30,7 +30,7 @@
                         <input type="text" class="form-control" id="password" name="password" placeholder="Passwords">
                     </div>
                     <div class="form-group">
-                        <label for="id_kategori"> Role </label>
+                        <label for="id"> Role </label>
                         <select required class="form-control" style="width: 100%;" name="id_role">
                             <option value="">- Pilih -</option>
                             @foreach($data_role as $role)
@@ -87,7 +87,7 @@
                                     </i>
                                 </b>
                             @else
-                            $akun->getRole->nama_role
+                            {{$akun->getRole->nama_role}}
                             @endif
                         </td>
                         <td>
