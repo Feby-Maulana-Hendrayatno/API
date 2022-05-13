@@ -120,7 +120,7 @@ class RumahController extends Controller
 
         if ($request->file("foto")) {
 
-            if ($request->Image) {
+            if ($request->Image) {p
                 Storage::delete($request->Image);
             }
 
@@ -128,6 +128,7 @@ class RumahController extends Controller
         }
 
         Rumah::where("id", $request->id)->update($validateData);
+
 
         return redirect("/admin/Rumah")->with("update", "Data Berhasil di update");
     }

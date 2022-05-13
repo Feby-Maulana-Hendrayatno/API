@@ -40,7 +40,7 @@
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="float-right d-none d-sm-inline-block">
-      <b>Sanggar Tari Melati</b> Kelompok1
+      <b>Propertyku</b> Kelompok4
     </div>
   </footer>
 
@@ -56,6 +56,8 @@
 @include("layouts.partials_owner.js.style_js")
 
 @yield("ajax_calendar_js")
+
+@yield("scripts_js")
 
 </body>
 </html>
