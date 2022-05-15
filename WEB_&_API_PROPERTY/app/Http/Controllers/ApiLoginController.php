@@ -11,29 +11,29 @@ class ApiLoginController extends Controller
     {
         if (\Auth::attempt(
             [
-                'email' => $request->email, 
+                'email' => $request->email,
                 'password' => $request->password
             ]
         )) {
             $user = \Auth::user();
             $user->update([
-                'remember_token' => bin2hex(random_bytes(40))
+                'token' => bin2hex(random_bytes(40))
             ]);
             $data['user']  = $user;
             return response()->json(
                 [
                     'success' => true,
-                    'data' => $data, 
+                    'data' => $data,
                     'pesan' => 'Login Berhasil'
                 ], 200
             );
-            
+
 
         }else{
             return response()->json(
                 [
                     'success' => false,
-                    'data' => '', 
+                    'data' => '',
                     'pesan' => 'Login Gagal'
                 ], 401
             );
