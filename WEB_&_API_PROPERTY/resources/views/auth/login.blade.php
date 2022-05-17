@@ -4,13 +4,13 @@
 	<title>Login 05</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
+
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
-	
+
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+
 	<link rel="stylesheet" href="auth/login/css/style.css">
-	
+
 </head>
 <body>
 	<section class="ftco-section">
@@ -62,19 +62,19 @@
 									</div>
 								</div>
 							</form>
-							<p class="text-center">Not a member? <a data-toggle="tab" href="#signup">Sign Up</a></p>
+							<p class="text-center">Not a member? <a  href="/register">Sign Up</a></p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	
+
 	<script src="auth/login/js/jquery.min.js"></script>
 	<script src="auth/login/js/popper.js"></script>
 	<script src="auth/login/js/bootstrap.min.js"></script>
 	<script src="auth/login/js/main.js"></script>
-	
+
 </body>
 </html>
 

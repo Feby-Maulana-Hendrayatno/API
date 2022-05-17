@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiLoginController;
 use App\Http\Controllers\ApiUserController;
 use App\Http\Controllers\ApiSyaratController;
+use App\Http\Controllers\ImageController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,8 +33,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/data_rumah', [RumahController::class, 'index']);
 Route::get('/transaksi', [TransactionController::class, 'index']);
 Route::get('/user', [ApiUserController::class, 'index']);
-// Route::get('/syarat', [ApiSyaratController::class, 'index']);
-// Route::post('/syarat/save', [ApiSyaratController::class, 'store']);
+Route::get('/profile', [ApiProfileController::class, 'index']);
+Route::post('/profile', [ApiProfileController::class, 'index']);
 // Route::post('/php transaction', [TransactionController::class, 'store']);
 // Route::get('/transaction/{id}', [TransactionController::class, 'show']);
 // Route::put('/transaction/{id}', [TransactionController::class, 'update']);
@@ -83,3 +85,24 @@ Route::post('/user', [ApiUserController::class, 'store']);
 //         Route::resource('/syarat', ApiSyaratController::class,);
 //     });
 // });
+
+
+Route::resource('imageadd', 'Api\ImageController@addimage');
+
+
+$router->group(['prefix' => 'api'], function () use ($router) {
+
+    $router->get('propertys', ['uses' => 'PropertyController@showAllProperty']);
+
+    $router->get('propertys/{id}', ['uses' => 'PropertyController@showOneProperty']);
+
+    $router->post('propertys', ['uses' => 'PropertyController@create']);
+
+    $router->delete('propertys/{id}', ['uses' => 'PropertyController@delete']);
+
+    $router->put('propertys/{id}', ['uses' => 'PropertyController@update']);
+});
+
+
+Route::get('/api/propertys', [PropertyController::class, 'showAllProperty']);
+

@@ -5,7 +5,7 @@
             style="opacity: .8" width="35" height="40">
             <span class="brand-text font-weight-light">Grand Savira</span>
         </a> --}}
-        
+
         <!-- Sidebar -->
         <div class="sidebar">
             <!-- Sidebar user panel (optional) -->
@@ -17,7 +17,7 @@
                     <a href="#" class="d-block">Grand Savira</a>
                 </div>
             </div>
-            
+
             <!-- SidebarSearch Form -->
             <div class="form-inline">
                 <div class="input-group" data-widget="sidebar-search">
@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Sidebar Menu -->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -38,7 +38,7 @@
                         <br>
                         <li class="nav-header">Dashboard</li>
                         <li class="nav-item">
-                            <a href="/admin/dashboard" class="nav-link">
+                            <a href="/owner/dashboard" class="nav-link">
                                 <i class="nav-icon fas fa-home"></i>
                                 <p>
                                     Home
@@ -59,44 +59,31 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
+                                    <a href="{{ url("/owner/perumahan/perumahan") }}" class="nav-link">
+                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                        <p>Perumahan</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="{{ url('/admin/form/') }}" class="nav-link">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         <p>Form Pembeli</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ url('/admin/kategori_tari/') }}" class="nav-link">
-                                        <i class="fas fa-tasks"></i>
-                                        <p>Kategori Rumah</p>
+                                    <a href="{{ url("/owner/syarat/syarat") }}" class="nav-link">
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+                                        <p>Syarat</p>
                                     </a>
                                 </li>
+
                                 <li class="nav-item">
-                                    <a href="{{ url('pelatih/') }}" class="nav-link">
-                                        <i class="fa fa-user-plus" aria-hidden="true"></i>
-                                        <p>Pemilik</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ url('/admin/pelatih_kategori_tari/') }}" class="nav-link">
-                                        <i class="fa fa-male" aria-hidden="true"></i>
-                                        <p>Pelatih Kategori Tari</p>
-                                    </a>
-                                </li> 
-                                <li class="nav-item">
-                                    <a href="/admin/murid" class="nav-link">
-                                        <i class="fa fa-user-plus" aria-hidden="true"></i>
-                                        <p>Murid</p>
+                                    <a href="/owner/deskripsi_rumah/deskripsi" class="nav-link">
+                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                        <p>Deskripsi Rumah</p>
                                     </a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('/admin/full-calender/') }}" class="nav-link">
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                                <p>
-                                    Event
-                                </p>
-                            </a>
                         </li>
                         <br>
                         <li class="nav-header">Akun</li>
@@ -122,4 +109,3 @@
             </div>
             <!-- /.sidebar -->
         </aside>
-        

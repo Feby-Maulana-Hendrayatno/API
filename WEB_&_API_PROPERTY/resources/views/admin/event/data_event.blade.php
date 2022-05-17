@@ -6,7 +6,7 @@
 @endsection
 
 @section('title')
-  Data Event
+    Data Event
 @stop
 
 @section("content")
