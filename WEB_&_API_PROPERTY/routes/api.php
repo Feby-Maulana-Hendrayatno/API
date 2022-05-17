@@ -31,6 +31,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/data_rumah', [RumahController::class, 'index']);
 Route::get('/transaksi', [TransactionController::class, 'index']);
 Route::get('/user', [ApiUserController::class, 'index']);
+// Route::get('/syarat', [ApiSyaratController::class, 'index']);
+// Route::post('/syarat/save', [ApiSyaratController::class, 'store']);
 // Route::post('/php transaction', [TransactionController::class, 'store']);
 // Route::get('/transaction/{id}', [TransactionController::class, 'show']);
 // Route::put('/transaction/{id}', [TransactionController::class, 'update']);
@@ -60,7 +62,7 @@ Route::get('/user', [ApiUserController::class, 'index']);
 
 
 //api login
-Route::post('login', [ApiLoginController::class, "login"] );
+Route::post('login', [ApiLoginController::class, "login"]);
 
 //api daftar
 Route::post('/user', [ApiUserController::class, 'store']);

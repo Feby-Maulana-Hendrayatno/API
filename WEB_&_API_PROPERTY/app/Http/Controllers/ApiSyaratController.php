@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Syrat;
 
 class ApiSyaratController extends Controller
 {
@@ -20,7 +21,7 @@ class ApiSyaratController extends Controller
             ]
         );
         $path = $request->file('file')->store('public/syarats');
-        $syarat = new Syarat();
+        $syarat = new Syrat();
         $syarat->nama = $request->nama;
         $syarat->file = $pathFile = $request->file('file');
         $syarat->user_id = $request->user()->id;
