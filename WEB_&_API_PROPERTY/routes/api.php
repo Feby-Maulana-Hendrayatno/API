@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiLoginController;
 use App\Http\Controllers\ApiUserController;
 use App\Http\Controllers\ApiSyaratController;
+use App\Http\Controllers\ApiProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/data_rumah', [RumahController::class, 'index']);
 Route::get('/transaksi', [TransactionController::class, 'index']);
 Route::get('/user', [ApiUserController::class, 'index']);
+Route::get('/profile', [ApiProfileController::class, 'index']);
+Route::post('/profile', [ApiProfileController::class, 'index']);
 // Route::post('/php transaction', [TransactionController::class, 'store']);
 // Route::get('/transaction/{id}', [TransactionController::class, 'show']);
 // Route::put('/transaction/{id}', [TransactionController::class, 'update']);
