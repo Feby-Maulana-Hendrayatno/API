@@ -13,13 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('terakhir_login', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->foreignId('id_role')->nullable()->constrianed("role")->cascadeOnUpdate()->nullOnDelete();
-            $table->string('password');
-            $table->string('token')->nullable();
+            $table->string("name", 100)->nullable();
+            $table->foreignId("id_user")->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('terakhir_login');
     }
 };

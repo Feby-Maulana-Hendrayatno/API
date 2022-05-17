@@ -41,7 +41,7 @@
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="float-right d-none d-sm-inline-block">
-      <b>Sanggar Tari Melati</b> Kelompok3
+      <b>Propertyku</b> Kelompok4
     </div>
   </footer>
 

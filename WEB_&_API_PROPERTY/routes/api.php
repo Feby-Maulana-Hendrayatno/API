@@ -8,7 +8,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiLoginController;
 use App\Http\Controllers\ApiUserController;
 use App\Http\Controllers\ApiSyaratController;
+<<<<<<< HEAD
 use App\Http\Controllers\ApiProfileController;
+=======
+use App\Http\Controllers\ImageController;
+
+>>>>>>> 921c829b3b442d6532f5acadc8c0178bac70610c
 
 /*
 |--------------------------------------------------------------------------
@@ -84,3 +89,24 @@ Route::post('/user', [ApiUserController::class, 'store']);
 //         Route::resource('/syarat', ApiSyaratController::class,);
 //     });
 // });
+
+
+Route::resource('imageadd', 'Api\ImageController@addimage');
+
+
+$router->group(['prefix' => 'api'], function () use ($router) {
+
+    $router->get('propertys', ['uses' => 'PropertyController@showAllProperty']);
+
+    $router->get('propertys/{id}', ['uses' => 'PropertyController@showOneProperty']);
+
+    $router->post('propertys', ['uses' => 'PropertyController@create']);
+
+    $router->delete('propertys/{id}', ['uses' => 'PropertyController@delete']);
+
+    $router->put('propertys/{id}', ['uses' => 'PropertyController@update']);
+});
+
+
+Route::get('/api/propertys', [PropertyController::class, 'showAllProperty']);
+

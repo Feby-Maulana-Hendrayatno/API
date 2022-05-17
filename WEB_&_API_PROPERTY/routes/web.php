@@ -12,7 +12,11 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\RegisterController;
-
+use App\Http\Controllers\DeskripsiRumahController;
+use App\Http\Controllers\SyaratController;
+use App\Http\Controllers\TerakhirLoginController;
+use App\Http\Controllers\PerumahanController;
+use App\Models\Owner;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,6 +115,8 @@ Route::prefix("rumah")->group(function () {
     Route::get("/dashboard", [AdminController::class, "dashboard"]);
     Route::get("/logout", [LoginController::class, "logout"]);
 
+    Route::get("/terakhir_login", [TerakhirLoginController::class, "index"]);
+
 
         Route::prefix("users")->group(function() {
             Route::get("/", [AkunController::class, "index"]);
@@ -151,9 +157,44 @@ Route::prefix("rumah")->group(function () {
     });
 });
 
+Route::group(["middleware" => ["owner"]], function() {
 Route::prefix("owner")->group(function() {
+
     Route::get("/dashboard", [OwnerController::class, "dashboard"]);
+
+    Route::prefix("deskripsi_rumah")->group(function() {
+        Route::get("/deskripsi", [DeskripsiRumahController::class, "index"]);
+        Route::get("/tambah", [DeskripsiRumahController::class, "tambah"]);
+        Route::post("/tambah_data", [DeskripsiRumahController::class, "tambah_data"]);
+        Route::get("/edit/{id}", [DeskripsiRumahController::class, "edit"]);
+        Route::post("/simpan", [DeskripsiRumahController::class, "simpan"]);
+        Route::post("/hapus", [DeskripsiRumahController::class, "hapus"]);
+        Route::get("/detail_deskripsi", [DeskripsiRumahController::class, "detail_deskripsi"]);
+    });
+
+
+    Route::prefix("syarat")->group(function() {
+        Route::get("/syarat", [SyaratController::class, "index"]);
+        Route::post("/tambah_syarat", [SyaratController::class, "tambah"]);
+        // Route::get("/edit/{id}", [SyaratController::class, "edit"]);
+        Route::get("/edit", [SyaratController::class, "edit"]);
+        Route::put("/simpan", [SyaratController::class, "simpan"]);
+        Route::post("/hapus", [SyaratController::class, "hapus"]);
+    });
+
+    Route::prefix("perumahan")->group(function() {
+        Route::get("/perumahan", [PerumahanController::class, "index"]);
+        Route::post("/tambah_perumahan", [PerumahanController::class, "tambah"]);
+        // Route::get("/edit/{id}", [PerumahanController::class, "edit"]);
+        Route::get("/edit", [PerumahanController::class, "edit"]);
+        Route::put("/simpan", [PerumahanController::class, "simpan"]);
+        Route::post("/hapus", [PerumahanController::class, "hapus"]);
+    });
 });
+
+});
+
+
 
 
 
