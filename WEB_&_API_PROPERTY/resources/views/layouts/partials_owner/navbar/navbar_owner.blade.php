@@ -67,7 +67,7 @@
                                 <li class="nav-item">
                                     <a href="{{ url('/admin/form/') }}" class="nav-link">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                        <p>Form Pembeli</p>
+                                        <p>Form Syarat Pembeli</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -85,7 +85,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <br>
+                        {{-- <br>
                         <li class="nav-header">Akun</li>
                         <li class="nav-item">
                             <a href="{{ url('/admin/users') }}" class="nav-link">
@@ -94,7 +94,7 @@
                                     Users
                                 </p>
                             </a>
-                        </li>
+                        </li> --}}
                         {{-- <li class="nav-item">
                             <a href="{{ url('/admin/role/') }}" class="nav-link">
                                 <i class="fa fa-list-alt" aria-hidden="true"></i>

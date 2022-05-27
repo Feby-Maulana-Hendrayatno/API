@@ -9,7 +9,8 @@ use App\Http\Controllers\ApiLoginController;
 use App\Http\Controllers\ApiUserController;
 use App\Http\Controllers\ApiSyaratController;
 use App\Http\Controllers\ImageController;
-
+use App\Http\Controllers\ApiPerumahanController;
+use App\Http\Controllers\ApiPaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,8 +34,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/data_rumah', [RumahController::class, 'index']);
 Route::get('/transaksi', [TransactionController::class, 'index']);
 Route::get('/user', [ApiUserController::class, 'index']);
-Route::get('/profile', [ApiProfileController::class, 'index']);
-Route::post('/profile', [ApiProfileController::class, 'index']);
+
+Route::post('/payment', [ApiPaymentController::class, 'payment_handler']);
 // Route::post('/php transaction', [TransactionController::class, 'store']);
 // Route::get('/transaction/{id}', [TransactionController::class, 'show']);
 // Route::put('/transaction/{id}', [TransactionController::class, 'update']);
@@ -64,7 +65,7 @@ Route::post('/profile', [ApiProfileController::class, 'index']);
 
 
 //api login
-Route::post('login', [ApiLoginController::class, "login"]);
+Route::post('login', [ApiLoginController::class, "login"] );
 
 //api daftar
 Route::post('/user', [ApiUserController::class, 'store']);
@@ -101,6 +102,16 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->delete('propertys/{id}', ['uses' => 'PropertyController@delete']);
 
     $router->put('propertys/{id}', ['uses' => 'PropertyController@update']);
+});
+
+
+
+Route::prefix('perumahan')->group(function () {
+    Route::controller(ApiPerumahanController::class)->group(function () {
+        Route::get('data', 'index');
+        Route::get('data/{id}', 'detail');
+
+    });
 });
 
 

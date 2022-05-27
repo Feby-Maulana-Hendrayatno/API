@@ -80,11 +80,9 @@
 								<th class="text-center">No.</th>
 								<th class="text-center">type</th>
 								<th class="text-center">kusen</th>
-								<th class="text-center">jendela</th>
 								<th class="text-center">listrik</th>
 								<th class="text-center">pondasi</th>
-								<th class="text-center">lantai</th>
-								<th class="text-center">wc</th>
+								<th class="text-center" >Harga</th>
 								<th class="text-center">Aksi</th>
 							</tr>
 						</thead>
@@ -95,11 +93,9 @@
 								<td class="text-center">{{ ++$no }}</td>
                                 <td>{{ $desk->type }}</td>
                                 <td>{{ $desk->kusen }}</td>
-                                <td>{{ $desk->jendela }}</td>
                                 <td>{{ $desk->listrik }}</td>
                                 <td>{{ $desk->pondasi }}</td>
-                                <td>{{ $desk->lantai }}</td>
-                                <td>{{ $desk->wc }}</td>
+                                <td>{{ currency_IDR($desk->harga) }}</td>
 								{{-- <td>{{ $desk->nama_murid }}</td>
 								<td class="text-center">
 									@if($desk->jenis_kelamin == "L")
@@ -116,6 +112,9 @@
                                     </button>
 									<a href="/owner/deskripsi_rumah/edit/{{ base64_encode($desk->id) }}" class="btn btn-warning btn-sm">
 										<i class="fas fa-edit"></i> Edit
+									</a>
+                                    <a href="/owner/deskripsi_rumah/paymentHarga/{{ $desk->id }}" class="btn btn-warning btn-sm">
+										<i class="fas fa-monesy"></i> payment
 									</a>
 									<form method="POST" action="{{ url('/owner/deskripsi_rumah/hapus') }}" class="d-inline">
                                         @csrf

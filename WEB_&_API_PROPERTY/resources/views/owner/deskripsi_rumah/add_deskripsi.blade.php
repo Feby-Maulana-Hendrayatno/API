@@ -50,6 +50,12 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label>Harga</label>
+                            <input type="number" name="harga" class="form-control" id="" placeholder="Masukan harga Rumah" required>
+                            <div class="text-danger">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label>Kusen</label>
                             <input type="text" name="kusen" class="form-control" id="" placeholder="Jenis kusen Rumah" required>
                         </div>

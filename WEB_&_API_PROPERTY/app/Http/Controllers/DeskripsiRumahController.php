@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DeskripsiRumah;
+use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
 
 class DeskripsiRumahController extends Controller
 {
     public function index()
     {
         $data = [
-            "deskripsi" => DeskripsiRumah::orderBy("id", "ASC")->get()
+            "deskripsi" => DeskripsiRumah::where('id_user', Auth::user()->id)->get()
         ];
 
         return view("/owner/deskripsi_rumah/data_deskripsi_rumah", $data);
@@ -24,21 +26,24 @@ class DeskripsiRumahController extends Controller
 
     public function tambah_data(Request $request)
     {
-        $validateData = $request->validate([
-            "type" => "required",
-            "kusen" => "required",
-            "pintu" => "required",
-            "jendela" => "required",
-            "plafond" => "required",
-            "air" => "required",
-            "listrik" => "required",
-            "pondasi" => "required",
-            "dinding" => "required",
-            "lantai" => "required",
-            "atap" => "required",
-            "wc" => "required"
+
+        DeskripsiRumah::create([
+            "type" => $request->type,
+            "id_user" => Auth::user()->id,
+            "kusen" => $request->kusen,
+            "pintu"=> $request->pintu,
+            "jendela" => $request->jendela,
+            "plafond" => $request->plafond,
+            "air" => $request->air,
+            "listrik" => $request->listrik,
+            "pondasi" => $request->pondasi,
+            "dinding" => $request->dinding,
+            "lantai" => $request->lantai,
+            "atap" => $request->atap,
+            "wc" => $request->wc,
+            "harga" => $request->harga,
         ]);
-        DeskripsiRumah::create($validateData);
+        return redirect()->back();
 
         return redirect("/owner/deskripsi_rumah/deskripsi")->with("tambah", "Data Berhasil di Tambahkan");
     }
@@ -67,7 +72,8 @@ class DeskripsiRumahController extends Controller
             "dinding" => $request->dinding,
             "lantai" => $request->lantai,
             "atap" => $request->atap,
-            "wc" => $request->wc
+            "wc" => $request->wc,
+            "harga" =>$request->harga
         ]);
 
         return redirect("/owner/deskripsi_rumah/deskripsi");
@@ -89,4 +95,73 @@ class DeskripsiRumahController extends Controller
 
         return view("owner.deskripsi_rumah.detail_deskripsi", $data);
     }
-}
+
+
+    public function payment($id)
+    {
+        $data = [
+            "edit" => DeskripsiRumah::where("id", $id)->first(),
+        ];
+        // return view("payment.payment", $data);
+
+        // Set your Merchant Server Key
+        \Midtrans\Config::$serverKey = env('MIDTRANS_SERVER_KEY');
+        // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
+        \Midtrans\Config::$isProduction = false;
+        // Set sanitization on (default)
+        \Midtrans\Config::$isSanitized = true;
+        // Set 3DS transaction for credit card to true
+        \Midtrans\Config::$is3ds = true;
+
+
+
+        $params = array(
+            'transaction_details' => array(
+                'order_id' => rand(),
+                'gross_amount' => $data['edit']->harga,
+                'custom_field1' =>$data['edit']->lantai,
+
+            ),
+            // 'item_details' => array(
+            //     [
+            //         'id' => 'a1',
+            //         'price' => '1',
+            //         'quantity' => 1,
+            //         'name' => ''
+            //     ],
+            //     [
+            //         'id' => 'b1',
+            //         'price' => '8000',
+            //         'quantity' => 1,
+            //         'name' => 'Jeruk'
+            //     ]
+            // ),
+            'customer_details' => array(
+                'first_name' => Auth::user()->name,                // 'last_name' => $data['edit']->harga,
+                // 'name' => Auth::user()->name,
+                'email' => Auth::user()->email,
+
+            ),
+        );
+
+        $snapToken = \Midtrans\Snap::getSnapToken($params);
+
+        return view('payment/payment', ['snap_token'=>$snapToken]);
+    }
+
+        public function payment_post(Request $request){
+            $json = json_decode($request->get('json'));
+            $order = new Order();
+            $order->status = $json->transaction_status;
+            $order->email = Auth::user()->name;
+            $order->email = Auth::user()->email;
+            $order->transaction_id = $json->transaction_id;
+            $order->order_id = $json->order_id;
+            $order->gross_amount = $json->gross_amount;
+            $order->payment_type = $json->payment_type;
+            $order->payment_code = isset($json->payment_code) ? $json->payment_code : null;
+            $order->pdf_url = isset($json->pdf_url) ? $json->pdf_url : null;
+            return $order->save() ? redirect(url('/'))->with('alert-success', 'Order berhasil dibuat') : redirect(url('/'))->with('alert-failed', 'Terjadi kesalahan');
+        }
+    }
+

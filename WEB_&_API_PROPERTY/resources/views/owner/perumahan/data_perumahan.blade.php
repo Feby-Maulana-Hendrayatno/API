@@ -26,7 +26,7 @@ Data Deskripsi Rumah
 <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1 class="m-0"> Syarat</h1>
+            <h1 class="m-0"> Perumahan</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -88,7 +88,7 @@ Data Deskripsi Rumah
                                 <td>{{ $desk->stok }}</td>
                                 <td>{{ $desk->alamat }}</td>
                                 <td>
-                                    <img src="{{ url('storage/'.$desk->foto) }}" width="300">
+                                    <img src="{{ url('storage/'.$desk->foto) }}" width="200">
                                 </td>
                                     <td class="text-center">
                                     <button onclick="editPerumahan({{ $desk->id }})" type="button" class="btn btn-success text-white btn-sm" data-toggle="modal" data-target="#modal-default-edit" title="Detail Data">

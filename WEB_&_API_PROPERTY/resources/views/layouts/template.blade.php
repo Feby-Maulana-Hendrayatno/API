@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PROYEK2</title>
+  <title>PROYEK 3</title>
 
   @include("layouts.partials_admin.css.style_css")
 

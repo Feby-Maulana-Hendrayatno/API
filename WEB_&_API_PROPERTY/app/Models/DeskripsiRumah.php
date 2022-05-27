@@ -14,4 +14,8 @@ class DeskripsiRumah extends Model
     protected $guarded = [''];
 
     public $timestamps = false;
+
+    public function getHarga(){
+        return $this->belongsTo("App\Models\User", "harga", "id" );
+    }
 }

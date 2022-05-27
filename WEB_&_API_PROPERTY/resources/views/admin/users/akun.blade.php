@@ -96,6 +96,7 @@
                             </a>
                             <form method="POST" action="{{ url('/admin/users/hapus') }}" style="display: inline;">
                                 {{ csrf_field() }}
+                                <input type="hidden" name="id" value="{{ $akun->id }}">
                                 <button onclick="return confirm('Ingin di Hapus ?')" type="submit" class="btn btn-danger btn-sm">
                                     <span class="fa fa-trash"></span>
                                 </button>

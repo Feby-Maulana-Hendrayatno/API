@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('deskripsi_rumah', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("id_user")->nullable();
             $table->string("type");
+            $table->integer("harga");
             $table->string("kusen");
             $table->string("pintu");
             $table->string("jendela");

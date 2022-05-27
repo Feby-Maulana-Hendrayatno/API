@@ -16,6 +16,8 @@ use App\Http\Controllers\DeskripsiRumahController;
 use App\Http\Controllers\SyaratController;
 use App\Http\Controllers\TerakhirLoginController;
 use App\Http\Controllers\PerumahanController;
+use App\Http\Controllers\MidtransController;
+
 use App\Models\Owner;
 
 /*
@@ -32,6 +34,10 @@ use App\Models\Owner;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/', [MidtransController::class, 'index']);
+Route::get('/payment', [MidtransController::class, 'payment']);
+Route::post('/payment', [MidtransController::class, 'payment_post']);
 
 
 Route::group(["middleware" => ["admin"]], function() {
@@ -166,6 +172,8 @@ Route::prefix("owner")->group(function() {
         Route::get("/deskripsi", [DeskripsiRumahController::class, "index"]);
         Route::get("/tambah", [DeskripsiRumahController::class, "tambah"]);
         Route::post("/tambah_data", [DeskripsiRumahController::class, "tambah_data"]);
+        Route::post('/paymentHarga/{id}', [DeskripsiRumahController::class, 'payment_post']);
+        Route::get("/paymentHarga/{id}", [DeskripsiRumahController::class, "payment"]);
         Route::get("/edit/{id}", [DeskripsiRumahController::class, "edit"]);
         Route::post("/simpan", [DeskripsiRumahController::class, "simpan"]);
         Route::post("/hapus", [DeskripsiRumahController::class, "hapus"]);
