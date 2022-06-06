@@ -17,6 +17,8 @@ use App\Http\Controllers\SyaratController;
 use App\Http\Controllers\TerakhirLoginController;
 use App\Http\Controllers\PerumahanController;
 use App\Http\Controllers\MidtransController;
+use App\Http\Controllers\LandingPageWebController;
+
 
 use App\Models\Owner;
 
@@ -31,9 +33,9 @@ use App\Models\Owner;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('Landing/index');
+// });
 
 // Route::get('/', [MidtransController::class, 'index']);
 Route::get('/payment', [MidtransController::class, 'payment']);
@@ -96,7 +98,7 @@ Route::group(["middleware" => ["admin"]], function() {
 Route::prefix("users")->group(function () {
     Route::get("/", [AkunController::class, "index"]);
     Route::post("/tambah/", [AkunController::class, "tambah"]);
-    Route::post("/hapus", [AkunController::class, "hapus"]);
+    Route::delete("/hapus/{id}", [AkunController::class, "hapus"]);
     Route::get("/edit/{id_role}", [AkunController::class, "edit"]);
     Route::post("/simpan", [AkunController::class, "simpan"]);
 });
@@ -135,7 +137,7 @@ Route::prefix("rumah")->group(function () {
         Route::prefix("role")->group(function() {
             Route::get("/", [RoleController::class, "index"]);
             Route::post("/tambah/", [RoleController::class, "tambah"]);
-            Route::post("/hapus", [RoleController::class, "hapus"]);
+            Route::delete("/hapus/{id}",[RoleController::class, "hapus"]);
             Route::get("/edit/{id_role}", [RoleController::class, "edit"]);
             Route::post("/simpan", [RoleController::class, "simpan"]);
         });
@@ -176,7 +178,7 @@ Route::prefix("owner")->group(function() {
         Route::get("/paymentHarga/{id}", [DeskripsiRumahController::class, "payment"]);
         Route::get("/edit/{id}", [DeskripsiRumahController::class, "edit"]);
         Route::post("/simpan", [DeskripsiRumahController::class, "simpan"]);
-        Route::post("/hapus", [DeskripsiRumahController::class, "hapus"]);
+        Route::delete("/hapus/{id}", [DeskripsiRumahController::class, "hapus"]);
         Route::get("/detail_deskripsi", [DeskripsiRumahController::class, "detail_deskripsi"]);
     });
 
@@ -187,7 +189,7 @@ Route::prefix("owner")->group(function() {
         // Route::get("/edit/{id}", [SyaratController::class, "edit"]);
         Route::get("/edit", [SyaratController::class, "edit"]);
         Route::put("/simpan", [SyaratController::class, "simpan"]);
-        Route::post("/hapus", [SyaratController::class, "hapus"]);
+        Route::delete("/hapus/{id}", [SyaratController::class, "hapus"]);
     });
 
     Route::prefix("perumahan")->group(function() {
@@ -196,11 +198,14 @@ Route::prefix("owner")->group(function() {
         // Route::get("/edit/{id}", [PerumahanController::class, "edit"]);
         Route::get("/edit", [PerumahanController::class, "edit"]);
         Route::put("/simpan", [PerumahanController::class, "simpan"]);
-        Route::post("/hapus", [PerumahanController::class, "hapus"]);
+        Route::delete("/hapus/{id}", [PerumahanController::class, "hapus"]);
     });
 });
 
 });
+
+
+Route::get("/", [LandingPageWebController::class, "index"]);
 
 
 

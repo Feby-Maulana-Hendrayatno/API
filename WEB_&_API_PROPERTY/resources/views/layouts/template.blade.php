@@ -58,5 +58,6 @@
 
 @yield("ajax_calendar_js")
 
+@yield("scripts_js")
 </body>
 </html>

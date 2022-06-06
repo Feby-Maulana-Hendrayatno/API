@@ -79,10 +79,11 @@
 							<tr>
 								<th class="text-center">No.</th>
 								<th class="text-center">type</th>
-								<th class="text-center">kusen</th>
+								{{-- <th class="text-center">kusen</th> --}}
 								<th class="text-center">listrik</th>
 								<th class="text-center">pondasi</th>
 								<th class="text-center" >Harga</th>
+                                <th class="text-center">Foto</th>
 								<th class="text-center">Aksi</th>
 							</tr>
 						</thead>
@@ -92,10 +93,11 @@
 							<tr>
 								<td class="text-center">{{ ++$no }}</td>
                                 <td>{{ $desk->type }}</td>
-                                <td>{{ $desk->kusen }}</td>
+                                {{-- <td>{{ $desk->kusen }}</td> --}}
                                 <td>{{ $desk->listrik }}</td>
                                 <td>{{ $desk->pondasi }}</td>
                                 <td>{{ currency_IDR($desk->harga) }}</td>
+
 								{{-- <td>{{ $desk->nama_murid }}</td>
 								<td class="text-center">
 									@if($desk->jenis_kelamin == "L")
@@ -106,6 +108,9 @@
 										Tidak Ada
 									@endif
 								</td> --}}
+                                <td>
+                                    <img src="{{ url('storage/'.$desk->foto) }}" width="200">
+                                </td>
 								<td class="text-center">
 									<button onclick=" editDataDeskripsi({{$desk->id}})" type="button" class="btn btn-success text-white btn-sm" data-toggle="modal" data-target="#modal-default-edit" title="Detail Data">
                                         <i class="fa fa-clipboard"> Detail</i>
@@ -116,13 +121,19 @@
                                     <a href="/owner/deskripsi_rumah/paymentHarga/{{ $desk->id }}" class="btn btn-warning btn-sm">
 										<i class="fas fa-monesy"></i> payment
 									</a>
-									<form method="POST" action="{{ url('/owner/deskripsi_rumah/hapus') }}" class="d-inline">
+									{{-- <form method="POST" action="{{ url('/owner/deskripsi_rumah/hapus') }}" class="d-inline">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $desk->id }}">
                                         <button onclick="return confirm('Yakin ? Ingin Menghapus Data Ini ?')" type="submit" name="btn-hapus" class="btn btn-danger btn-sm">
                                             <i class="fa fa-trash-o"></i> Hapus
                                         </button>
-                                    </form>
+                                    </form> --}}
+                                    {{-- <button id="delete" data-id="{{ $desk->id }}" class="btn btn-danger btn-sm">
+                                        <i class="fa fa-trash"></i> Hapus
+                                    </button> --}}
+                                    <button id="deleteDeskripsi" data-id="{{ $desk->id }}" class="btn btn-danger btn-sm">
+                                        <i class="fa fa-trash"></i> Hapus
+                                    </button>
 								</td>
 							</tr>
 							@endforeach
@@ -163,6 +174,12 @@
 	</div>
 </div>
 
+
+
+@endsection
+
+
+@section('scripts_js')
 <script type="text/javascript">
 
     function  editDataDeskripsi(id)
@@ -178,40 +195,34 @@
         });
     }
 
-    (function($,W,D) {
-        var JQUERY4U = {};
-        JQUERY4U.UTIL =
-        {
-            setupFormValidation: function()
-            {
-                $("#formEditDeskripsi").validate({
-                    ignore: "",
-                    rules: {
-                        type: {
-                            required: true
-                        },
-                    },
-
-                    messages: {
-                        type: {
-                            required: "Type harap di isi!"
-                        },
-                    },
-
-                    submitHandler: function(form) {
-                        form.submit();
-                    }
-                });
+$(document).ready(function() {
+    $("#table-1").dataTable();
+    $('body').on('click', '#deleteDeskripsi', function () {
+        console.log('Ok');
+        let id = $(this).data('id');
+        Swal.fire({
+            title: 'Anda Yakin Hapus File?',
+            text: "Data tidak bisa dikembalikan!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                form_string = "<form method=\"POST\" action=\"{{ url('/owner/deskripsi_rumah/hapus/') }}/"+id+"\" accept-charset=\"UTF-8\"><input name=\"_method\" type=\"hidden\" value=\"DELETE\"><input name=\"_token\" type=\"hidden\" value=\"{{ csrf_token() }}\"></form>"
+                form = $(form_string)
+                form.appendTo('body');
+                form.submit();
+            } else {
+                Swal.fire('Selamat!', 'Data anda tidak jadi dihapus', 'error');
             }
-        }
-
-        $(D).ready(function($) {
-            JQUERY4U.UTIL.setupFormValidation();
-        });
-
-    })(jQuery, window, document);
-
+        })
+    })
+})
 </script>
-
+<script src="{{ url('sweetalert/dist/sweetalert2.all.min.js') }}"></script>
+@if (session('message'))
+    {!! session('message') !!}
+@endif
 @endsection
-

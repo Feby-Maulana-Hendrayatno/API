@@ -22,7 +22,7 @@ class PerumahanSeeder extends Seeder
             "id" => 1,
 			"nama_perumahan" => "Balongan Asri",
             "alamat" => "Balongan",
-            "uraian" => "aman, nyaman, dan tentram",
+            "uraian" => "aman dan nyaman",
             "stok" => "50",
             "foto" => "image/dOyaex5fayFhKgvwYnAI4i8XstI7e88WEuZHbqxO.jpg",
             "id_user" =>2

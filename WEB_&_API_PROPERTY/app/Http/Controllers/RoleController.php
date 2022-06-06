@@ -20,14 +20,15 @@ class RoleController extends Controller
     {
         Role::create($request->all());
 
-        return redirect()->back();
+
+        return redirect()->back()->with(["message" => "<script>Swal.fire('Berhasil', 'Data Berhasil di Simpan', 'success');</script>"]);
+
     }
 
     public function hapus(Request $request)
     {
         Role::where("id", $request->id)->delete();
-
-        return redirect()->back();
+        return redirect()->back()->with("message", "<script>Swal.fire('Berhasil', 'Data Berhasil di Hapus', 'success')</script>");
     }
 
     public function edit($id)
@@ -46,6 +47,6 @@ class RoleController extends Controller
             "nama_role" => $request->nama_role
         ]);
 
-        return redirect("/admin/role");
+        return redirect("/admin/role")->with(["message" => "<script>Swal.fire('Berhasil', 'Data Berhasil di update', 'success');</script>"]);
     }
 }

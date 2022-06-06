@@ -23,13 +23,13 @@ class SyaratController extends Controller
             "syarat" => $request->syarat,
             "id_user" => Auth::user()->id
         ]);
-        return redirect()->back();
+        return redirect()->back()->with(["message" => "<script>Swal.fire('Berhasil', 'Data Berhasil di Simpan', 'success');</script>"]);
     }
 
     public function hapus(Request $request)
     {
         Syarat::where("id", $request->id)->delete();
-        return redirect()->back();
+        return redirect()->back()->with("message", "<script>Swal.fire('Berhasil', 'Data Berhasil di Hapus', 'success')</script>");
     }
 
     public function edit(Request $request)
@@ -47,6 +47,7 @@ class SyaratController extends Controller
             "syarat" => $request->syarat
         ]);
 
-        return redirect("/owner/syarat/syarat");
+        return redirect()->back()->with(["message" => "<script>Swal.fire('Berhasil', 'Data Berhasil di update', 'success');</script>"]);
+
     }
 }

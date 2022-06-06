@@ -50,6 +50,13 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label>Foto </label>
+                            <img class="img-preview img-fluid mb-3 col-sm-5">
+                            <input type="file"  name="foto" class="form-control" id="foto" placeholder="Masukan Foto/Gambar" required onchange="viewImage()">
+                            <div class="text-danger">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label>Harga</label>
                             <input type="number" name="harga" class="form-control" id="" placeholder="Masukan harga Rumah" required>
                             <div class="text-danger">
@@ -73,7 +80,7 @@
                         </div>
                         <div class="form-group">
                             <label>Air</label>
-                            <input type="text" name="air" class="form-control" id="" placeholder=" Jenis Air yabg digunakan"  required>
+                            <input type="text" name="air" class="form-control" id="" placeholder=" Jenis Air yang digunakan"  required>
                         </div>
                         <div class="form-group">
                             <label>Listrik</label>

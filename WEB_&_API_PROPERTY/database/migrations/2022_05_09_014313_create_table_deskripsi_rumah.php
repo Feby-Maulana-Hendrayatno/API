@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId("id_user")->nullable();
             $table->string("type");
+            $table->string("foto")->nullable();
             $table->integer("harga");
             $table->string("kusen");
             $table->string("pintu");

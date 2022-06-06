@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Models\DeskripsiRumah;
 use App\Models\Order;
@@ -26,9 +26,12 @@ class DeskripsiRumahController extends Controller
 
     public function tambah_data(Request $request)
     {
-
+        if ($request->file("foto")) {
+            $coba = $request->file("foto")->store("image");
+        }
         DeskripsiRumah::create([
             "type" => $request->type,
+            "foto" => $coba,
             "id_user" => Auth::user()->id,
             "kusen" => $request->kusen,
             "pintu"=> $request->pintu,
@@ -43,9 +46,7 @@ class DeskripsiRumahController extends Controller
             "wc" => $request->wc,
             "harga" => $request->harga,
         ]);
-        return redirect()->back();
-
-        return redirect("/owner/deskripsi_rumah/deskripsi")->with("tambah", "Data Berhasil di Tambahkan");
+        return redirect("/owner/deskripsi_rumah/deskripsi")->with(["message" => "<script>Swal.fire('Berhasil', 'Data Berhasil di Simpan', 'success');</script>"]);
     }
 
     public function edit($id)
@@ -59,9 +60,17 @@ class DeskripsiRumahController extends Controller
 
     public function simpan(Request $request)
     {
-
+        if ($request->file("foto")) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $coba = $request->file("foto")->store("image");
+        }else{
+            $coba = $request->oldImage;
+        }
         DeskripsiRumah::where("id", $request->id)->update([
             "type" => $request->type,
+            "foto" => $coba,
             "kusen" => $request->kusen,
             "pintu" => $request->pintu,
             "jendela" => $request->jendela,
@@ -76,7 +85,8 @@ class DeskripsiRumahController extends Controller
             "harga" =>$request->harga
         ]);
 
-        return redirect("/owner/deskripsi_rumah/deskripsi");
+
+        return redirect("/owner/deskripsi_rumah/deskripsi")->with(["message" => "<script>Swal.fire('Berhasil', 'Data Berhasil di update', 'success');</script>"]);
     }
 
 
@@ -84,7 +94,7 @@ class DeskripsiRumahController extends Controller
     {
         DeskripsiRumah::where("id", $request->id)->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with("message", "<script>Swal.fire('Berhasil', 'Data Berhasil di Hapus', 'success')</script>");
     }
 
     public function detail_deskripsi(Request $request)

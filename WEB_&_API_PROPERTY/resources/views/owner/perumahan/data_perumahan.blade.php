@@ -94,13 +94,9 @@ Data Deskripsi Rumah
                                     <button onclick="editPerumahan({{ $desk->id }})" type="button" class="btn btn-success text-white btn-sm" data-toggle="modal" data-target="#modal-default-edit" title="Detail Data">
                                         <i class="fa fa-clipboard"> Edit </i>
                                     </button>
-                                    <form method="POST" action="{{ url('/owner/perumahan/hapus') }}" class="d-inline">
-                                        @csrf
-                                        <input type="hidden" name="id" value="{{ $desk->id }}">
-                                        <button onclick="return confirm('Yakin ? Ingin Menghapus Data Ini ?')" type="submit" name="btn-hapus" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-trash-o"></i> Hapus
-                                        </button>
-                                    </form>
+                                    <button id="deletePerumahan" data-id="{{ $desk->id }}" class="btn btn-danger btn-sm">
+                                        <i class="fa fa-trash"></i> Hapus
+                                    </button>
                                 </td>
                             </tr>
                             @endforeach
@@ -213,6 +209,35 @@ Data Deskripsi Rumah
             }
         });
     }
+
+    $(document).ready(function() {
+        $("#table-1").dataTable();
+        $('body').on('click', '#deletePerumahan', function () {
+            let id = $(this).data('id');
+            Swal.fire({
+                title: 'Anda Yakin Hapus File?',
+                text: "Data tidak bisa dikembalikan!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    form_string = "<form method=\"POST\" action=\"{{ url('/owner/perumahan/hapus/') }}/"+id+"\" accept-charset=\"UTF-8\"><input name=\"_method\" type=\"hidden\" value=\"DELETE\"><input name=\"_token\" type=\"hidden\" value=\"{{ csrf_token() }}\"></form>"
+                    form = $(form_string)
+                    form.appendTo('body');
+                    form.submit();
+                } else {
+                    Swal.fire('Selamat!', 'Data anda tidak jadi dihapus', 'error');
+                }
+            })
+        })
+    })
 </script>
+<script src="{{ url('sweetalert/dist/sweetalert2.all.min.js') }}"></script>
+@if (session('message'))
+        {!! session('message') !!}
+@endif
 
 @endsection

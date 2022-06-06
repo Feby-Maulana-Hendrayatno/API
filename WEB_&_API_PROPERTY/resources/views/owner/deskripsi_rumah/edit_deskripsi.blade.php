@@ -43,10 +43,20 @@
                     <form method="POST" action="/owner/deskripsi_rumah/simpan" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <input type="hidden" name="id" value="{{ $edit->id }}">
+                        <input type="hidden" name="oldGambar" value="{{ $edit->foto }}">
                         <div class="card-body">
                             <div class="form-group">
                                 <label>Type</label>
                                 <input type="text" name="type" class="form-control" id="" placeholder = "Masukan Type Rumah" required value="{{ $edit->type }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="foto">Foto</label>
+                                @if($edit->foto)
+                                    <img class="img-preview img-fluid mb-3 col-sm-5 d-block" src="{{ url('storage/'.$edit->foto) }}">
+                                @else
+                                    <img class="img-preview img-fluid mb-3 col-sm-5">
+                                @endif
+                                <input type="file"  name="foto" class="form-control" id="foto" placeholder="Masukan Foto/Gambar"  onchange="viewImage()">
                             </div>
                             <div class="form-group">
                                 <label>Harga</label>

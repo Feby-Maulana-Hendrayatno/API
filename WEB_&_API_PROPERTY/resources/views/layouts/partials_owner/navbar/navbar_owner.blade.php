@@ -29,7 +29,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Sidebar Menu -->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -50,14 +49,6 @@
                             Daftar Menu
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fas fa-bars"></i>
-                                <p>
-                                    Menu
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{ url("/owner/perumahan/perumahan") }}" class="nav-link">
                                         <i class="fa fa-home" aria-hidden="true"></i>
@@ -76,14 +67,12 @@
                                         <p>Syarat</p>
                                     </a>
                                 </li>
-
                                 <li class="nav-item">
                                     <a href="/owner/deskripsi_rumah/deskripsi" class="nav-link">
                                         <i class="fa fa-home" aria-hidden="true"></i>
                                         <p>Deskripsi Rumah</p>
                                     </a>
                                 </li>
-                            </ul>
                         </li>
                         {{-- <br>
                         <li class="nav-header">Akun</li>

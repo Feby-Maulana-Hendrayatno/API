@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PROYEK2</title>
+  <title>PROYEK 3</title>
 
   @include("layouts.partials_owner.css.style_css")
   @yield("ajax_calendar_css")
@@ -33,6 +33,7 @@
 
     <!-- Main content -->
     <section class="content">
+        {{-- @include('sweetalert::alert') --}}
       @yield("content")
     </section>
     <!-- /.content -->
@@ -61,3 +62,4 @@
 
 </body>
 </html>
+

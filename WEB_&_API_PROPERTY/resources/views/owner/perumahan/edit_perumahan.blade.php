@@ -10,7 +10,7 @@
 </div>
 <div class="form-group">
     <label for="rsyarat"> Stock </label>
-    <input type="text" class="form-control" name="stok" placeholder="Masukkan Jumlah Stock rumah yang tersedia" value="{{ $edit->stok }}">
+    <input type="number" class="form-control" name="stok" placeholder="Masukkan Jumlah Stock rumah yang tersedia" value="{{ $edit->stok }}">
 </div>
 <div class="form-group">
     <label for="foto">Foto</label>

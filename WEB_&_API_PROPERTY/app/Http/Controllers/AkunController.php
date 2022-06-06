@@ -27,17 +27,14 @@ class AkunController extends Controller
             "id_role" => $request->id_role,
             "password" => bcrypt($request->password)
         ]);
-
-        return redirect()->back();
-
-        return redirect("/")->with("sukses");
+        return redirect()->back()->with(["message" => "<script>Swal.fire('Berhasil', 'Data Berhasil di Simpan', 'success');</script>"]);
     }
 
     public function hapus(Request $request)
     {
         User::where("id", $request->id)->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with("message", "<script>Swal.fire('Berhasil', 'Data Berhasil di Hapus', 'success')</script>");
     }
 
     public function edit($id)
@@ -61,7 +58,7 @@ class AkunController extends Controller
             "password" => bcrypt($request->password),
 
         ]);
-
-        return redirect("/users");
+        return redirect("/users")->with(["message" => "<script>Swal.fire('Berhasil', 'Data Berhasil di update', 'success');</script>"]);
+        // return redirect("/users");
     }
 }

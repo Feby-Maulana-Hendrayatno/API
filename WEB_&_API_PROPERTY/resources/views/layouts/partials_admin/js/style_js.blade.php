@@ -3,6 +3,7 @@
 <script src="/template/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Select2 -->
 <script src="{{ url('/template') }}/plugins/select2/js/select2.full.min.js"></script>
+
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
 $.widget.bridge('uibutton', $.ui.button)
@@ -45,6 +46,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="/template/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="/template/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="/template/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+{{-- <script src="{{ url('sweetalert/dist/sweetalert2.all.min.js') }}"></script> --}}
 <script>
 $(function () {
     $('.select2').select2(),
@@ -65,3 +67,4 @@ $(function () {
     });
 });
 </script>
+

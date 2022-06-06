@@ -31,7 +31,7 @@ class ApiUserController extends Controller
         $user->name         = $request->name;
         $user->email        = $request->email;
         $user->password     = bcrypt($request->password);
-        $user->id_role      = $request->id_role;
+        $user->id_role      = 3;
         // $user->tanggal_lahir= $request->tanggal_lahir;
         $user->save();
 
