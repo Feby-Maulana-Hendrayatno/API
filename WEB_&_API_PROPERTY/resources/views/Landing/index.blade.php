@@ -128,14 +128,6 @@
                 <td>
                     <img src="{{ url('storage/'.$desk->foto) }}" width="200">
                 </td>
-                    <td class="text-center">
-                    <button onclick="editPerumahan({{ $desk->id }})" type="button" class="btn btn-success text-white btn-sm" data-toggle="modal" data-target="#modal-default-edit" title="Detail Data">
-                        <i class="fa fa-clipboard"> Edit </i>
-                    </button>
-                    <button id="deletePerumahan" data-id="{{ $desk->id }}" class="btn btn-danger btn-sm">
-                        <i class="fa fa-trash"></i> Hapus
-                    </button>
-                </td>
             </tr>
             @endforeach
         </tbody>
