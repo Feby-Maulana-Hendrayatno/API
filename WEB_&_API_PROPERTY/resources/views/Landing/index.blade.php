@@ -113,7 +113,6 @@
                 <th class="text-center">Stock</th>
                 <th class="text-center">Alamat</th>
                 <th class="text-center">Foto</th>
-                <th class="text-center">Aksi</th>
             </tr>
         </thead>
         <tbody>
