@@ -73,6 +73,12 @@
                                         <p>Deskripsi Rumah</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="/owner/transaksi/index" class="nav-link">
+                                        <i class="	fas fa-handshake" aria-hidden="true"></i>
+                                        <p>Transaksi</p>
+                                    </a>
+                                </li>
                         </li>
                         {{-- <br>
                         <li class="nav-header">Akun</li>

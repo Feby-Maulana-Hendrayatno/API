@@ -18,6 +18,7 @@ use App\Http\Controllers\TerakhirLoginController;
 use App\Http\Controllers\PerumahanController;
 use App\Http\Controllers\MidtransController;
 use App\Http\Controllers\LandingPageWebController;
+use App\Http\Controllers\ValidasiTransaksiController;
 
 
 use App\Models\Owner;
@@ -199,6 +200,11 @@ Route::prefix("owner")->group(function() {
         Route::get("/edit", [PerumahanController::class, "edit"]);
         Route::put("/simpan", [PerumahanController::class, "simpan"]);
         Route::delete("/hapus/{id}", [PerumahanController::class, "hapus"]);
+    });
+
+
+    Route::prefix("transaksi")->group(function() {
+        Route::get("/index", [ValidasiTransaksiController::class, "index"]);
     });
 });
 

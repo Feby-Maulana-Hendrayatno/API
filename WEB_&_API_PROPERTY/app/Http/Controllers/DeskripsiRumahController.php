@@ -15,7 +15,7 @@ class DeskripsiRumahController extends Controller
             "deskripsi" => DeskripsiRumah::where('id_user', Auth::user()->id)->get()
         ];
 
-        return view("/owner/deskripsi_rumah/data_deskripsi_rumah", $data);
+        return view("owner.deskripsi_rumah.data_deskripsi_rumah", $data);
     }
 
     public function tambah(Request $request)
@@ -146,6 +146,8 @@ class DeskripsiRumahController extends Controller
             //         'name' => 'Jeruk'
             //     ]
             // ),
+
+            
             'customer_details' => array(
                 'first_name' => Auth::user()->name,                // 'last_name' => $data['edit']->harga,
                 // 'name' => Auth::user()->name,
@@ -163,7 +165,7 @@ class DeskripsiRumahController extends Controller
             $json = json_decode($request->get('json'));
             $order = new Order();
             $order->status = $json->transaction_status;
-            $order->email = Auth::user()->name;
+            $order->name = Auth::user()->name;
             $order->email = Auth::user()->email;
             $order->transaction_id = $json->transaction_id;
             $order->order_id = $json->order_id;
