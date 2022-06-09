@@ -52,7 +52,7 @@ class DeskripsiRumahController extends Controller
     public function edit($id)
     {
         $data = [
-            "edit" => DeskripsiRumah::where("id", base64_decode($id))->first(),
+            "edit" => DeskripsiRumah::where("id", decrypt($id))->first(),
         ];
 
         return view("owner.deskripsi_rumah.edit_deskripsi", $data);
@@ -147,7 +147,7 @@ class DeskripsiRumahController extends Controller
             //     ]
             // ),
 
-            
+
             'customer_details' => array(
                 'first_name' => Auth::user()->name,                // 'last_name' => $data['edit']->harga,
                 // 'name' => Auth::user()->name,

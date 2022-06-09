@@ -205,6 +205,7 @@ Route::prefix("owner")->group(function() {
 
     Route::prefix("transaksi")->group(function() {
         Route::get("/index", [ValidasiTransaksiController::class, "index"]);
+        Route::delete("/hapus/{id}", [ValidasiTransaksiController::class, "hapus"]);
     });
 });
 

@@ -91,7 +91,7 @@
                             @endif
                         </td>
                         <td>
-                            <a href="{{ url('/admin/users/edit') }}/{{ $akun->id }}" class="btn btn-warning btn-sm">
+                            <a href="{{ url('/admin/users/edit') }}/{{ encrypt($akun->id) }}" class="btn btn-warning btn-sm">
                                 <span class="fa fa-edit"></span>
                             </a>
                             {{-- <form method="POST" action="{{ url('/admin/users/hapus') }}" style="display: inline;">

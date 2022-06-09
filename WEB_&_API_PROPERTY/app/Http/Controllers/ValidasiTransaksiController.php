@@ -20,14 +20,12 @@ class ValidasiTransaksiController extends Controller
     }
 
 
-    // public function index()
-    // {
-    //     $data = [
-    //         "data_role" => Role::orderBy("nama_role", "ASC")->get()
-    //     ];
+    public function hapus(Request $request)
+    {
+        Order::where("id", $request->id)->delete();
 
-    //     return view("/admin/role/data_role", $data);
-    // }
+        return redirect()->back()->with("message", "<script>Swal.fire('Berhasil', 'Data Berhasil di Hapus', 'success')</script>");
+    }
 }
 
 

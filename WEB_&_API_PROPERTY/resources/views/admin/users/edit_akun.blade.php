@@ -25,7 +25,7 @@
                     <div  class="form-group">
                         <label for="password" >Password</label>
                         <input type="text" class="form-control" id="password" name="password"  >
-                    </div> 
+                    </div>
                     <div class="form-group">
                         <label for="id"> Role </label>
                         <select required class="form-control" style="width: 100%;" name="id_role">
@@ -87,7 +87,7 @@
                                 @endif
                             </td>
                             <td class="text-center">
-                                <a href="{{ url('/admin/users/edit') }}/{{ $akun->id }}" class="btn btn-warning btn-sm">
+                                <a href="{{ url('/admin/users/edit') }}/{{ encrypt($akun->id) }}" class="btn btn-warning btn-sm">
                                     <span class="fa fa-edit"></span>
                                 </a>
                                 <form method="POST" action="{{ url('/admin/users/hapus') }}" style="display: inline;">

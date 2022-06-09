@@ -26,7 +26,7 @@
       <!-- small box -->
       <div class="small-box bg-info">
         <div class="inner">
-          {{-- <h3>{{ $jumlah_pelatih }}</h3> --}}
+          <h3>{{ $jumlah_property }}</h3>
           <p>Jumlah Property</p>
         </div>
         <div class="icon">
@@ -40,7 +40,7 @@
       <!-- small box -->
       <div class="small-box bg-success">
         <div class="inner">
-          {{-- <h3>{{ $jumlah_murid}}</h3> --}}
+          <h3>{{ $jumlah_rumah}}</h3>
           <p>Jumlah Rumah</p>
         </div>
         <div class="icon">
@@ -54,8 +54,8 @@
       <!-- small box -->
       <div class="small-box bg-warning">
         <div class="inner">
-          {{-- <h3>{{ $jumlah_kategori_tari}}</h3> --}}
-          <p>Pengajuan Syarat yg diterima</p>
+          <h3>{{ $jumlah_buyer}}</h3>
+          <p>Jumlah Buyer</p>
         </div>
         <div class="icon">
           <i class="ion ion-person-add"></i>

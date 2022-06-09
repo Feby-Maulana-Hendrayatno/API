@@ -34,8 +34,8 @@ class RoleController extends Controller
     public function edit($id)
     {
         $data = [
-            "edit" => Role::where("id", $id)->first(),
-            "data_role" => Role::where("id", "!=", $id)->orderBy("nama_role", "ASC")->get()
+            "edit" => Role::where("id", decrypt($id))->first(),
+            "data_role" => Role::where("id", "!=", decrypt($id))->orderBy("nama_role", "ASC")->get()
         ];
 
         return view("/admin/role/edit_role", $data);

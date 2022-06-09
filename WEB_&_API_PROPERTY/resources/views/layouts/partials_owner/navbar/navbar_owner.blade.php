@@ -38,7 +38,7 @@
                         <li class="nav-header">Dashboard</li>
                         <li class="nav-item">
                             <a href="/owner/dashboard" class="nav-link">
-                                <i class="nav-icon fas fa-home"></i>
+                                <i class="fa fa-tachometer" aria-hidden="true"></i>
                                 <p>
                                     Home
                                 </p>

@@ -40,8 +40,8 @@ class AkunController extends Controller
     public function edit($id)
     {
         $data = [
-            "edit" => User::where("id", $id)->first(),
-            "data_akun" => User::where("id", "!=", $id)->orderBy("id", "ASC")->get(),
+            "edit" => User::where("id", decrypt($id))->first(),
+            "data_akun" => User::where("id", "!=", decrypt($id))->orderBy("id", "ASC")->get(),
             // "edit" => Role::where("id_role", $id_role)->first(),
             "data_role" => Role::orderBy("nama_role", "DESC")->get(),
         ];

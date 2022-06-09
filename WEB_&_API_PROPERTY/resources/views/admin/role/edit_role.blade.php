@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-md-4">
         <form method="POST" action="{{ url('/admin/role/simpan/') }}">
-            {{ csrf_field() }}  
+            {{ csrf_field() }}
             <input type="hidden" name="id" value="{{ $edit->id }}">
             <div class="card card-info">
                 <div class="card-header">
@@ -57,7 +57,7 @@
                             <td class="text-center">{{ ++$no }}.</td>
                             <td class="text-center">{{ $role->nama_role }}</td>
                             <td class="text-center">
-                                <a href="{{ url('/admin/role/edit') }}/{{ $role->id }}" class="btn btn-warning btn-sm">
+                                <a href="{{ url('/admin/role/edit') }}/{{ encrypt($role->id) }}" class="btn btn-warning btn-sm">
                                     <span class="fa fa-edit"></span>
                                 </a>
                                 <form method="POST" action="{{ url('/admin/role/hapus') }}" style="display: inline;">

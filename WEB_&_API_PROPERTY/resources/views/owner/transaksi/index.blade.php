@@ -69,12 +69,12 @@ Data Transaksi
                                 <td>{{ $desk->transaction_id }}</td>
                                 <td>{{ $desk->order_id }}</td>
                                 <td>{{ $desk->gross_amount }}</td>
-                                <td>{{ $desk->payment_type }}</td>
+                                <td>{{ currency_IDR($desk->payment_type) }}</td>
                                 <td class="text-center">
                                     <button onclick="editSyarat({{ $desk->id }})" type="button" class="btn btn-success text-white btn-sm" data-toggle="modal" data-target="#modal-default-edit" title="Detail Data">
                                         <i class="fa fa-clipboard"> Edit </i>
                                     </button>
-                                    <button id="deleteSyarat" data-id="{{ $desk->id }}" class="btn btn-danger btn-sm">
+                                    <button id="deleteTransaksi" data-id="{{ $desk->id }}" class="btn btn-danger btn-sm">
                                         <i class="fa fa-trash"></i> Hapus
                                     </button>
                                 </td>
@@ -178,19 +178,19 @@ Data Transaksi
 
     $(document).ready(function() {
         $("#table-1").dataTable();
-        $('body').on('click', '#deleteSyarat', function () {
+        $('body').on('click', '#deleteTransaksi', function () {
             let id = $(this).data('id');
             Swal.fire({
                 title: 'Anda Yakin Hapus File?',
                 text: "Data tidak bisa dikembalikan!",
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Ya, Hapus!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    form_string = "<form method=\"POST\" action=\"{{ url('/owner/syarat/hapus/') }}/"+id+"\" accept-charset=\"UTF-8\"><input name=\"_method\" type=\"hidden\" value=\"DELETE\"><input name=\"_token\" type=\"hidden\" value=\"{{ csrf_token() }}\"></form>"
+                    form_string = "<form method=\"POST\" action=\"{{ url('/owner/transaksi/hapus/') }}/"+id+"\" accept-charset=\"UTF-8\"><input name=\"_method\" type=\"hidden\" value=\"DELETE\"><input name=\"_token\" type=\"hidden\" value=\"{{ csrf_token() }}\"></form>"
                     form = $(form_string)
                     form.appendTo('body');
                     form.submit();

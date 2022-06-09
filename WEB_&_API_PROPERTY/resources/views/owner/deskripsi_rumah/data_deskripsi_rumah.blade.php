@@ -115,7 +115,7 @@
 									<button onclick=" editDataDeskripsi({{$desk->id}})" type="button" class="btn btn-success text-white btn-sm" data-toggle="modal" data-target="#modal-default-edit" title="Detail Data">
                                         <i class="fa fa-clipboard"> Detail</i>
                                     </button>
-									<a href="/owner/deskripsi_rumah/edit/{{ base64_encode($desk->id) }}" class="btn btn-warning btn-sm">
+									<a href="/owner/deskripsi_rumah/edit/{{ encrypt($desk->id) }}" class="btn btn-warning btn-sm">
 										<i class="fas fa-edit"></i> Edit
 									</a>
                                     <a href="/owner/deskripsi_rumah/paymentHarga/{{ $desk->id }}" class="btn btn-warning btn-sm">
@@ -205,9 +205,9 @@ $(document).ready(function() {
             text: "Data tidak bisa dikembalikan!",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Ya, Hapus!'
         }).then((result) => {
             if (result.isConfirmed) {
                 form_string = "<form method=\"POST\" action=\"{{ url('/owner/deskripsi_rumah/hapus/') }}/"+id+"\" accept-charset=\"UTF-8\"><input name=\"_method\" type=\"hidden\" value=\"DELETE\"><input name=\"_token\" type=\"hidden\" value=\"{{ csrf_token() }}\"></form>"

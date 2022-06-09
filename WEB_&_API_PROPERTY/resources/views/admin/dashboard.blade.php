@@ -26,7 +26,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
                 <div class="inner">
-                    {{-- <h3>{{ $jumlah_pelatih }}</h3> --}}
+                    <h3>{{ $jumlah_owner }}</h3>
                     <p>Jumlah Owner</p>
                 </div>
                 <div class="icon">
@@ -40,7 +40,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
                 <div class="inner">
-                    {{-- <h3>{{ $jumlah_murid}}</h3> --}}
+                    <h3>{{ $jumlah_buyer}}</h3>
                     <p>Jumlah Buyer</p>
                 </div>
                 <div class="icon">
@@ -54,7 +54,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
                 <div class="inner">
-                    {{-- <h3>{{ $jumlah_kategori_tari}}</h3> --}}
+                    <h3>{{ $jumlah_admin}}</h3>
                     <p>Jumlah Admin</p>
                 </div>
                 <div class="icon">
