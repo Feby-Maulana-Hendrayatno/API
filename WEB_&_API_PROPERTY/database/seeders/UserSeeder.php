@@ -39,6 +39,13 @@ class UserSeeder extends Seeder
 			"id_role" =>2
 		]);
 
+        User::create([
+			"name" => "buyer",
+			"email" => "buyer@gmail.com",
+			"password" => bcrypt("alan"),
+			"id_role" =>3
+		]);
+
 
     }
 }

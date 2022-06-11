@@ -33,7 +33,7 @@ class PerumahanController extends Controller
         Perumahan::create([
             "nama_perumahan" => $request->nama_perumahan,
             "alamat" => $request->alamat,
-            "stok" => $request->stok,
+            // "stok" => $request->stok,
             "uraian" => $request->uraian,
             "foto" => $coba,
             "id_user" => Auth::user()->id
@@ -95,14 +95,11 @@ class PerumahanController extends Controller
         Perumahan::where("id", $request->id)->update([
             "nama_perumahan" => $request->nama_perumahan,
             "alamat" => $request->alamat,
-            "stok" => $request->stok,
+            // "stok" => $request->stok,
             "uraian" => $request->uraian,
             "foto" => $coba
         ]);
 
         return redirect()->back()->with(["message" => "<script>Swal.fire('Berhasil', 'Data Berhasil di update', 'success');</script>"]);
-
-
-
     }
 }

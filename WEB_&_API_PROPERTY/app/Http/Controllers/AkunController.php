@@ -16,7 +16,7 @@ class AkunController extends Controller
         ];
 
 
-        return view("/admin/users/akun", $data);
+        return view("admin.users.akun", $data);
     }
 
     public function tambah(Request $request)

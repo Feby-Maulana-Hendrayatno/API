@@ -18,7 +18,10 @@ use App\Http\Controllers\TerakhirLoginController;
 use App\Http\Controllers\PerumahanController;
 use App\Http\Controllers\MidtransController;
 use App\Http\Controllers\LandingPageWebController;
+use App\Http\Controllers\FotoSyaratController;
 use App\Http\Controllers\ValidasiTransaksiController;
+
+
 
 
 use App\Models\Owner;
@@ -181,6 +184,8 @@ Route::prefix("owner")->group(function() {
         Route::post("/simpan", [DeskripsiRumahController::class, "simpan"]);
         Route::delete("/hapus/{id}", [DeskripsiRumahController::class, "hapus"]);
         Route::get("/detail_deskripsi", [DeskripsiRumahController::class, "detail_deskripsi"]);
+        // Route::get("/deskripsi", [DeskripsiRumahController::class, "operations"]);
+
     });
 
 
@@ -206,6 +211,17 @@ Route::prefix("owner")->group(function() {
     Route::prefix("transaksi")->group(function() {
         Route::get("/index", [ValidasiTransaksiController::class, "index"]);
         Route::delete("/hapus/{id}", [ValidasiTransaksiController::class, "hapus"]);
+        Route::post("/tambah_foto_syarat", [ValidasiTransaksiController::class, "tambah"]);
+        Route::get("/edit", [ValidasiTransaksiController::class, "edit"]);
+        Route::put("/simpan", [ValidasiTransaksiController::class, "simpan"]);
+    });
+
+
+    Route::prefix("foto_syarat")->group(function() {
+        Route::get("/index", [FotoSyaratController::class, "index"]);
+        Route::get("/edit", [FotoSyaratController::class, "edit"]);
+        Route::post("/tambah_foto_syarat", [FotoSyaratController::class, "tambah"]);
+
     });
 });
 
@@ -213,6 +229,7 @@ Route::prefix("owner")->group(function() {
 
 
 Route::get("/", [LandingPageWebController::class, "index"]);
+Route::get("/list", [DeskripsiRumahController::class, "operations"]);
 
 
 

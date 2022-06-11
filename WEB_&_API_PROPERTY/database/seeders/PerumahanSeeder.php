@@ -23,7 +23,7 @@ class PerumahanSeeder extends Seeder
 			"nama_perumahan" => "Balongan Asri",
             "alamat" => "Balongan",
             "uraian" => "aman dan nyaman",
-            "stok" => "50",
+            // "stok" => "50",
             "foto" => "image/dOyaex5fayFhKgvwYnAI4i8XstI7e88WEuZHbqxO.jpg",
             "id_user" =>2
 		]);
@@ -33,7 +33,7 @@ class PerumahanSeeder extends Seeder
 			"nama_perumahan" => "Permai",
             "uraian" => "Aman Banjir",
             "alamat" => "Indramayu",
-            "stok" => "40",
+            // "stok" => "40",
             "foto" => "image/CbRBeKAAfwRUwmsYtlBPq67GcO0xofc93kjFU1If.jpg",
             "id_user" =>2
 		]);

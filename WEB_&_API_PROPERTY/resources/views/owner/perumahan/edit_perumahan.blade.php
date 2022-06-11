@@ -8,10 +8,10 @@
     <label for="rsyarat"> Uraian / Mott </label>
     <input type="text" class="form-control" name="uraian" placeholder="Masukkan Motto / Uraian" value="{{ $edit->uraian }}">
 </div>
-<div class="form-group">
+{{-- <div class="form-group">
     <label for="rsyarat"> Stock </label>
     <input type="number" class="form-control" name="stok" placeholder="Masukkan Jumlah Stock rumah yang tersedia" value="{{ $edit->stok }}">
-</div>
+</div> --}}
 <div class="form-group">
     <label for="foto">Foto</label>
     @if($edit->foto)

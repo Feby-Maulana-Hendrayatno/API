@@ -56,7 +56,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ url('/admin/form/') }}" class="nav-link">
+                                    <a href="{{ url('/owner/foto_syarat/index') }}" class="nav-link">
                                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                         <p>Form Syarat Pembeli</p>
                                     </a>

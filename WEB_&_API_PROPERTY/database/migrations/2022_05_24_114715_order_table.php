@@ -15,15 +15,17 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('status');
-            $table->string('name');
-            $table->string('email');
-            // $table->string('number');
-            $table->string('transaction_id');
-            $table->string('order_id');
-            $table->string('gross_amount');
-            $table->string('payment_type');
+            $table->string('status')->nullable();
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
+            $table->integer('id_rumah')->nullable();
+            $table->integer('id_owner')->nullable();
+            $table->string('transaction_id')->nullable();
+            $table->string('order_id')->nullable();
+            $table->string('gross_amount')->nullable();
+            $table->string('payment_type')->nullable();
             $table->string('payment_code')->nullable();
+            $table->string('validasi')->nullable();
             $table->string('pdf_url')->nullable();
             $table->timestamps();
         });

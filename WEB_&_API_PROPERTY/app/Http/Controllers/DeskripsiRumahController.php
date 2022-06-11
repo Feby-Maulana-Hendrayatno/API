@@ -6,14 +6,24 @@ use Illuminate\Http\Request;
 use App\Models\DeskripsiRumah;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\support\Facades\DB;
 
 class DeskripsiRumahController extends Controller
 {
+
+    // public function operations(){
+    //     $stock_baru = DB::table('orders')->count('id');
+    //     // return  DB::table('perumahan')->sum('id');
+    // }
+
     public function index()
     {
         $data = [
-            "deskripsi" => DeskripsiRumah::where('id_user', Auth::user()->id)->get()
+            "deskripsi" => DeskripsiRumah::where('id_user', Auth::user()->id)->get(),
+            // "stock_baru" => DB::table('orders')->count('id'),
+            // "total_stock" => DB::table('deskripsi_rumah')->sum('id'),
         ];
+
 
         return view("owner.deskripsi_rumah.data_deskripsi_rumah", $data);
     }
@@ -34,6 +44,7 @@ class DeskripsiRumahController extends Controller
             "foto" => $coba,
             "id_user" => Auth::user()->id,
             "kusen" => $request->kusen,
+            "stock" => $request->stock,
             "pintu"=> $request->pintu,
             "jendela" => $request->jendela,
             "plafond" => $request->plafond,
@@ -71,6 +82,7 @@ class DeskripsiRumahController extends Controller
         DeskripsiRumah::where("id", $request->id)->update([
             "type" => $request->type,
             "foto" => $coba,
+            "stock" => $request->stock,
             "kusen" => $request->kusen,
             "pintu" => $request->pintu,
             "jendela" => $request->jendela,
@@ -153,21 +165,39 @@ class DeskripsiRumahController extends Controller
                 // 'name' => Auth::user()->name,
                 'email' => Auth::user()->email,
 
+
             ),
         );
 
         $snapToken = \Midtrans\Snap::getSnapToken($params);
 
-        return view('payment/payment', ['snap_token'=>$snapToken]);
+        return view('payment.payment',
+        ['snap_token'=>$snapToken, 'id_deskripsi_rumah' => $data['edit']->id, 'id_user_order' => $data['edit']->id, 'id_owner_order' => $data['edit']->id_user ]
+    );
     }
 
         public function payment_post(Request $request){
+            $id_deskripsi = $request->id_deskripsi_rumah;
+            $id_perumahan = $request->id_user_order;
+            $id_owner = $request->id_owner_order;
+
+            $id_owner_order = DeskripsiRumah::where('id', $id_owner)->first();
+            $id_perumahan_order = DeskripsiRumah::where('id', $id_perumahan)->first();
+            $deskripsi_rumah = DeskripsiRumah::where('id', $id_deskripsi)->first();
+
+            DeskripsiRumah::where('id', $id_deskripsi)->update([
+                'stock' => $deskripsi_rumah->stock - 1,
+            ]);
+
+
             $json = json_decode($request->get('json'));
             $order = new Order();
             $order->status = $json->transaction_status;
             $order->name = Auth::user()->name;
             $order->email = Auth::user()->email;
             $order->transaction_id = $json->transaction_id;
+            $order->id_rumah = $id_perumahan;
+            $order->id_owner = $id_owner;
             $order->order_id = $json->order_id;
             $order->gross_amount = $json->gross_amount;
             $order->payment_type = $json->payment_type;

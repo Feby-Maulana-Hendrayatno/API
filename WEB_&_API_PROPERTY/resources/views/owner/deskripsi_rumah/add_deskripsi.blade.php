@@ -53,14 +53,16 @@
                             <label>Foto </label>
                             <img class="img-preview img-fluid mb-3 col-sm-5">
                             <input type="file"  name="foto" class="form-control" id="foto" placeholder="Masukan Foto/Gambar" required onchange="viewImage()">
-                            <div class="text-danger">
-                            </div>
+                           
                         </div>
                         <div class="form-group">
                             <label>Harga</label>
                             <input type="number" name="harga" class="form-control" id="" placeholder="Masukan harga Rumah" required>
-                            <div class="text-danger">
-                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label>Stock</label>
+                            <input type="number" name="stock" class="form-control" id="" placeholder="Stock Rumah" required>
                         </div>
                         <div class="form-group">
                             <label>Kusen</label>

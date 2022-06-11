@@ -63,6 +63,10 @@
                                 <input type="number" name="harga" class="form-control" id="" placeholder = "Masukan Harga Rumah" required value="{{ $edit->harga }}">
                             </div>
                             <div class="form-group">
+                                <label>Stock</label>
+                                <input type="number" name="stock" class="form-control" id="" placeholder = "Masukan Stock Rumah" required value="{{ $edit->stock }}">
+                            </div>
+                            <div class="form-group">
                                 <label>Kusen</label>
                                 <input type="text" name="kusen" class="form-control" id="" placeholder = "Jenis kusen Rumah" required value="{{ $edit->kusen }}">
                             </div>

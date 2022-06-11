@@ -8,6 +8,10 @@
     <input type="text" class="form-control" name="type" placeholder="type" disabled value="{{ $detail->harga }}">
 </div>
 <div class="form-group">
+    <label for="type"> Stock </label>
+    <input type="text" class="form-control" name="type" placeholder="type" disabled value="{{ $detail->stock  }}">
+</div>
+<div class="form-group">
     <label>Kusen</label>
     <input type="" name="kusen" class="form-control" placeholder = "Jenis kusen Rumah" disabled value="{{  $detail->kusen }}">
 </div>

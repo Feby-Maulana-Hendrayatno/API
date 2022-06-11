@@ -6,34 +6,17 @@ Data Deskripsi Rumah
 
 @section("header")
 
-<script>
-    function viewImage()
-    {
-        const image = document.querySelector('#foto');
-        const imgPreview = document.querySelector('.img-preview');
-
-        imgPreview.style.display = 'block';
-
-        const oFReader = new FileReader();
-        oFReader.readAsDataURL(image.files[0]);
-
-        oFReader.onload = function(oFREvent) {
-            imgPreview.src = oFREvent.target.result;
-        }
-    }
-</script>
-
 <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1 class="m-0"> Perumahan</h1>
+            <h1 class="m-0"> Syarat</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item">
                     <a href="{{ url('/owner/dashboard') }}"> Dashboard </a>
                 </li>
-                <li class="breadcrumb-item active"> Perumahan </li>
+                <li class="breadcrumb-item active"> Syarat </li>
             </ol>
         </div>
     </div>
@@ -70,31 +53,24 @@ Data Deskripsi Rumah
                         <thead>
                             <tr>
                                 <th class="text-center">No.</th>
-                                <th class="text-center">Perumahan</th>
-                                <th class="text-center">Motto</th>
-                                {{-- <th class="text-center">Stock</th> --}}
-                                <th class="text-center">Alamat</th>
+                                <th class="text-center">Syarat</th>
                                 <th class="text-center">Foto</th>
-                                <th class="text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             @php $no = 0 @endphp
-                            @foreach($perumahan as $desk)
+                            @foreach($foto_syarat as $desk)
                             <tr>
                                 <td class="text-center">{{ ++$no }}</td>
-                                <td>{{ $desk->nama_perumahan }}</td>
-                                <td>{{ $desk->uraian }}</td>
-                                {{-- <td>{{ $desk->stok }}</td> --}}
-                                <td>{{ $desk->alamat }}</td>
+                                <td>{{ $desk->id_foto_syarat }}</td>
                                 <td>
-                                    <img src="{{ url('storage/'.$desk->foto) }}" width="200">
+                                    <img src="{{ json_decode(url('storage/'.$desk->foto)) }}" width="200">
                                 </td>
-                                    <td class="text-center">
-                                    <button onclick="editPerumahan({{ $desk->id }})" type="button" class="btn btn-success text-white btn-sm" data-toggle="modal" data-target="#modal-default-edit" title="Detail Data">
+                                <td class="text-center">
+                                    <button onclick="editSyarat({{ $desk->id }})" type="button" class="btn btn-success text-white btn-sm" data-toggle="modal" data-target="#modal-default-edit" title="Detail Data">
                                         <i class="fa fa-clipboard"> Edit </i>
                                     </button>
-                                    <button id="deletePerumahan" data-id="{{ $desk->id }}" class="btn btn-danger btn-sm">
+                                    <button id="deleteSyarat" data-id="{{ $desk->id }}" class="btn btn-danger btn-sm">
                                         <i class="fa fa-trash"></i> Hapus
                                     </button>
                                 </td>
@@ -114,37 +90,21 @@ Data Deskripsi Rumah
 <div class="modal fade" id="modal-default">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header">kemp
                 <h4 class="modal-title">Tambah Data</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST" action="{{ url('/owner/perumahan/tambah_perumahan') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ url('/owner/foto_syarat/tambah_foto_syarat') }}"  enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="rsyarat"> Perumahan </label>
-                        <input type="text" class="form-control" name="nama_perumahan" placeholder="Masukkan Nama Perumahan">
-                    </div>
-                    <div class="form-group">
-                        <label for="rsyarat"> Uraian / Motto </label>
-                        <input type="text" class="form-control" name="uraian" placeholder="Masukkan Motto / Uraian">
-                    </div>
-                    {{-- <div class="form-group">
-                        <label for="rsyarat"> Stock </label>
-                        <input type="number" class="form-control" name="stok" placeholder="Masukkan Jumlah Stock rumah yang tersedia">
-                    </div> --}}
-                    <div class="form-group">
                         <label>Foto </label>
                         <img class="img-preview img-fluid mb-3 col-sm-5">
-                        <input multiple type="file"  name="foto" class="form-control" id="foto" placeholder="Masukan Foto/Gambar" required onchange="viewImage()">
+                        <input multiple type="file"  name="image[]" class="form-control" id="foto" placeholder="Masukan Foto/Gambar" required onchange="viewImage()">
                         <div class="text-danger">
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="syarat"> Alamat </label>
-                        <textarea class="form-control" id="alamat" name="alamat" rows="5" placeholder="Masukkan Alamat dari Perumahan" ></textarea>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">
@@ -157,9 +117,7 @@ Data Deskripsi Rumah
                 </div>
             </form>
         </div>
-        <!-- /.modal-content -->
     </div>
-    <!-- /.modal-dialog -->
 </div>
 <!-- END -->
 
@@ -174,7 +132,7 @@ Data Deskripsi Rumah
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST" action="{{ url('/owner/perumahan/simpan') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ url('/owner/syarat/simpan') }}">
                 @method("PUT")
                 @csrf
                 <div class="modal-body" id="modal-content-edit">
@@ -197,10 +155,10 @@ Data Deskripsi Rumah
 @section("scripts_js")
 
 <script type="text/javascript">
-    function editPerumahan(id)
+    function editSyarat(id)
     {
         $.ajax({
-            url : "{{ url('/owner/perumahan/edit') }}",
+            url : "{{ url('/owner/syarat/edit') }}",
             type : "GET",
             data : { id : id },
             success : function(data) {
@@ -210,9 +168,10 @@ Data Deskripsi Rumah
         });
     }
 
+
     $(document).ready(function() {
         $("#table-1").dataTable();
-        $('body').on('click', '#deletePerumahan', function () {
+        $('body').on('click', '#deleteSyarat', function () {
             let id = $(this).data('id');
             Swal.fire({
                 title: 'Anda Yakin Hapus File?',
@@ -224,7 +183,7 @@ Data Deskripsi Rumah
                 confirmButtonText: 'Ya, Hapus!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    form_string = "<form method=\"POST\" action=\"{{ url('/owner/perumahan/hapus/') }}/"+id+"\" accept-charset=\"UTF-8\"><input name=\"_method\" type=\"hidden\" value=\"DELETE\"><input name=\"_token\" type=\"hidden\" value=\"{{ csrf_token() }}\"></form>"
+                    form_string = "<form method=\"POST\" action=\"{{ url('/owner/syarat/hapus/') }}/"+id+"\" accept-charset=\"UTF-8\"><input name=\"_method\" type=\"hidden\" value=\"DELETE\"><input name=\"_token\" type=\"hidden\" value=\"{{ csrf_token() }}\"></form>"
                     form = $(form_string)
                     form.appendTo('body');
                     form.submit();

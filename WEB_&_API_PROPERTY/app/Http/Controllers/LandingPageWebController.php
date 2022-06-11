@@ -17,7 +17,7 @@ class LandingPageWebController extends Controller
     public function index()
     {
         $data = [
-            "perumahan" => Perumahan::where('id_user', Auth::user()->id)->get()
+            "perumahan" => Perumahan::orderBy("id", "DESC")->get()
         ];
 
         return view("Landing.index", $data);

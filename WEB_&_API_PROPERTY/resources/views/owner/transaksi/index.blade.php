@@ -5,6 +5,22 @@ Data Transaksi
 @stop
 
 @section("header")
+<script>
+    function viewImage()
+    {
+        const image = document.querySelector('#foto');
+        const imgPreview = document.querySelector('.img-preview');
+
+        imgPreview.style.display = 'block';
+
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+
+        oFReader.onload = function(oFREvent) {
+            imgPreview.src = oFREvent.target.result;
+        }
+    }
+</script>
 
 <div class="container-fluid">
     <div class="row mb-2">
@@ -41,23 +57,16 @@ Data Transaksi
             </div>
             @endif
             <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">
-                        <button type="button" class="btn btn-success col fileinput-button dz-clickable" data-toggle="modal" data-target="#modal-default" title="Tambah Data">
-                            <i class="fa fa-plus"></i> Tambah Data
-                        </button>
-                    </h3>
-                </div>
                 <div class="card-body">
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th class="text-center">No.</th>
                                 <th class="text-center">Nama</th>
-                                <th class="text-center"> ID Transaksi </th>
                                 <th class="text-center"> Order Id </th>
                                 <th class="text-center"> Harga </th>
                                 <th class="text-center"> MeTode Pembayaran </th>
+                                <th class="text-center"> Validasi </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -66,10 +75,20 @@ Data Transaksi
                             <tr>
                                 <td class="text-center">{{ ++$no }}</td>
                                 <td>{{ $desk->name }}</td>
-                                <td>{{ $desk->transaction_id }}</td>
                                 <td>{{ $desk->order_id }}</td>
-                                <td>{{ $desk->gross_amount }}</td>
-                                <td>{{ currency_IDR($desk->payment_type) }}</td>
+                                <td>{{ currency_IDR($desk->gross_amount) }}</td>
+                                <td>{{ $desk->payment_type }}</td>
+                                <td>
+                                    @if (empty($desk->validasi))
+                                        <b>
+                                            <i>
+                                                Belum Validasi
+                                            </i>
+                                        </b>
+                                    @else
+                                    {{$desk->validasi}}
+                                    @endif
+                                </td>
                                 <td class="text-center">
                                     <button onclick="editSyarat({{ $desk->id }})" type="button" class="btn btn-success text-white btn-sm" data-toggle="modal" data-target="#modal-default-edit" title="Detail Data">
                                         <i class="fa fa-clipboard"> Edit </i>
@@ -90,43 +109,6 @@ Data Transaksi
 
 
 
-<!-- Tambah Data -->
-<div class="modal fade" id="modal-default">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Tambah Data</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form method="POST" action="{{ url('/owner/syarat/tambah_syarat') }}">
-                @csrf
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="rsyarat"> Syarat </label>
-                        <input type="text" class="form-control" name="syarat" placeholder="Masukkan Syarat - Syarat yang diperlukan">
-                    </div>
-                    {{-- <div class="form-group">
-                        <label for="syarat"> Syarat </label>
-                        <textarea class="form-control" id="syarat" name="syarat" rows="5" placeholder="Masukkan Syarat - Syarat yang diperlukan" ></textarea>
-                    </div> --}}
-                </div>
-                <div class="modal-footer justify-content-between">
-                    <button type="reset" class="btn btn-social btn-warning btn-flat btn-sm" title="Reset">
-                        <i class="fa fa-refresh"></i> Reset
-                    </button>
-                    <button type="submit" class="btn btn-social btn-success btn-flat bt-sm" title="Tambah Data">
-                        <i class="fa fa-plus"></i> Tambah
-                    </button>
-                </div>
-            </form>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- END -->
 
 
 <!-- Edit Data -->
@@ -139,7 +121,7 @@ Data Transaksi
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST" action="{{ url('/owner/syarat/simpan') }}">
+            <form method="POST" action="{{ url('/owner/transaksi/simpan') }}">
                 @method("PUT")
                 @csrf
                 <div class="modal-body" id="modal-content-edit">
@@ -165,7 +147,7 @@ Data Transaksi
     function editSyarat(id)
     {
         $.ajax({
-            url : "{{ url('/owner/syarat/edit') }}",
+            url : "{{ url('owner/transaksi/edit') }}",
             type : "GET",
             data : { id : id },
             success : function(data) {
