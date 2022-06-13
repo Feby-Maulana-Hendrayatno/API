@@ -44,6 +44,34 @@
                     {{ csrf_field() }}
                     <div class="card-body">
                         <div class="form-group">
+                            <label for="id"> Perumahan </label>
+                            <select required class="form-control" style="width: 100%;" name="perumahan_id">
+                                <option value="">- Pilih -</option>
+                                @foreach($perumahan as $perum)
+                                <option value="{{ $perum->id }}">
+                                    {{ $perum->nama_perumahan }}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="id"> Alamat </label>
+                            <select required class="form-control" style="width: 100%;" name="alamat_id">
+                                <option value="">- Pilih -</option>
+                                @foreach($alamat as $almt)
+                                <option value="{{ $almt->id }}">
+                                    {{ $almt->alamat }}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Type</label>
+                            <input type="text" name="type" class="form-control" id="" placeholder="Masukan Type Rumah" required>
+                            <div class="text-danger">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label>Type</label>
                             <input type="text" name="type" class="form-control" id="" placeholder="Masukan Type Rumah" required>
                             <div class="text-danger">
@@ -53,7 +81,7 @@
                             <label>Foto </label>
                             <img class="img-preview img-fluid mb-3 col-sm-5">
                             <input type="file"  name="foto" class="form-control" id="foto" placeholder="Masukan Foto/Gambar" required onchange="viewImage()">
-                           
+
                         </div>
                         <div class="form-group">
                             <label>Harga</label>

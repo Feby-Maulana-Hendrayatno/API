@@ -24,7 +24,7 @@ class PerumahanSeeder extends Seeder
             "alamat" => "Balongan",
             "uraian" => "aman dan nyaman",
             // "stok" => "50",
-            "foto" => "image/dOyaex5fayFhKgvwYnAI4i8XstI7e88WEuZHbqxO.jpg",
+            "foto" => "image/C5yrh4knDzWURuSD6XJKD0c8Yxw0zCXu0pQwQEZs.jpg",
             "id_user" =>2
 		]);
 
@@ -34,7 +34,7 @@ class PerumahanSeeder extends Seeder
             "uraian" => "Aman Banjir",
             "alamat" => "Indramayu",
             // "stok" => "40",
-            "foto" => "image/CbRBeKAAfwRUwmsYtlBPq67GcO0xofc93kjFU1If.jpg",
+            "foto" => "image/hNxDIikz1sfeGAMQbr0oLtLa9nWftSoQ3HDmBZh8.jpg",
             "id_user" =>2
 		]);
 

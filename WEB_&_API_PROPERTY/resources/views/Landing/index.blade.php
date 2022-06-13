@@ -1,523 +1,516 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;">
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyek 3 Propertiku</title>
     <meta charset="utf-8">
-    <meta name="keywords" content="REAL ESTATE AGENCY, Dream House, Amanda Martocchio Architecture, The design challenge, What We Do, Practicing at the confluence of art, architecture, and building technology, we collaborate with clients to create buildings and environments in dialogue with culture and place., Good Work, Greenwich Modern, What to learn more?">
-    <meta name="description" content="">
-    <title>Home</title>
-    {{-- <link href="{{asset('assets/nicepage.css')}}" rel="stylesheet" type="text/css" /> --}}
-    {{-- <link href="{{asset('nicepage.css')}}" rel="stylesheet" type="text/css" /> --}}
-    {{-- <link href="{{('assets/nicepage.css')}}" rel="stylesheet" type="text/css" /> --}}
-    {{-- <link href="{{('nicepage.css')}}" rel="stylesheet" type="text/css" /> --}}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    {{-- <link href="{{asset('assets/Home.css')}}" rel="stylesheet" type="text/css" /> --}}
-    {{-- <link href="{{asset('Home.css')}}" rel="stylesheet" type="text/css" /> --}}
-    {{-- <link href="{{('assets/Home.css')}}" rel="stylesheet" type="text/css" /> --}}
-    {{-- <link href="{{('Home.css')}}" rel="stylesheet" type="text/css" /> --}}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
 
-    {{-- <link href="{{'assets/Home.css'}}" rel="stylesheet" type="text/css" />  --}}
-    {{-- <link href="{{'Home.css'}}" rel="stylesheet" type="text/css" /> --}}
+    <link rel="stylesheet" href={{url("Landing/css/bootstrap.min.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/magnific-popup.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/jquery-ui.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/owl.carousel.min.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/owl.theme.default.min.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/bootstrap-datepicker.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/mediaelementplayer.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/animate.css")}}>
+    <link rel="stylesheet" href={{url("Landing/fonts/flaticon/font/flaticon.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/fl-bigmug-line.css")}}>
 
-    <link rel="stylesheet" href="Landing/nicepage.css" media="screen">
-    <link rel="stylesheet" href="Landing/Home.css" media="screen">
-    <script class="u-script" type="text/javascript" src="Landing/jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="Landing/nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 4.11.3, nicepage.com">
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    <script type="application/ld+json">{
-        "@context": "http://schema.org",
-        "@type": "Organization",
-        "name": "",
-        "logo": "Landing/images/default-logo.png"
-    }</script>
-    <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Home">
-    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href={{url("Landing/css/aos.css")}}>
+
+    <link rel="stylesheet" href={{url("Landing/css/style.css")}}>
+
 </head>
-<body data-home-page="Home.html" data-home-page-title="Home" class="u-body u-white u-xl-mode"><header class="u-clearfix u-header u-header" id="sec-6fad"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-    <a href="https://nicepage.com" class="u-image u-logo u-image-1">
-        <img src="Landing/images/default-logo.png" class="u-logo-image u-logo-image-1">
-    </a>
-    <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
-        <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
-            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-                <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-                <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-                </g></svg>
-            </a>
-        </div>
-        <div class="u-nav-container">
-            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Home.html" style="padding: 10px 20px;">Home</a>
-            </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="About.html" style="padding: 10px 20px;">About</a>
-            </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Contact.html" style="padding: 10px 20px;">Contact</a>
-            </li></ul>
-        </div>
-        <div class="u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-                <div class="u-inner-container-layout u-sidenav-overflow">
-                    <div class="u-menu-close"></div>
-                    <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">Home</a>
-                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="About.html">About</a>
-                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html">Contact</a>
-                    </li></ul>
+<body>
+
+    <div class="site-loader"></div>
+
+    <div class="site-wrap">
+
+        <div class="site-mobile-menu">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
                 </div>
             </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-        </div>
-    </nav>
-</div></header>
-<section class="-lg -sm -xl -xs u-clearfix u-image u-shading u-section-1" src="" id="carousel_ec51">
-    <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-align-left-xs u-align-right-lg u-align-right-md u-align-right-sm u-align-right-xl u-container-style u-group u-group-1">
-            <div class="u-container-layout u-container-layout-1">
-                <h1 class="u-text u-title u-text-1">REAL ESTATE AGENCY</h1>
-                <p class="u-large-text u-text u-text-variant u-text-2">Aplikasi Penjualan Proprty yang terintegrasi dengan payment gateway</p>
-            </div>
-        </div>
-    </div>
-</section>
+            <div class="site-mobile-menu-body"></div>
+        </div> <!-- .site-mobile-menu -->
+
+        <div class="site-navbar mt-4">
+            <div class="container py-1">
+                <div class="row align-items-center">
+                    <div class="col-8 col-md-8 col-lg-4">
+                        <h1 class="mb-0"><a href={{url("/")}} class="text-white h2 mb-0"><strong>Propertiku</strong></a></h1>
+                    </div>
+                    <div class="col-4 col-md-4 col-lg-8">
+                        <nav class="site-navigation text-right text-md-right" role="navigation">
+                            <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+                            <ul class="site-menu js-clone-nav d-none d-lg-block">
+                                <li class="active">
+                                    <a href={{url("/")}}>Home</a>
+                                </li>
+                                <li >
+                                    <a href={{url("/properties")}}>Properties</a>
+                                </li>
+                                <li><a href={{url("/blog")}}>Blog</a></li>
+                                <li><a href={{url("/about")}}>About</a></li>
+                            </ul>
+                        </nav>
+                    </div>
 
 
-<section class="u-align-center u-clearfix u-section-2" id="sec-7ded">
-    <div class="u-clearfix u-sheet u-sheet-1"><span class="u-icon u-icon-circle u-text-palette-2-base u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 -90 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9125"></use></svg><svg class="u-svg-content" viewBox="0 -90 512 512" id="svg-9125"><path d="m409.597656 265.449219c-30.347656 0-46.011718 11.015625-59.828125 20.730469-12.136719 8.53125-21.722656 15.269531-42.578125 15.269531-20.851562 0-30.4375-6.738281-42.570312-15.269531-13.816406-9.71875-29.480469-20.730469-59.828125-20.730469-30.34375 0-46.007813 11.015625-59.824219 20.730469-12.132812 8.53125-21.71875 15.269531-42.570312 15.269531-20.851563 0-30.4375-6.738281-42.570313-15.269531-13.820313-9.714844-29.484375-20.730469-59.828125-20.730469v30c20.855469 0 30.4375 6.738281 42.570312 15.273437 13.820313 9.714844 29.480469 20.726563 59.828126 20.726563 30.34375 0 46.007812-11.011719 59.824218-20.726563 12.132813-8.535156 21.71875-15.273437 42.570313-15.273437 20.855469 0 30.4375 6.738281 42.574219 15.273437 13.816406 9.714844 29.480468 20.726563 59.824218 20.726563 30.347656 0 46.011719-11.011719 59.832032-20.726563 12.132812-8.53125 21.71875-15.273437 42.574218-15.273437 20.855469 0 30.4375 6.738281 42.574219 15.273437 13.816406 9.714844 29.480469 20.726563 59.828125 20.726563v-30c-20.855469 0-30.441406-6.738281-42.574219-15.269531-13.820312-9.714844-29.484375-20.730469-59.828125-20.730469zm0 0"></path><path d="m409.597656 88.484375c-30.347656 0-46.011718 11.011719-59.828125 20.726563-12.136719 8.53125-21.722656 15.273437-42.578125 15.273437-20.851562 0-30.4375-6.742187-42.570312-15.273437-13.816406-9.714844-29.480469-20.726563-59.828125-20.726563-30.34375 0-46.007813 11.011719-59.824219 20.726563-12.132812 8.53125-21.71875 15.273437-42.570312 15.273437-20.851563 0-30.4375-6.742187-42.570313-15.273437-13.820313-9.714844-29.484375-20.726563-59.828125-20.726563v30c20.855469 0 30.4375 6.738281 42.570312 15.269531 13.820313 9.71875 29.480469 20.730469 59.828126 20.730469 30.34375 0 46.007812-11.015625 59.824218-20.730469 12.132813-8.53125 21.71875-15.269531 42.570313-15.269531 20.855469 0 30.4375 6.738281 42.574219 15.269531 13.816406 9.71875 29.480468 20.730469 59.824218 20.730469 30.347656 0 46.011719-11.015625 59.832032-20.730469 12.132812-8.53125 21.71875-15.269531 42.574218-15.269531 20.855469 0 30.4375 6.738281 42.574219 15.269531 13.816406 9.71875 29.480469 20.730469 59.828125 20.730469v-30c-20.855469 0-30.441406-6.742187-42.574219-15.273437-13.820312-9.714844-29.484375-20.726563-59.828125-20.726563zm0 0"></path><path d="m409.597656 176.96875c-30.347656 0-46.011718 11.011719-59.828125 20.726562-12.136719 8.53125-21.722656 15.273438-42.578125 15.273438-20.851562 0-30.4375-6.742188-42.570312-15.273438-13.816406-9.714843-29.480469-20.726562-59.828125-20.726562-30.34375 0-46.007813 11.011719-59.824219 20.726562-12.132812 8.53125-21.71875 15.273438-42.570312 15.273438-20.851563 0-30.4375-6.742188-42.570313-15.273438-13.820313-9.714843-29.484375-20.726562-59.828125-20.726562v30c20.855469 0 30.4375 6.738281 42.570312 15.269531 13.820313 9.714844 29.480469 20.730469 59.828126 20.730469 30.34375 0 46.007812-11.015625 59.824218-20.730469 12.132813-8.53125 21.71875-15.269531 42.570313-15.269531 20.855469 0 30.4375 6.738281 42.574219 15.269531 13.816406 9.714844 29.480468 20.730469 59.824218 20.730469 30.347656 0 46.011719-11.015625 59.832032-20.730469 12.132812-8.53125 21.71875-15.269531 42.574218-15.269531 20.855469 0 30.4375 6.738281 42.574219 15.269531 13.816406 9.714844 29.480469 20.730469 59.828125 20.730469v-30c-20.855469 0-30.441406-6.742188-42.574219-15.273438-13.820312-9.714843-29.484375-20.726562-59.828125-20.726562zm0 0"></path><path d="m469.425781 20.730469c-13.820312-9.71875-29.484375-20.730469-59.828125-20.730469-30.347656 0-46.011718 11.011719-59.828125 20.730469-12.136719 8.53125-21.722656 15.269531-42.578125 15.269531-20.851562 0-30.4375-6.738281-42.570312-15.269531-13.816406-9.71875-29.480469-20.730469-59.828125-20.730469-30.34375 0-46.007813 11.011719-59.824219 20.730469-12.132812 8.53125-21.71875 15.269531-42.570312 15.269531-20.851563 0-30.4375-6.738281-42.570313-15.269531-13.820313-9.71875-29.484375-20.730469-59.828125-20.730469v30c20.855469 0 30.4375 6.738281 42.570312 15.269531 13.820313 9.71875 29.480469 20.730469 59.828126 20.730469 30.34375 0 46.007812-11.011719 59.824218-20.730469 12.132813-8.53125 21.71875-15.269531 42.570313-15.269531 20.855469 0 30.4375 6.738281 42.574219 15.269531 13.816406 9.71875 29.480468 20.730469 59.824218 20.730469 30.347656 0 46.011719-11.011719 59.832032-20.730469 12.132812-8.53125 21.71875-15.269531 42.574218-15.269531 20.855469 0 30.4375 6.738281 42.574219 15.269531 13.816406 9.71875 29.480469 20.730469 59.828125 20.730469v-30c-20.855469 0-30.441406-6.738281-42.574219-15.269531zm0 0"></path></svg></span>
-        <h1 class="u-text u-text-default u-text-1">Perumahan</h1>
-        <div class="u-expanded-width u-list u-list-1">
-            <div class="u-repeater u-repeater-1">
-                <div class="u-align-left u-container-style u-grey-10 u-list-item u-radius-15 u-repeater-item u-shape-round u-list-item-1">
-                    <div class="u-container-layout u-similar-container u-container-layout-1">
-                        <img class="u-expanded-width u-image u-image-round u-radius-15 u-image-1" src="Landing/images/black-white-business-card-mockup-design_47987-2181.jpg" alt="" data-image-width="626" data-image-height="469">
-                        <h4 class="u-text u-text-default u-text-2">Design</h4>
-                        <ul class="u-custom-list u-text u-text-3">
-                            <li style="">
-                                <div class="u-list-icon u-text-palette-2-base">
-                                    <svg class="u-svg-content" viewBox="0 0 512 512" x="0px" y="0px" id="svg-0af4"><g><g><path d="M492,236H276V20c0-11.046-8.954-20-20-20c-11.046,0-20,8.954-20,20v216H20c-11.046,0-20,8.954-20,20s8.954,20,20,20h216    v216c0,11.046,8.954,20,20,20s20-8.954,20-20V276h216c11.046,0,20-8.954,20-20C512,244.954,503.046,236,492,236z"></path>
-                                    </g>
-                                </g></svg>
-                            </div>Product Mockup
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="card-body">
-    <table id="example1" class="table table-bordered table-striped">
-        <thead>
-            <tr>
-                <th class="text-center">No.</th>
-                <th class="text-center">Perumahan</th>
-                <th class="text-center">Motto</th>
-                <th class="text-center">Stock</th>
-                <th class="text-center">Alamat</th>
-                <th class="text-center">Foto</th>
-            </tr>
-        </thead>
-        <tbody>
-            @php $no = 0 @endphp
-            @foreach($perumahan as $desk)
-            <tr>
-                <td class="text-center">{{ ++$no }}</td>
-                <td>{{ $desk->nama_perumahan }}</td>
-                <td>{{ $desk->uraian }}</td>
-                <td>{{ $desk->stok }}</td>
-                <td>{{ $desk->alamat }}</td>
-                <td>
-                    <img src="{{ url('storage/'.$desk->foto) }}" width="200">
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div>
+    <div class="slide-one-item home-slider owl-carousel">
+
+        <div class="site-blocks-cover overlay" style="background-image: url(Landing/images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        </div>
+        <div class="site-blocks-cover overlay" style="background-image: url(Landing/images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        </div>
+
+    </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</section>
-
-
-
-
-<section class="u-clearfix u-lightbox u-palette-1-light-1 u-section-3" id="carousel_bb51">
-    <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-clearfix u-expanded-width u-gutter-26 u-layout-wrap u-layout-wrap-1">
-            <div class="u-layout">
-                <div class="u-layout-row">
-                    <div class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-container-style u-image u-layout-cell u-left-cell u-size-20 u-image-1" data-animation-name="customAnimationIn" data-animation-duration="1000">
-                        <div class="u-container-layout"></div>
+    <div class="site-section site-section-sm pb-0">
+        <div class="container">
+            <div class="row">
+                <form class="form-search col-md-12" style="margin-top: -100px;">
+                    <div class="row  align-items-end">
+                        <div class="col-md-3">
+                            <label for="list-types">Harga</label>
+                            <div class="select-wrap">
+                                <span class="icon icon-arrow_drop_down"></span>
+                                <select name="list-types" id="list-types" class="form-control d-block rounded-0">
+                                    <option value="">Condo</option>
+                                    <option value="">Commercial Building</option>
+                                    <option value="">Land Property</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="offer-types">Type</label>
+                            <div class="select-wrap">
+                                <span class="icon icon-arrow_drop_down"></span>
+                                <select name="offer-types" id="offer-types" class="form-control d-block rounded-0">
+                                    <option value="">For Sale</option>
+                                    <option value="">For Rent</option>
+                                    <option value="">For Lease</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="select-city">Kota</label>
+                            <div class="select-wrap">
+                                <span class="icon icon-arrow_drop_down"></span>
+                                <select name="select-city" id="select-city" class="form-control d-block rounded-0">
+                                    <option value="">New York</option>
+                                    <option value="">Brooklyn</option>
+                                    <option value="">London</option>
+                                    <option value="">Japan</option>
+                                    <option value="">Philippines</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="submit" class="btn btn-success text-white btn-block rounded-0" value="Search">
+                        </div>
                     </div>
-                    <div class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-container-style u-image u-layout-cell u-size-20 u-image-2" data-animation-name="customAnimationIn" data-animation-duration="1000">
-                        <div class="u-container-layout"></div>
-                    </div>
-                    <div class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-container-style u-image u-layout-cell u-right-cell u-size-20 u-image-3" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-direction="X">
-                        <div class="u-container-layout"></div>
+                </form>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="view-options bg-white py-3 px-3 d-md-flex align-items-center">
+                        <div class="mr-auto">
+                            <a href="index.html" class="icon-view view-module active"><span class="icon-view_module"></span></a>
+                            <a href="view-list.html" class="icon-view view-list"><span class="icon-view_list"></span></a>
+
+                        </div>
                     </div>
                 </div>
             </div>
-        </div><!--blog--><!--blog_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/blog_options_json-->
-        <div class="u-blog u-container-style u-expanded-width u-layout-horizontal u-blog-1">
-            <div class="u-list-control"></div>
+
+        </div>
+    </div>
 
 
-            <div class="u-repeater u-repeater-1"><!--blog_post-->
-                <div class="u-blog-post u-container-style u-repeater-item">
-                    <div class="u-container-layout u-similar-container u-container-layout-4"><!--blog_post_header-->
-                        <h2 class="u-blog-control u-text">
-                            <a class="u-post-header-link" href="blog/post-5.html"><!--blog_post_header_content-->Post 6 Headline<!--/blog_post_header_content--></a>
-                        </h2><!--/blog_post_header-->
-                        <a class="u-post-header-link" href="blog/post-5.html"><!--blog_post_image-->
-                            <img src="Landing/images/4.jpeg" alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-4"><!--/blog_post_image-->
-                        </a><!--blog_post_content-->
-                        <div class="u-blog-control u-post-content u-text"><!--blog_post_content_content-->Sample small text. Lorem ipsum dolor sit amet.<!--/blog_post_content_content--></div><!--/blog_post_content-->
-                    </div>
-                </div><!--/blog_post--><!--blog_post-->
-                <div class="u-blog-post u-container-style u-repeater-item">
-                    <div class="u-container-layout u-similar-container u-container-layout-5"><!--blog_post_header-->
-                        <h2 class="u-blog-control u-text">
-                            <a class="u-post-header-link" href="blog/post-4.html"><!--blog_post_header_content-->Post 5 Headline<!--/blog_post_header_content--></a>
-                        </h2><!--/blog_post_header-->
-                        <a class="u-post-header-link" href="blog/post-4.html"><!--blog_post_image-->
-                            <img src="Landing/images/3.jpeg" alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-5"><!--/blog_post_image-->
-                        </a><!--blog_post_content-->
-                        <div class="u-blog-control u-post-content u-text"><!--blog_post_content_content-->Sample small text. Lorem ipsum dolor sit amet.<!--/blog_post_content_content--></div><!--/blog_post_content-->
-                    </div>
-                </div><!--/blog_post--><!--blog_post-->
-                <div class="u-blog-post u-container-style u-repeater-item">
-                    <div class="u-container-layout u-similar-container u-container-layout-6"><!--blog_post_header-->
-                        <h2 class="u-blog-control u-text">
-                            <a class="u-post-header-link" href="blog/post-3.html"><!--blog_post_header_content-->Post 4 Headline<!--/blog_post_header_content--></a>
-                        </h2><!--/blog_post_header-->
-                        <a class="u-post-header-link" href="blog/post-3.html"><!--blog_post_image-->
-                            <img src="Landing/images/2.jpeg" alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-6"><!--/blog_post_image-->
-                        </a><!--blog_post_content-->
-                        <div class="u-blog-control u-post-content u-text"><!--blog_post_content_content-->Sample small text. Lorem ipsum dolor sit amet.<!--/blog_post_content_content--></div><!--/blog_post_content-->
-                    </div>
-                </div><!--/blog_post--><!--blog_post-->
-                <div class="u-blog-post u-container-style u-repeater-item">
-                    <div class="u-container-layout u-similar-container u-container-layout-7"><!--blog_post_header-->
-                        <h2 class="u-blog-control u-text">
-                            <a class="u-post-header-link" href="blog/post-2.html"><!--blog_post_header_content-->Post 3 Headline<!--/blog_post_header_content--></a>
-                        </h2><!--/blog_post_header-->
-                        <a class="u-post-header-link" href="blog/post-2.html"><!--blog_post_image-->
-                            <img src="images/4.jpeg" alt="" class="u-blog-control u-expanded-width u-image u-image-default u-image-7"><!--/blog_post_image-->
-                        </a><!--blog_post_content-->
-                        <div class="u-blog-control u-post-content u-text"><!--blog_post_content_content-->Sample small text. Lorem ipsum dolor sit amet.<!--/blog_post_content_content--></div><!--/blog_post_content-->
-                    </div>
-                </div><!--/blog_post-->
-            </div>
 
 
-            <div class="u-list-control"></div>
-            <a class="u-absolute-vcenter u-gallery-nav u-gallery-nav-prev u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-1" href="#" role="button">
-                <span aria-hidden="true">
-                    <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-                        c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
-                        c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg>
-                    </span>
-                    <span class="sr-only">
-                        <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-                            c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
-                            c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg>
-                        </span>
-                    </a>
-                    <a class="u-absolute-vcenter u-gallery-nav u-gallery-nav-next u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-2" href="#" role="button">
-                        <span aria-hidden="true">
-                            <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
-                                L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
-                                c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="site-section site-section-sm bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                @foreach ($foto_syarat as $desk)
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="property-entry h-100">
+                        <a href="property-details.html" class="property-thumbnail">
+                            <img src="{{ url('storage/' . $desk->foto) }}" alt="Image" class="img-fluid">
+                        </a>
+                        <div class="p-4 property-body">
+                            <a href="#"></a>
+                            <h2 class="property-title"><a href="property-details.html">
+                            @if (empty($desk->getPerum->nama_perumahan))
+                                        <b>
+                                            <i>
+                                                Perumahan Belum terdaftar
+                                            </i>
+                                        </b>
+                                    @else
+                                    {{$desk->getPerum->nama_perumahan}}
+                                    @endif
+                                </a>
+                            </h2>
+                            <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span>
+                            @if (empty($desk->getAlamat->alamat))
+                                        <b>
+                                            <i>
+                                                Perumahan Belum terdaftar
+                                            </i>
+                                        </b>
+                                    @else
+                                    {{$desk->getPerum->alamat}}
+                                    @endif
                             </span>
-                            <span class="sr-only">
-                                <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
-                                    L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
-                                    c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg>
-                                </span>
-                            </a>
-                        </div><!--/blog-->
-                    </div>
-                </section>
-                <section class="u-clearfix u-section-4" id="carousel_3956">
-                    <div class="u-clearfix u-sheet u-sheet-1">
-                        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-                            <div class="u-layout">
-                                <div class="u-layout-row">
-                                    <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-23 u-layout-cell-1">
-                                        <div class="u-container-layout u-valign-middle u-container-layout-1">
-                                            <a href="https://jensen-architects.com/work/meraki-market-parklet/" class="u-link u-link-1" title="Read More" target="_blank">Meraki Market Parklet</a>
-                                            <a href="https://jensen-architects.com/work/turner-residence/" class="u-link u-link-2" title="turner residence">Turner Residence</a>
-                                            <a href="https://jensen-architects.com/work/tech-office-space/" class="u-link u-link-3" title="Tech Office Space" target="_blank">Tech Office Space</a>
-                                            <a href="https://jensen-architects.com/work/david-ireland-house/" class="u-link u-link-4" title="More" target="_blank">David Ireland House</a>
-                                        </div>
-                                    </div>
-                                    <div class="u-container-style u-image u-layout-cell u-right-cell u-size-37 u-image-1">
-                                        <div class="u-container-layout"></div>
-                                    </div>
-                                </div>
-                            </div>
+                            <strong class="property-price text-primary mb-3 d-block text-success">{{ currency_IDR($desk->harga) }}</strong>
+                            <ul class="property-specs-wrap mb-3 mb-lg-0">
+                                <li>
+                                    <span class="property-specs">Type</span>
+                                    <span class="property-specs-number">{{ $desk->type }}</span>
+                                </li>
+                                <li>
+                                    <span class="property-specs">Stock</span>
+                                    <span class="property-specs-number">{{ $desk->stock }}</span>
+
+                                </li>
+                            </ul>
+
                         </div>
                     </div>
-                </section>
-                <section class="skrollable skrollable-between u-clearfix  u-section-5" id="carousel_e57b">
-                    {{-- @foreach($perumahan as $desk) --}}
-                    <div class="u-clearfix u-sheet u-sheet-1">
+                </div>
+                @endforeach
 
 
-                    {{-- <img src="{{ url('storage/'.$desk->foto) }}" width="200"> --}}
-
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="site-pagination">
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <span>...</span>
+                        <a href="#">10</a>
                     </div>
-                </section>
-                {{-- @endforeach --}}
-                <section class="u-clearfix u-white u-section-6" id="carousel_9a27">
-                    <div class="u-clearfix u-sheet u-sheet-1">
-                        <div class="u-align-center u-container-style u-expanded-width-xs u-group u-group-1">
-                            <div class="u-container-layout u-valign-middle u-container-layout-1">
-                                <h1 class="u-text u-text-palette-1-dark-1 u-text-1">Good Work</h1>
-                            </div>
-                        </div>
-                        <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
-                            <div class="u-layout">
-                                <div class="u-layout-row">
-                                    <div class="u-align-left u-container-style u-layout-cell u-left-cell u-palette-5-dark-3 u-size-30 u-layout-cell-1">
-                                        <div class="u-container-layout u-valign-middle u-container-layout-2">
-                                            <div alt="" class="u-image u-image-circle u-image-1" data-image-width="277" data-image-height="277"></div>
-                                            <h2 class="u-text u-text-palette-3-base u-text-2">Greenwich Modern</h2>
-                                            <p class="u-text u-text-palette-3-base u-text-3">The design for this client’s “dream house on the water” capitalizes on every opportunity to incorporate views of the Long Island Sound within the home. The placement and expanse of the fir windows and sliding doors underscore
-                                                the water’s proximity. </p>
-                                                <a href="https://amandamartocchio.com/" class="u-border-1 u-border-palette-3-base u-link u-text-palette-3-base u-link-1" title="read more" target="_blank">read more</a>
-                                            </div>
-                                        </div>
-                                        <div class="u-align-left u-container-style u-image u-layout-cell u-right-cell u-size-30 u-image-2">
-                                            <div class="u-container-layout" src=""></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="u-align-center u-clearfix u-white u-section-7" id="sec-b772">
-                        <div class="u-clearfix u-sheet u-sheet-1">
-                            <div id="carousel-5989" data-interval="5000" data-u-ride="carousel" class="u-carousel u-slider u-slider-1">
-                                <ol class="u-absolute-hcenter u-carousel-indicators u-carousel-indicators-1">
-                                    <li data-u-target="#carousel-5989" class="u-active u-grey-30 u-shape-circle" data-u-slide-to="0" style="width: 10px; height: 10px;"></li>
-                                    <li data-u-target="#carousel-5989" class="u-grey-30 u-shape-circle" data-u-slide-to="1" style="width: 10px; height: 10px;"></li>
-                                    <li data-u-target="#carousel-5989" class="u-grey-30 u-shape-circle" data-u-slide-to="2" style="width: 10px; height: 10px;"></li>
-                                </ol>
-                                <div class="u-carousel-inner" role="listbox">
-                                    <div class="u-active u-carousel-item u-container-style u-slide">
-                                        <div class="u-container-layout u-container-layout-1">
-                                            <div alt="" class="u-image u-image-circle u-image-1" data-image-width="1280" data-image-height="716"></div>
-                                            <h4 class="u-text u-text-default u-text-1">Feby Maulana Hendrayatno </h4>
-                                            <p class="u-align-center u-large-text u-text u-text-variant u-text-2">" Mahasiswa Jurusan Teknik Informatika Kelas D3TI 2C "</p>
-                                            <h6 class="u-text u-text-default u-text-3">2003070</h6>
-                                        </div>
-                                    </div>
-                                    <div class="u-carousel-item u-container-style u-slide">
-                                        <div class="u-container-layout u-container-layout-2">
-                                            <div alt="" class="u-image u-image-circle u-image-2" data-image-width="1280" data-image-height="716"></div>
-                                            <h4 class="u-text u-text-default u-text-4">Mona Rosanah</h4>
-                                            <p class="u-align-center u-large-text u-text u-text-variant u-text-5">" Mahasiswa Jurusan Teknik Informatika Kelas D3TI 2C "</p>
-                                            <h6 class="u-text u-text-default u-text-6">20030</h6>
-                                        </div>
-                                    </div>
-                                    <div class="u-carousel-item u-container-style u-slide">
-                                        <div class="u-container-layout u-container-layout-3">
-                                            <div alt="" class="u-image u-image-circle u-image-3" data-image-width="1280" data-image-height="716"></div>
-                                            <h4 class="u-text u-text-default u-text-7">Nazmah Zhafirah</h4>
-                                            <p class="u-align-center u-large-text u-text u-text-variant u-text-8">" Mahasiswa Jurusan Teknik Informatika Kelas D3TI 2C "</p>
-                                            <h6 class="u-text u-text-default u-text-9">2003070</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a class="u-absolute-vcenter u-carousel-control u-carousel-control-prev u-grey-70 u-icon-circle u-spacing-10 u-carousel-control-1" href="#carousel-5989" role="button" data-u-slide="prev">
-                                    <span aria-hidden="true">
-                                        <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-                                            c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
-                                            c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg>
-                                        </span>
-                                        <span class="sr-only">
-                                            <svg viewBox="0 0 451.847 451.847"><path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-                                                c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
-                                                c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path></svg>
-                                            </span>
-                                        </a>
-                                        <a class="u-absolute-vcenter u-carousel-control u-carousel-control-next u-grey-70 u-icon-circle u-spacing-10 u-carousel-control-2" href="#carousel-5989" role="button" data-u-slide="next">
-                                            <span aria-hidden="true">
-                                                <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
-                                                    L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
-                                                    c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg>
-                                                </span>
-                                                <span class="sr-only">
-                                                    <svg viewBox="0 0 451.846 451.847"><path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
-                                                        L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
-                                                        c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path></svg>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <style data-mode="XXL">@media (max-width: 0px) {
-                                            .u-section-7 {
-                                                background-image: none;
-                                            }
-                                            .u-section-7 .u-sheet-1 {
-                                                min-height: 579px;
-                                            }
-                                            .u-section-7 .u-slider-1 {
-                                                min-height: 480px;
-                                                width: 763px;
-                                                margin-top: 50px;
-                                                margin-bottom: 50px;
-                                                margin-left: auto;
-                                                margin-right: auto;
-                                            }
-                                            .u-section-7 .u-carousel-indicators-1 {
-                                                position: absolute;
-                                                bottom: 10px;
-                                                width: auto;
-                                                height: auto;
-                                            }
-                                            .u-section-7 .u-container-layout-1 {
-                                                padding-top: 30px;
-                                                padding-bottom: 30px;
-                                                padding-left: 80px;
-                                                padding-right: 80px;
-                                            }
-                                            .u-section-7 .u-image-1 {
-                                                width: 83px;
-                                                height: 83px;
-                                                background-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJtYW4iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiBzdHlsZT0id2lkdGg6IDI1NnB4OyBoZWlnaHQ6IDI1NnB4OyI+CjxyZWN0IGZpbGw9IiNDNkQ4RTEiIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2Ii8+CjxwYXRoIGZpbGw9IiM3Rjk2QTYiIGQ9Ik0xNzIuNiw5My40YzExLjYtNDQuNy0xMS4yLTQ4LjYtMTEuNy00OC4xYy0yMi40LTMxLjMtOTAuMy0xNi44LTc3LjQsNDguMWMtMTMuMy0yLjQtMS44LDMxLjYsMy43LDMyLjEKCWMwLDAsMCwwLDAsMGMwLjIsMCwwLjMsMCwwLjUtMC4xYzE0LjQsNDkuNyw2Mi43LDUwLjIsODAuNywwQzE3Mi4zLDEyNy4zLDE4Ni41LDkzLjMsMTcyLjYsOTMuNHoiLz4KPHBhdGggZmlsbD0iIzdGOTZBNiIgZD0iTTIwNS40LDE3Ny45Yy0yNC02LjEtNDMuNS0xOS44LTQzLjUtMTkuOGwtMjAuNiw2NC44bC04LTIyLjhjMTkuNy0yNy41LTMwLjMtMjcuNS0xMC42LDBsLTgsMjIuOEw5NCwxNTguMQoJYzAsMC0xOS41LDEzLjctNDMuNSwxOS44QzMyLjcsMTgyLjUsMzAsMjU2LDMwLDI1NmgxOTZDMjI2LDI1NiwyMjMuMywxODIuNSwyMDUuNCwxNzcuOXoiLz4KPC9zdmc+Cg==");
-                                                background-position: 50% 50%;
-                                                margin-top: 0;
-                                                margin-bottom: 0;
-                                                margin-left: auto;
-                                                margin-right: auto;
-                                            }
-                                            .u-section-7 .u-text-2 {
-                                                margin-top: 20px;
-                                                margin-left: 0;
-                                                margin-right: 0;
-                                                margin-bottom: 0;
-                                                font-size: 1.25rem;
-                                            }
-                                            .u-section-7 .u-text-1 {
-                                                font-weight: 700;
-                                                margin-top: 35px;
-                                                margin-left: auto;
-                                                margin-right: auto;
-                                                margin-bottom: 0;
-                                            }
-                                            .u-block-77a6-17 {
-                                                font-size: 1rem;
-                                                font-weight: 400;
-                                                margin-top: 15px;
-                                                margin-left: auto;
-                                                margin-right: auto;
-                                                margin-bottom: 0;
-                                            }
-                                            .u-block-77a6-20 {
-                                                padding-top: 30px;
-                                                padding-bottom: 30px;
-                                                padding-left: 80px;
-                                                padding-right: 80px;
-                                            }
-                                            .u-block-77a6-21 {
-                                                width: 83px;
-                                                height: 83px;
-                                                background-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJtYW4iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAyNTYgMjU2IiBzdHlsZT0id2lkdGg6IDI1NnB4OyBoZWlnaHQ6IDI1NnB4OyI+CjxyZWN0IGZpbGw9IiNDNkQ4RTEiIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2Ii8+CjxwYXRoIGZpbGw9IiM3Rjk2QTYiIGQ9Ik0xNzIuNiw5My40YzExLjYtNDQuNy0xMS4yLTQ4LjYtMTEuNy00OC4xYy0yMi40LTMxLjMtOTAuMy0xNi44LTc3LjQsNDguMWMtMTMuMy0yLjQtMS44LDMxLjYsMy43LDMyLjEKCWMwLDAsMCwwLDAsMGMwLjIsMCwwLjMsMCwwLjUtMC4xYzE0LjQsNDkuNyw2Mi43LDUwLjIsODAuNywwQzE3Mi4zLDEyNy4zLDE4Ni41LDkzLjMsMTcyLjYsOTMuNHoiLz4KPHBhdGggZmlsbD0iIzdGOTZBNiIgZD0iTTIwNS40LDE3Ny45Yy0yNC02LjEtNDMuNS0xOS44LTQzLjUtMTkuOGwtMjAuNiw2NC44bC04LTIyLjhjMTkuNy0yNy41LTMwLjMtMjcuNS0xMC42LDBsLTgsMjIuOEw5NCwxNTguMQoJYzAsMC0xOS41LDEzLjctNDMuNSwxOS44QzMyLjcsMTgyLjUsMzAsMjU2LDMwLDI1NmgxOTZDMjI2LDI1NiwyMjMuMywxODIuNSwyMDUuNCwxNzcuOXoiLz4KPC9zdmc+Cg==");
-                                                background-position: 50% 50%;
-                                                margin-top: 0;
-                                                margin-bottom: 0;
-                                                margin-left: auto;
-                                                margin-right: auto;
-                                            }
-                                            .u-block-77a6-22 {
-                                                margin-top: 20px;
-                                                margin-left: 0;
-                                                margin-right: 0;
-                                                margin-bottom: 0;
-                                                font-size: 1.25rem;
-                                            }
-                                            .u-block-77a6-23 {
-                                                font-weight: 700;
-                                                margin-top: 35px;
-                                                margin-left: auto;
-                                                margin-right: auto;
-                                                margin-bottom: 0;
-                                            }
-                                            .u-block-77a6-24 {
-                                                font-size: 1rem;
-                                                font-weight: 400;
-                                                margin-top: 15px;
-                                                margin-left: auto;
-                                                margin-right: auto;
-                                                margin-bottom: 0;
-                                            }
-                                            .u-section-7 .u-carousel-control-1 {
-                                                width: 43px;
-                                                height: 43px;
-                                                background-image: none;
-                                            }
-                                            .u-section-7 .u-carousel-control-2 {
-                                                width: 43px;
-                                                height: 43px;
-                                                background-image: none;
-                                                left: auto;
-                                                position: absolute;
-                                                right: 0;
-                                            }
-                                        }</style>
-                                    </section>
-                                    <section class="u-clearfix u-palette-4-light-3 u-section-8" id="carousel_75c0">
-                                        <div class="u-clearfix u-sheet u-sheet-1">
-                                            <div class="u-align-center u-container-style u-group u-group-1">
-                                                <div class="u-container-layout u-valign-middle u-container-layout-1">
-                                                    <h2 class="u-text u-text-1">What to learn more?</h2>
-                                                    <p class="u-text u-text-2">Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
-                                                    <a href="https://nicepage.com/k/astrology-website-templates" class="u-border-1 u-border-grey-dark-1 u-btn u-button-style u-btn-1">Read More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 
-                                    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-2bcb"><div class="u-clearfix u-sheet u-sheet-1">
-                                        <p class="u-small-text u-text u-text-variant u-text-1">Aplikasi Penjualan Property</p>
-                                    </div></footer>
-                                    <section class="u-backlink u-clearfix u-grey-80">
-                                        <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-                                            <span>Website Templates</span>
-                                        </a>
-                                        <p class="u-text">
-                                            <span>created with</span>
-                                        </p>
-                                        <a class="u-link" href="" target="_blank">
-                                            <span>Website Builder Software</span>
-                                        </a>.
-                                    </section><span style="height: 64px; width: 64px; margin-left: 0px; margin-right: auto; margin-top: 0px; background-image: none; right: 20px; bottom: 20px; padding: 15px;" class="u-back-to-top u-icon u-icon-circle u-opacity u-opacity-85 u-palette-1-base" data-href="#">
-                                        <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 551.13 551.13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1d98"></use></svg>
-                                        <svg class="u-svg-content" enable-background="new 0 0 551.13 551.13" viewBox="0 0 551.13 551.13" xmlns="http://www.w3.org/2000/svg" id="svg-1d98"><path d="m275.565 189.451 223.897 223.897h51.668l-275.565-275.565-275.565 275.565h51.668z"></path></svg>
-                                    </span>
-                                </body>
-                                </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="site-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-7 text-center">
+                <div class="site-section-title">
+                    <h2>Kenapa pilih kami?</h2>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis maiores quisquam saepe architecto error corporis aliquam. Cum ipsam a consectetur aut sunt sint animi, pariatur corporis, eaque, deleniti cupiditate officia.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <a href="#" class="service text-center">
+                    <span class="icon flaticon-house"></span>
+                    <h2 class="service-heading">Tempat yang Straregis</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iure qui natus perspiciatis ex odio molestia.</p>
+                    <p><span class="read-more">Read More</span></p>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="#" class="service text-center">
+                    <span class="icon flaticon-sold"></span>
+                    <h2 class="service-heading">Rumah-nya Cepat Terjual</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iure qui natus perspiciatis ex odio molestia.</p>
+                    <p><span class="read-more">Read More</span></p>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="#" class="service text-center">
+                    <span class="icon flaticon-camera"></span>
+                    <h2 class="service-heading">Dilengkapi CCTV</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iure qui natus perspiciatis ex odio molestia.</p>
+                    <p><span class="read-more">Read More</span></p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 text-center">
+                <div class="site-section-title">
+                    <h2>Recent Blog</h2>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis maiores quisquam saepe architecto error corporis aliquam. Cum ipsam a consectetur aut sunt sint animi, pariatur corporis, eaque, deleniti cupiditate officia.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
+                <a href="#"><img src={{url("Landing/images/img_4.jpg")}} alt="Image" class="img-fluid"></a>
+                <div class="p-4 bg-white">
+                    <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
+                    <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
+                <a href="#"><img src={{url("Landing/images/img_2.jpg")}} alt="Image" class="img-fluid"></a>
+                <div class="p-4 bg-white">
+                    <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
+                    <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
+                <a href="#"><img src={{url("Landing/images/img_3.jpg")}} alt="Image" class="img-fluid"></a>
+                <div class="p-4 bg-white">
+                    <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
+                    <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<div class="site-section">
+    <div class="container">
+        <div class="row mb-5 justify-content-center">
+            <div class="col-md-7">
+                <div class="site-section-title text-center">
+                    <h2>Our Agents</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero magnam officiis ipsa eum pariatur labore fugit amet eaque iure vitae, repellendus laborum in modi reiciendis quis! Optio minima quibusdam, laboriosam.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
+                <div class="team-member">
+
+                    <img src={{url("Landing/images/person_1.jpg")}} alt="Image" class="img-fluid rounded mb-4">
+
+                    <div class="text">
+
+                        <h2 class="mb-2 font-weight-light text-black h4">Megan Smith</h2>
+                        <span class="d-block mb-3 text-white-opacity-05">Real Estate Agent</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorem totam non quis facere blanditiis praesentium est. Totam atque corporis nisi, veniam non. Tempore cupiditate, vitae minus obcaecati provident beatae!</p>
+                        <p>
+                            <a href="#" class="text-black p-2"><span class="icon-facebook"></span></a>
+                            <a href="#" class="text-black p-2"><span class="icon-twitter"></span></a>
+                            <a href="#" class="text-black p-2"><span class="icon-linkedin"></span></a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
+                <div class="team-member">
+
+                    <img src={{url("Landing/images/person_2.jpg")}} alt="Image" class="img-fluid rounded mb-4">
+
+                    <div class="text">
+
+                        <h2 class="mb-2 font-weight-light text-black h4">Brooke Cagle</h2>
+                        <span class="d-block mb-3 text-white-opacity-05">Real Estate Agent</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, cumque vitae voluptates culpa earum similique corrupti itaque veniam doloribus amet perspiciatis recusandae sequi nihil tenetur ad, modi quos id magni!</p>
+                        <p>
+                            <a href="#" class="text-black p-2"><span class="icon-facebook"></span></a>
+                            <a href="#" class="text-black p-2"><span class="icon-twitter"></span></a>
+                            <a href="#" class="text-black p-2"><span class="icon-linkedin"></span></a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
+                <div class="team-member">
+
+                    <img src={{url("Landing/images/person_3.jpg")}} alt="Image" class="img-fluid rounded mb-4">
+
+                    <div class="text">
+
+                        <h2 class="mb-2 font-weight-light text-black h4">Philip Martin</h2>
+                        <span class="d-block mb-3 text-white-opacity-05">Real Estate Agent</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores illo iusto, inventore, iure dolorum officiis modi repellat nobis, praesentium perspiciatis, explicabo. Atque cupiditate, voluptates pariatur odit officia libero veniam quo.</p>
+                        <p>
+                            <a href="#" class="text-black p-2"><span class="icon-facebook"></span></a>
+                            <a href="#" class="text-black p-2"><span class="icon-twitter"></span></a>
+                            <a href="#" class="text-black p-2"><span class="icon-linkedin"></span></a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="mb-5">
+                    <h3 class="footer-heading mb-4">Proyek 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
+                </div>
+
+
+
+            </div>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="row mb-5">
+                    <div class="col-md-12">
+                        <h3 class="footer-heading mb-4">Navigations</h3>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <ul class="list-unstyled">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Properties</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <ul class="list-unstyled">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Terms</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h3 class="footer-heading mb-4">Follow Us</h3>
+
+                <div>
+                    <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                    <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                    <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                    <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+            <div class="col-md-12">
+                <p>
+                    Copyright &copy;<script data-cfasync="false" ></script><script>document.write(new Date().getFullYear());</script> Kelompok 4 <i class="icon-heart text-danger" aria-hidden="true"></i>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+</div>
+
+<script src={{url("Landing/js/jquery-3.3.1.min.js")}}></script>
+<script src={{url("Landing/js/jquery-migrate-3.0.1.min.js")}}></script>
+<script src={{url("Landing/js/jquery-ui.js")}}></script>
+<script src={{url("Landing/js/popper.min.js")}}></script>
+<script src={{url("Landing/js/bootstrap.min.js")}}></script>
+<script src={{url("Landing/js/owl.carousel.min.js")}}></script>
+<script src={{url("Landing/js/mediaelement-and-player.min.js")}}></script>
+<script src={{url("Landing/js/jquery.stellar.min.js")}}></script>
+<script src={{url("Landing/js/jquery.countdown.min.js")}}></script>
+<script src={{url("Landing/js/jquery.magnific-popup.min.js")}}></script>
+<script src={{url("Landing/js/bootstrap-datepicker.min.js")}}></script>
+<script src={{url("Landing/js/aos.js")}}></script>
+
+<script src={{url("Landing/js/main.js")}}></script>
+
+</body>
+</html>

@@ -15,7 +15,11 @@ class DeskripsiRumah extends Model
 
     public $timestamps = false;
 
-    public function getHarga(){
-        return $this->belongsTo("App\Models\User", "harga", "id" );
+    public function getPerum(){
+        return $this->belongsTo("App\Models\Perumahan", "perumahan_id", "id" );
+    }
+
+    public function getAlamat(){
+        return $this->belongsTo("App\Models\Perumahan", "alamat_id", "id" );
     }
 }

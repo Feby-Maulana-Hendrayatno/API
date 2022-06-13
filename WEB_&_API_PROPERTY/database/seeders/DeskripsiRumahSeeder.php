@@ -17,8 +17,9 @@ class DeskripsiRumahSeeder extends Seeder
     public function run()
     {
         DeskripsiRumah::create([
+            "perumahan_id" => "1",
             "id" => "1",
-            "foto" => "image/GwlBrKI9cxIuSV1XyamQC6twcbXbYQoR02YQEtGr.jpg",
+            "foto" => "image/c3Hnv0Ow1M7ZeIm4ysD12qOAlpMBAFifSZjtObik.jpg",
 			"type" => "45",
             "harga" =>50000000,
             "stock" =>40,
@@ -37,9 +38,10 @@ class DeskripsiRumahSeeder extends Seeder
 		]);
 
         DeskripsiRumah::create([
+            "perumahan_id" => "1",
             "id" => "2",
 			"type" => "35",
-            "foto" => "image/scE8Sm49xT7a8eX0dvZ4AD7YlM6gxueZ90mvDh5Y.jpg",
+            "foto" => "image/Ad1FjLv05Viv8msgUf45Dt01tDa0d1fWHqrXPow5.jpg",
             "harga" =>75000000,
             "stock" =>40,
             "kusen" => "Kayu",
@@ -53,6 +55,7 @@ class DeskripsiRumahSeeder extends Seeder
             "lantai" => "Keramik",
             "atap" => "Baja Ringan dan Genteng Beton",
             "wc" => " closet Jongkok",
+            "id_user" =>2,
 		]);
     }
 }

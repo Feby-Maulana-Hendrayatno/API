@@ -4,24 +4,18 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Models\DeskripsiRumah;
+use App\Models\Perumahan;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\support\Facades\DB;
 
 class DeskripsiRumahController extends Controller
 {
-
-    // public function operations(){
-    //     $stock_baru = DB::table('orders')->count('id');
-    //     // return  DB::table('perumahan')->sum('id');
-    // }
-
     public function index()
     {
         $data = [
             "deskripsi" => DeskripsiRumah::where('id_user', Auth::user()->id)->get(),
-            // "stock_baru" => DB::table('orders')->count('id'),
-            // "total_stock" => DB::table('deskripsi_rumah')->sum('id'),
+            "perumahan" => Perumahan::orderBy("id", "ASC")->get(),
         ];
 
 
@@ -30,18 +24,27 @@ class DeskripsiRumahController extends Controller
 
     public function tambah(Request $request)
     {
-        return view("/owner/deskripsi_rumah/add_deskripsi");
+        $data = [
+            "perumahan" => Perumahan::orderBy("nama_perumahan", "ASC")->get(),
+            "alamat" => Perumahan::orderBy("alamat", "ASC")->get(),
+        ];
+        return view("owner.deskripsi_rumah.add_deskripsi", $data);
+
     }
 
 
     public function tambah_data(Request $request)
     {
+
+
         if ($request->file("foto")) {
             $coba = $request->file("foto")->store("image");
         }
         DeskripsiRumah::create([
             "type" => $request->type,
             "foto" => $coba,
+            "perumahan_id" => $request-> perumahan_id,
+            "alamat_id" => $request->alamat_id,
             "id_user" => Auth::user()->id,
             "kusen" => $request->kusen,
             "stock" => $request->stock,
@@ -64,8 +67,9 @@ class DeskripsiRumahController extends Controller
     {
         $data = [
             "edit" => DeskripsiRumah::where("id", decrypt($id))->first(),
+            "perumahan" => Perumahan::orderBy("nama_perumahan", "ASC")->get(),
+            "alamat" => Perumahan::orderBy("alamat", "ASC")->get(),
         ];
-
         return view("owner.deskripsi_rumah.edit_deskripsi", $data);
     }
 
@@ -82,6 +86,8 @@ class DeskripsiRumahController extends Controller
         DeskripsiRumah::where("id", $request->id)->update([
             "type" => $request->type,
             "foto" => $coba,
+            "perumahan_id" => $request->perumahan_id,
+            "alamat_id" => $request->alamat_id,
             "stock" => $request->stock,
             "kusen" => $request->kusen,
             "pintu" => $request->pintu,

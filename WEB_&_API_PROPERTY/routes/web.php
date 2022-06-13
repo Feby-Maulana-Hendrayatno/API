@@ -221,6 +221,9 @@ Route::prefix("owner")->group(function() {
         Route::get("/index", [FotoSyaratController::class, "index"]);
         Route::get("/edit", [FotoSyaratController::class, "edit"]);
         Route::post("/tambah_foto_syarat", [FotoSyaratController::class, "tambah"]);
+        Route::delete("/hapus/{id}", [FotoSyaratController::class, "hapus"]);
+        Route::put("/simpan", [FotoSyaratController::class, "simpan"]);
+
 
     });
 });
@@ -229,7 +232,11 @@ Route::prefix("owner")->group(function() {
 
 
 Route::get("/", [LandingPageWebController::class, "index"]);
-Route::get("/list", [DeskripsiRumahController::class, "operations"]);
+Route::get("/properties", [LandingPageWebController::class, "properties"]);
+Route::get("/blog", [LandingPageWebController::class, "blog"]);
+Route::get("/about", [LandingPageWebController::class, "about"]);
+
+// Route::get("/property", [LandingPageWebController::class, "property"]);
 
 
 

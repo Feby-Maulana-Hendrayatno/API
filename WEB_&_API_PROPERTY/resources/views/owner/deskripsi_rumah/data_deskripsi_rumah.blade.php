@@ -78,6 +78,7 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">No.</th>
+                                    <th class="text-center">perumahan</th>
                                     <th class="text-center">type</th>
                                     <th class="text-center">Stock</th>
                                     {{-- <th class="text-center">kusen</th> --}}
@@ -91,12 +92,20 @@
                             <tbody>
                                 @php $no = 0 @endphp
                                 @foreach ($deskripsi as $desk)
-                                    {{-- @php
-                                        $stok = $desk->stock - $stock_baru;
-                                    @endphp --}}
-                                    {{-- @if ($stok >= 1) --}}
                                     <tr>
                                         <td class="text-center">{{ ++$no }}</td>
+                                        <td>
+                                            @if (empty($desk->getPerum->nama_perumahan))
+                                                <b>
+                                                    <i>
+                                                        Perumahan Belum terdaftar
+                                                    </i>
+                                                </b>
+                                            @else
+                                            {{$desk->getPerum->nama_perumahan}}
+                                            @endif
+                                        </td>
+                                        {{-- <td>{{ $desk->perumahan_id }}</td> --}}
                                         <td>{{ $desk->type }}</td>
                                         <td>{{ $desk->stock }}</td>
                                         <td>{{ $desk->listrik }}</td>

@@ -30,7 +30,7 @@
                         <label for="id"> Role </label>
                         <select required class="form-control" style="width: 100%;" name="id_role">
                             @foreach($data_role as $role)
-                            <option value="{{ $role->id }}">
+                            <option value="{{ $role->id }}"  {{ $role->id == $edit->id_role ? 'selected' : '' }}>
                                 {{ $role->nama_role }}
                             </option>
                             @endforeach

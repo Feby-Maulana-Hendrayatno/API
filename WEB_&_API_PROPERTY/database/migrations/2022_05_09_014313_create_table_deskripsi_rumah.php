@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('deskripsi_rumah', function (Blueprint $table) {
             $table->id();
             $table->foreignId("id_user")->nullable();
+            $table->string("perumahan_id")->nullable();
+            $table->string("alamat_id")->nullable();
             $table->string("type");
             $table->integer('stock')->nullable();
             $table->string("foto")->nullable();
