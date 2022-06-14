@@ -218,8 +218,8 @@
         </div>
       </div>
     </footer>
-
   </div>
+
 
   <script src={{url("Landing/js/jquery-3.3.1.min.js")}}></script>
   <script src={{url("Landing/js/jquery-migrate-3.0.1.min.js")}}></script>
