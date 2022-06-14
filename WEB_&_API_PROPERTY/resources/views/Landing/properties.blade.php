@@ -314,8 +314,8 @@
         <div class="row pt-5 mt-5 text-center">
           <div class="col-md-12">
             <p>
-            Copyright &copy;<script data-cfasync="false" ></script><script>document.write(new Date().getFullYear());</script> Kelompok 4 <i class="icon-heart text-danger" aria-hidden="true"></i>
-            </p>
+                Copyright &copy;<script data-cfasync="false" ></script><script>document.write(new Date().getFullYear());</script> Kelompok 4 <i class="icon-heart text-danger" aria-hidden="true"></i>
+                </p>
           </div>
 
         </div>
