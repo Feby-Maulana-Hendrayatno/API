@@ -84,6 +84,10 @@
       <div class="site-blocks-cover overlay" style="background-image: url(Landing/images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
       </div>
 
+
+
+
+
       <div class="site-blocks-cover overlay" style="background-image: url(Landing/images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
@@ -183,7 +187,7 @@
 
 
 
-                <h2 class="property-title"><a href="#">{{$edit->perumahan_id}} </a></h2>
+                <h2 class="property-title"><a href="#">{{$edit->getPerum->nama_perumahan}} </a></h2>
 
 
 
