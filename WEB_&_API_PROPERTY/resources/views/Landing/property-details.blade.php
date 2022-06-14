@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -18,17 +18,17 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
     <link rel="stylesheet" href="css/fl-bigmug-line.css">
-    
-  
+
+
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
-    
+
   </head>
   <body>
-  
+
   <div class="site-loader"></div>
-  
+
   <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -64,7 +64,7 @@
                 </ul>
               </nav>
             </div>
-           
+
 
           </div>
         </div>
@@ -104,17 +104,17 @@
                   <li>
                     <span class="property-specs">Beds</span>
                     <span class="property-specs-number">2 <sup>+</sup></span>
-                    
+
                   </li>
                   <li>
                     <span class="property-specs">Baths</span>
                     <span class="property-specs-number">2</span>
-                    
+
                   </li>
                   <li>
                     <span class="property-specs">SQ FT</span>
                     <span class="property-specs-number">7,000</span>
-                    
+
                   </li>
                 </ul>
                 </div>
@@ -211,7 +211,7 @@
             </div>
 
           </div>
-          
+
         </div>
       </div>
     </div>
@@ -226,19 +226,19 @@
             </div>
           </div>
         </div>
-      
+
         <div class="row mb-5">
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="property-entry h-100">
               <div class="p-4 property-body">
-            
+
               </div>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="property-entry h-100">
-              
+
               <div class="p-4 property-body">
                 <a href="#" class="property-favorite active"><span class="icon-heart-o"></span></a>
                 <h2 class="property-title"><a href="property-details.html">871 Crenshaw Blvd</a></h2>
@@ -248,17 +248,17 @@
                   <li>
                     <span class="property-specs">Beds</span>
                     <span class="property-specs-number">2 <sup>+</sup></span>
-                    
+
                   </li>
                   <li>
                     <span class="property-specs">Baths</span>
                     <span class="property-specs-number">2</span>
-                    
+
                   </li>
                   <li>
                     <span class="property-specs">SQ FT</span>
                     <span class="property-specs-number">1,620</span>
-                    
+
                   </li>
                 </ul>
 
@@ -283,17 +283,17 @@
                   <li>
                     <span class="property-specs">Beds</span>
                     <span class="property-specs-number">2 <sup>+</sup></span>
-                    
+
                   </li>
                   <li>
                     <span class="property-specs">Baths</span>
                     <span class="property-specs-number">2</span>
-                    
+
                   </li>
                   <li>
                     <span class="property-specs">SQ FT</span>
                     <span class="property-specs-number">5,500</span>
-                    
+
                   </li>
                 </ul>
 
@@ -346,39 +346,39 @@
                   <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
                 </div>
 
-            
+
 
           </div>
-          
+
         </div>
         <div class="row pt-5 mt-5 text-center">
           <div class="col-md-12">
             <p>
-            Copyright &copy;<script data-cfasync="false" ></script><script>document.write(new Date().getFullYear());</script> Kelompok 4 <i class="icon-heart text-danger" aria-hidden="true"></i> 
+            Copyright &copy;<script data-cfasync="false" ></script><script>document.write(new Date().getFullYear());</script> Kelompok 4 <i class="icon-heart text-danger" aria-hidden="true"></i>
             </p>
           </div>
-          
+
         </div>
       </div>
     </footer>
 
   </div>
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/mediaelement-and-player.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.countdown.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/bootstrap-datepicker.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/circleaudioplayer.js"></script>
+  <script src={{url("Landing/jsjquery-3.3.1.min.js")}}></script>
+  <script src={{url("Landing/jsjquery-migrate-3.0.1.min.js")}}></script>
+  <script src={{url("Landing/jsjquery-ui.js")}}></script>
+  <script src={{url("Landing/jspopper.min.js")}}></script>
+  <script src={{url("Landing/jsbootstrap.min.js")}}></script>
+  <script src={{url("Landing/jsowl.carousel.min.js")}}></script>
+  <script src={{url("Landing/jsmediaelement-and-player.min.js")}}></script>
+  <script src={{url("Landing/jsjquery.stellar.min.js")}}></script>
+  <script src={{url("Landing/jsjquery.countdown.min.js")}}></script>
+  <script src={{url("Landing/jsjquery.magnific-popup.min.js")}}></script>
+  <script src={{url("Landing/jsbootstrap-datepicker.min.js")}}></script>
+  <script src={{url("Landing/jsaos.js")}}></script>
+  <script src={{url("Landing/jscircleaudioplayer.js")}}></script>
 
-  <script src="js/main.js"></script>
-    
+  <script src={{url("Landing/jsmain.js")}}></script>
+
   </body>
 </html>

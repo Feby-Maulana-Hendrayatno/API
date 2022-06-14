@@ -15,7 +15,6 @@ class DeskripsiRumahController extends Controller
     {
         $data = [
             "deskripsi" => DeskripsiRumah::where('id_user', Auth::user()->id)->get(),
-            "perumahan" => Perumahan::orderBy("id", "ASC")->get(),
         ];
 
 
@@ -69,6 +68,7 @@ class DeskripsiRumahController extends Controller
             "edit" => DeskripsiRumah::where("id", decrypt($id))->first(),
             "perumahan" => Perumahan::orderBy("nama_perumahan", "ASC")->get(),
             "alamat" => Perumahan::orderBy("alamat", "ASC")->get(),
+
         ];
         return view("owner.deskripsi_rumah.edit_deskripsi", $data);
     }
@@ -129,6 +129,9 @@ class DeskripsiRumahController extends Controller
     {
         $data = [
             "edit" => DeskripsiRumah::where("id", $id)->first(),
+            // "perumahan" => Perumahan::orderBy("id", "ASC")->get(),
+            // "foto_syarat" => DeskripsiRumah::orderBy("id", "DESC")->get(),
+            // "foto_syarat_perumhan" => Perumahan::orderBy("id", "DESC")->get()
         ];
         // return view("payment.payment", $data);
 
@@ -178,7 +181,11 @@ class DeskripsiRumahController extends Controller
         $snapToken = \Midtrans\Snap::getSnapToken($params);
 
         return view('payment.payment',
-        ['snap_token'=>$snapToken, 'id_deskripsi_rumah' => $data['edit']->id, 'id_user_order' => $data['edit']->id, 'id_owner_order' => $data['edit']->id_user ]
+        ['snap_token'=>$snapToken,
+        'id_deskripsi_rumah' => $data['edit']->id,
+        'id_user_order' => $data['edit']->id,
+        'id_owner_order' => $data['edit']->id_user
+    ], $data
     );
     }
 
@@ -211,5 +218,9 @@ class DeskripsiRumahController extends Controller
             $order->pdf_url = isset($json->pdf_url) ? $json->pdf_url : null;
             return $order->save() ? redirect(url('/'))->with('alert-success', 'Order berhasil dibuat') : redirect(url('/'))->with('alert-failed', 'Terjadi kesalahan');
         }
+
+
+
+
     }
 

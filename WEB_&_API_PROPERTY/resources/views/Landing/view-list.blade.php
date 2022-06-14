@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href={{url("Landing/fonts/icomoon/style.css")}}>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/mediaelementplayer.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-    <link rel="stylesheet" href="css/fl-bigmug-line.css">
+    <link rel="stylesheet" href={{url("Landing/css/bootstrap.min.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/magnific-popup.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/jquery-ui.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/owl.carousel.min.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/owl.theme.default.min.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/bootstrap-datepicker.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/mediaelementplayer.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/animate.css")}}>
+    <link rel="stylesheet" href={{url("Landing/fonts/flaticon/font/flaticon.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/fl-bigmug-line.css")}}>
 
 
-    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href={{url("Landing/css/aos.css")}}>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href={{url("Landing/css/style.css")}}>
 
   </head>
   <body>
@@ -68,10 +68,10 @@
 
     <div class="slide-one-item home-slider owl-carousel">
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(Landing/images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
       </div>
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(Landing/images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-10">
@@ -158,14 +158,12 @@
 
               <a href="#" class="property-thumbnail h-100">
                 <div class="offer-type-wrap">
-                  <span class="offer-type bg-danger">Sale</span>
-                  <span class="offer-type bg-success">Rent</span>
                 </div>
-                <img src="images/img_2.jpg" alt="Image" class="img-fluid">
+                <img src="Landing/images/img_2.jpg" alt="Image" class="img-fluid">
               </a>
 
               <div class="p-4 property-body">
-                <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
+
                 <h2 class="property-title"><a href="#">853 S Lucerne Blvd</a></h2>
                 <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 853 S Lucerne Blvd Unit 101 Los Angeles, CA 90005</span>
                 <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
@@ -191,9 +189,9 @@
 
             </div>
           </div>
-        </div>
+    </div>
 
-        <div class="row mb-4">
+        {{-- <div class="row mb-4">
           <div class="col-md-12">
             <div class="property-entry horizontal d-lg-flex">
 
@@ -354,7 +352,7 @@
 
             </div>
           </div>
-        </div>
+        </div> --}}
 
 
         <div class="row mt-5">
@@ -374,177 +372,7 @@
       </div>
     </div>
 
-    <div class="site-section">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-7 text-center">
-            <div class="site-section-title">
-              <h2>Why Choose Us?</h2>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis maiores quisquam saepe architecto error corporis aliquam. Cum ipsam a consectetur aut sunt sint animi, pariatur corporis, eaque, deleniti cupiditate officia.</p>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="col-md-6 col-lg-4">
-            <a href="#" class="service text-center">
-              <span class="icon flaticon-house"></span>
-              <h2 class="service-heading">Research Subburbs</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iure qui natus perspiciatis ex odio molestia.</p>
-              <p><span class="read-more">Read More</span></p>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <a href="#" class="service text-center">
-              <span class="icon flaticon-sold"></span>
-              <h2 class="service-heading">Sold Houses</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iure qui natus perspiciatis ex odio molestia.</p>
-              <p><span class="read-more">Read More</span></p>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <a href="#" class="service text-center">
-              <span class="icon flaticon-camera"></span>
-              <h2 class="service-heading">Security Priority</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iure qui natus perspiciatis ex odio molestia.</p>
-              <p><span class="read-more">Read More</span></p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="site-section bg-light">
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-7 text-center">
-            <div class="site-section-title">
-              <h2>Recent Blog</h2>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis maiores quisquam saepe architecto error corporis aliquam. Cum ipsam a consectetur aut sunt sint animi, pariatur corporis, eaque, deleniti cupiditate officia.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
-            <a href="#"><img src="images/img_4.jpg" alt="Image" class="img-fluid"></a>
-            <div class="p-4 bg-white">
-              <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
-            <a href="#"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-            <div class="p-4 bg-white">
-              <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
-            <a href="#"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
-            <div class="p-4 bg-white">
-              <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
-            </div>
-          </div>
-
-          <!-- <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="100">
-            <a href="#"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-            <div class="p-4 bg-white">
-              <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt, voluptatum reprehenderit deserunt illum rem.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="200">
-            <a href="#"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
-            <div class="p-4 bg-white">
-              <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt, voluptatum reprehenderit deserunt illum rem.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up" data-aos-delay="300">
-            <a href="#"><img src="images/img_4.jpg" alt="Image" class="img-fluid"></a>
-            <div class="p-4 bg-white">
-              <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt, voluptatum reprehenderit deserunt illum rem.</p>
-            </div>
-          </div> -->
-
-        </div>
-
-      </div>
-    </div>
-
-    <div class="site-section">
-      <div class="container">
-
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-7 text-center">
-            <div class="site-section-title">
-              <h2>Frequently Ask Questions</h2>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis maiores quisquam saepe architecto error corporis aliquam. Cum ipsam a consectetur aut sunt sint animi, pariatur corporis, eaque, deleniti cupiditate officia.</p>
-          </div>
-        </div>
-
-        <div class="row justify-content-center" data-aos="fade" data-aos-delay="100">
-          <div class="col-md-8">
-            <div class="accordion unit-8" id="accordion">
-            <div class="accordion-item">
-              <h3 class="mb-0 heading">
-                <a class="btn-block" data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">What is the name of your company<span class="icon"></span></a>
-              </h3>
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="body-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur quae cumque perspiciatis aperiam accusantium facilis provident aspernatur nisi optio debitis dolorum, est eum eligendi vero aut ad necessitatibus nulla sit labore doloremque magnam! Ex molestiae, dolor tempora, ad fuga minima enim mollitia consequuntur, necessitatibus praesentium eligendi officia recusandae culpa tempore eaque quasi ullam magnam modi quidem in amet. Quod debitis error placeat, tempore quasi aliquid eaque vel facilis culpa voluptate.</p>
-                </div>
-              </div>
-            </div> <!-- .accordion-item -->
-
-            <div class="accordion-item">
-              <h3 class="mb-0 heading">
-                <a class="btn-block" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">How much pay for 3  months?<span class="icon"></span></a>
-              </h3>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="body-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel ad laborum expedita. Nostrum iure atque enim quisquam minima distinctio omnis, consequatur aliquam suscipit, quidem, esse aspernatur! Libero, excepturi animi repellendus porro impedit nihil in doloremque a quaerat enim voluptatum, perspiciatis, quas dignissimos maxime ut cum reiciendis eius dolorum voluptatem aliquam!</p>
-                </div>
-              </div>
-            </div> <!-- .accordion-item -->
-
-            <div class="accordion-item">
-              <h3 class="mb-0 heading">
-                <a class="btn-block" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">Do I need to register?  <span class="icon"></span></a>
-              </h3>
-              <div id="collapseThree" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="body-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel ad laborum expedita. Nostrum iure atque enim quisquam minima distinctio omnis, consequatur aliquam suscipit, quidem, esse aspernatur! Libero, excepturi animi repellendus porro impedit nihil in doloremque a quaerat enim voluptatum, perspiciatis, quas dignissimos maxime ut cum reiciendis eius dolorum voluptatem aliquam!</p>
-                </div>
-              </div>
-            </div> <!-- .accordion-item -->
-
-            <div class="accordion-item">
-              <h3 class="mb-0 heading">
-                <a class="btn-block" data-toggle="collapse" href="#collapseFour" role="button" aria-expanded="false" aria-controls="collapseFour">Who should I contact in case of support.<span class="icon"></span></a>
-              </h3>
-              <div id="collapseFour" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="body-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel ad laborum expedita. Nostrum iure atque enim quisquam minima distinctio omnis, consequatur aliquam suscipit, quidem, esse aspernatur! Libero, excepturi animi repellendus porro impedit nihil in doloremque a quaerat enim voluptatum, perspiciatis, quas dignissimos maxime ut cum reiciendis eius dolorum voluptatem aliquam!</p>
-                </div>
-              </div>
-            </div> <!-- .accordion-item -->
-
-          </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
 
 
     <footer class="site-footer">
@@ -604,7 +432,7 @@
           <div class="col-md-12">
             <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js")}}></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>
@@ -615,21 +443,21 @@
 
   </div>
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/mediaelement-and-player.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.countdown.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/bootstrap-datepicker.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/circleaudioplayer.js"></script>
+  <script src={{url("Landing/js/jquery-3.3.1.min.js")}}></script>
+  <script src={{url("Landing/js/jquery-migrate-3.0.1.min.js")}}></script>
+  <script src={{url("Landing/js/jquery-ui.js")}}></script>
+  <script src={{url("Landing/js/popper.min.js")}}></script>
+  <script src={{url("Landing/js/bootstrap.min.js")}}></script>
+  <script src={{url("Landing/js/owl.carousel.min.js")}}></script>
+  <script src={{url("Landing/js/mediaelement-and-player.min.js")}}></script>
+  <script src={{url("Landing/js/jquery.stellar.min.js")}}></script>
+  <script src={{url("Landing/js/jquery.countdown.min.js")}}></script>
+  <script src={{url("Landing/js/jquery.magnific-popup.min.js")}}></script>
+  <script src={{url("Landing/js/bootstrap-datepicker.min.js")}}></script>
+  <script src={{url("Landing/js/aos.js")}}></script>
+  <script src={{url("Landing/js/circleaudioplayer.js")}}></script>
 
-  <script src="js/main.js"></script>
+  <script src={{url("Landing/js/main.js")}}></script>
 
   </body>
 </html>

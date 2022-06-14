@@ -22,4 +22,9 @@ class DeskripsiRumah extends Model
     public function getAlamat(){
         return $this->belongsTo("App\Models\Perumahan", "alamat_id", "id" );
     }
+
+
+//     public function getUser(){
+//         return $this->belongsTo("App\Models\Perumahan", "alamat_id", "id" );
+//     }
 }

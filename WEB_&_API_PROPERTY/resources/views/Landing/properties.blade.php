@@ -11,18 +11,18 @@
     <link rel="stylesheet" href={{url("Landing/css/bootstrap.min.css")}}>
     <link rel="stylesheet" href={{url("Landing/css/magnific-popup.css")}}>
     <link rel="stylesheet" href={{url("Landing/css/jquery-ui.css")}}>
-    <link rel="stylesheet" href="Landing/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="Landing/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/mediaelementplayer.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-    <link rel="stylesheet" href="css/fl-bigmug-line.css">
+    <link rel="stylesheet" href={{url("Landing/css/owl.carousel.min.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/owl.theme.default.min.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/bootstrap-datepicker.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/mediaelementplayer.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/animate.css")}}>
+    <link rel="stylesheet" href={{url("Landing/fonts/flaticon/font/flaticon.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/fl-bigmug-line.css")}}>
 
 
-    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href={{url("Landing/css/aos.css")}}>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href={{url("Landing/css/style.css")}}>
 
   </head>
   <body>
@@ -73,10 +73,10 @@
 
     <div class="slide-one-item home-slider owl-carousel">
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(Landing/images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
       </div>
 
-      <div class="site-blocks-cover overlay" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover overlay" style="background-image: url(Landing/images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
       </div>
 
     </div>
@@ -161,347 +161,84 @@
       </div>
     </div>
 
+
     <div class="site-section site-section-sm bg-light">
-      <div class="container">
+        <div class="container">
+            <div class="row mb-5">
+                @foreach ($foto_syarat as $desk)
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="property-entry h-100">
+                        <a href="property-details.html" class="property-thumbnail">
+                            <img src="{{ url('storage/' . $desk->foto) }}" alt="Image" class="img-fluid">
+                        </a>
+                        <div class="p-4 property-body">
+                            <a href="#"></a>
+                            <h2 class="property-title"><a href="property-details.html">
+                            @if (empty($desk->getPerum->nama_perumahan))
+                                        <b>
+                                            <i>
+                                                Perumahan Belum terdaftar
+                                            </i>
+                                        </b>
+                                    @else
+                                    {{$desk->getPerum->nama_perumahan}}
+                                    @endif
+                                </a>
+                            </h2>
+                            <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span>
+                            @if (empty($desk->getAlamat->alamat))
+                                        <b>
+                                            <i>
+                                                Perumahan Belum terdaftar
+                                            </i>
+                                        </b>
+                                    @else
+                                    {{$desk->getPerum->alamat}}
+                                    @endif
+                            </span>
+                            <strong class="property-price text-primary mb-3 d-block text-success">{{ currency_IDR($desk->harga) }}</strong>
+                            <ul class="property-specs-wrap mb-3 mb-lg-0">
+                                <li>
+                                    <span class="property-specs">Type</span>
+                                    <span class="property-specs-number">{{ $desk->type }}</span>
+                                </li>
+                                <li>
+                                    <span class="property-specs">Stock</span>
+                                    <span class="property-specs-number">{{ $desk->stock }}</span>
 
-        <div class="row mb-5">
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="property-details.html" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-danger">Sale</span>
-                  <span class="offer-type bg-success">Rent</span>
+                                </li>
+        
+                            </ul>
+                            <a href="/owner/deskripsi_rumah/paymentHarga/{{ $desk->id }}"
+                                class="btn btn-warning btn-sm">
+                                <i class="fas fa-monesy"></i> payment
+                            </a>
+
+                        </div>
+                    </div>
                 </div>
-                <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="property-details.html">625 S. Berendo St</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 625 S. Berendo St Unit 607 Los Angeles, CA 90005</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
+                @endforeach
 
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
 
-                  </li>
-                  <li>
-                    <span class="property-specs">SQ FT</span>
-                    <span class="property-specs-number">7,000</span>
-
-                  </li>
-                </ul>
-
-              </div>
             </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="property-details.html" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-danger">Sale</span>
-                  <span class="offer-type bg-success">Rent</span>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="site-pagination">
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <span>...</span>
+                        <a href="#">10</a>
+                    </div>
                 </div>
-                <img src="images/img_2.jpg" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite active"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="property-details.html">871 Crenshaw Blvd</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 1 New York Ave, Warners Bay, NSW 2282</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">SQ FT</span>
-                    <span class="property-specs-number">1,620</span>
-
-                  </li>
-                </ul>
-
-              </div>
             </div>
-          </div>
 
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="property-details.html" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-info">Lease</span>
-                </div>
-                <img src="images/img_3.jpg" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="property-details.html">853 S Lucerne Blvd</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 853 S Lucerne Blvd Unit 101 Los Angeles, CA 90005</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">SQ FT</span>
-                    <span class="property-specs-number">5,500</span>
-
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="property-details.html" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-danger">Sale</span>
-                  <span class="offer-type bg-success">Rent</span>
-                </div>
-                <img src="images/img_4.jpg" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="property-details.html">625 S. Berendo St</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 625 S. Berendo St Unit 607 Los Angeles, CA 90005</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">SQ FT</span>
-                    <span class="property-specs-number">7,000</span>
-
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="property-details.html" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-danger">Sale</span>
-                  <span class="offer-type bg-success">Rent</span>
-                </div>
-                <img src="images/img_5.jpg" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="property-details.html">871 Crenshaw Blvd</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 1 New York Ave, Warners Bay, NSW 2282</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">SQ FT</span>
-                    <span class="property-specs-number">1,620</span>
-
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="property-details.html" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-info">Lease</span>
-                </div>
-                <img src="images/img_6.jpg" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="property-details.html">853 S Lucerne Blvd</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 853 S Lucerne Blvd Unit 101 Los Angeles, CA 90005</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">SQ FT</span>
-                    <span class="property-specs-number">5,500</span>
-
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="property-details.html" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-danger">Sale</span>
-                  <span class="offer-type bg-success">Rent</span>
-                </div>
-                <img src="images/img_7.jpg" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="property-details.html">625 S. Berendo St</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 625 S. Berendo St Unit 607 Los Angeles, CA 90005</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">SQ FT</span>
-                    <span class="property-specs-number">7,000</span>
-
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="property-details.html" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-danger">Sale</span>
-                  <span class="offer-type bg-success">Rent</span>
-                </div>
-                <img src="images/img_8.jpg" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="property-details.html">871 Crenshaw Blvd</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 1 New York Ave, Warners Bay, NSW 2282</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">SQ FT</span>
-                    <span class="property-specs-number">1,620</span>
-
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="property-entry h-100">
-              <a href="property-details.html" class="property-thumbnail">
-                <div class="offer-type-wrap">
-                  <span class="offer-type bg-info">Lease</span>
-                </div>
-                <img src="images/img_1.jpg" alt="Image" class="img-fluid">
-              </a>
-              <div class="p-4 property-body">
-                <a href="#" class="property-favorite"><span class="icon-heart-o"></span></a>
-                <h2 class="property-title"><a href="property-details.html">853 S Lucerne Blvd</a></h2>
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> 853 S Lucerne Blvd Unit 101 Los Angeles, CA 90005</span>
-                <strong class="property-price text-primary mb-3 d-block text-success">$2,265,500</strong>
-                <ul class="property-specs-wrap mb-3 mb-lg-0">
-                  <li>
-                    <span class="property-specs">Beds</span>
-                    <span class="property-specs-number">2 <sup>+</sup></span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">Baths</span>
-                    <span class="property-specs-number">2</span>
-
-                  </li>
-                  <li>
-                    <span class="property-specs">SQ FT</span>
-                    <span class="property-specs-number">5,500</span>
-
-                  </li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
         </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <div class="site-pagination">
-              <a href="#" class="active">1</a>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <a href="#">4</a>
-              <a href="#">5</a>
-              <span>...</span>
-              <a href="#">10</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
     </div>
+
+
 
     <footer class="site-footer">
       <div class="container">
@@ -567,20 +304,20 @@
 
   </div>
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/mediaelement-and-player.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.countdown.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/bootstrap-datepicker.min.js"></script>
-  <script src="js/aos.js"></script>
+  <script src={{url("Landing/js/jquery-3.3.1.min.js")}}></script>
+  <script src={{url("Landing/js/jquery-migrate-3.0.1.min.js")}}></script>
+  <script src={{url("Landing/js/jquery-ui.js")}}></script>
+  <script src={{url("Landing/js/popper.min.js")}}></script>
+  <script src={{url("Landing/js/bootstrap.min.js")}}></script>
+  <script src={{url("Landing/js/owl.carousel.min.js")}}></script>
+  <script src={{url("Landing/js/mediaelement-and-player.min.js")}}></script>
+  <script src={{url("Landing/js/jquery.stellar.min.js")}}></script>
+  <script src={{url("Landing/js/jquery.countdown.min.js")}}></script>
+  <script src={{url("Landing/js/jquery.magnific-popup.min.js")}}></script>
+  <script src={{url("Landing/js/bootstrap-datepicker.min.js")}}></script>
+  <script src={{url("Landing/js/aos.js")}}></script>
 
-  <script src="js/main.js"></script>
+  <script src={{url("Landing/js/main.js")}}></script>
 
   </body>
 </html>

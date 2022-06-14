@@ -7,7 +7,7 @@ use App\Models\User;
 
 class RegisterController extends Controller
 {
-    
+
     public function tambah(Request $request)
     {
         User::create([
@@ -19,7 +19,7 @@ class RegisterController extends Controller
 
         return redirect("/login")->with("sukses");
     }
-    
+
     public function simpan(Request $request)
     {
         User::where("id", $request->id)->update([

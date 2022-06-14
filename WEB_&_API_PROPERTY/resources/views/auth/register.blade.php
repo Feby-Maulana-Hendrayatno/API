@@ -53,7 +53,7 @@
 								</div>
 								<div hidden >
 									<label for="id_role">Id Role</label>
-									<input type="text" class="form-control" id="id_role" name="id_role" value="1">
+									<input type="text" class="form-control" id="id_role" name="id_role" value="0">
 								</div>
 								<div class="form-group">
 									<button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
@@ -70,7 +70,7 @@
 									<a href="#">Forgot Password</a>
 								</div>
 							</div>
-							<p class="text-center">Not a member? <a data-toggle="tab" href="/login">Sign In</a></p>
+							<p class="text-center">Have a account? <a href={{url("/login")}}>Sign In</a></p>
 						</div>
 					</div>
 				</div>

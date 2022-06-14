@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href={{url("fonts/icomoon/style.css")}}>
 
     <link rel="stylesheet" href={{url("Landing/css/bootstrap.min.css")}}>
     <link rel="stylesheet" href={{url("Landing/css/magnific-popup.css")}}>
@@ -58,6 +58,15 @@
                                 </li>
                                 <li><a href={{url("/blog")}}>Blog</a></li>
                                 <li><a href={{url("/about")}}>About</a></li>
+
+                                @if(empty(auth()->user()->name))
+                                {{-- <li class="nav-item"><a class="nav-link" href="{{ url('/admin/login') }}"> Login </a></li> --}}
+                                <li class="nav-item"><a class="nav-link" href="{{ url('/login') }}"> Login </a></li>
+                                @else
+                                {{-- <li class="nav-item"><a class="nav-link" href="{{ url('/pengunjung/full-calender/') }}">Events</a></li> --}}
+                                <li class="nav-item"><a class="nav-link" href="{{ url('/admin/logout') }}"> Logout </a></li>
+                                @endif
+
                             </ul>
                         </nav>
                     </div>
@@ -127,15 +136,32 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <div class="view-options bg-white py-3 px-3 d-md-flex align-items-center">
-                        <div class="mr-auto">
-                            <a href="index.html" class="icon-view view-module active"><span class="icon-view_module"></span></a>
-                            <a href="view-list.html" class="icon-view view-list"><span class="icon-view_list"></span></a>
+                  <div class="view-options bg-white py-3 px-3 d-md-flex align-items-center">
+                    <div class="mr-auto">
+                      <a href="index.html" class="icon-view view-module active"><span class="icon-view_module"></span></a>
+                      <a href="view-list.html" class="icon-view view-list"><span class="icon-view_list"></span></a>
 
-                        </div>
                     </div>
+                    <div class="ml-auto d-flex align-items-center">
+                      <div>
+                        <a href="#" class="view-list px-3 border-right active">All</a>
+                        <a href="#" class="view-list px-3 border-right">Rent</a>
+                        <a href="#" class="view-list px-3">Sale</a>
+                      </div>
+
+
+                      <div class="select-wrap">
+                        <span class="icon icon-arrow_drop_down"></span>
+                        <select class="form-control form-control-sm d-block rounded-0">
+                          <option value="">Sort by</option>
+                          <option value="">Price Ascending</option>
+                          <option value="">Price Descending</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </div>
+              </div>
 
         </div>
     </div>
@@ -201,7 +227,7 @@
                             @if (empty($desk->getAlamat->alamat))
                                         <b>
                                             <i>
-                                                Perumahan Belum terdaftar
+                                                Alamat Perumahan Belun di inputkan
                                             </i>
                                         </b>
                                     @else
@@ -219,7 +245,23 @@
                                     <span class="property-specs-number">{{ $desk->stock }}</span>
 
                                 </li>
+
                             </ul>
+
+                            {{-- @if (empty($desk->getAlamat->alamat)) --}}
+                            @if(empty(auth()->user()->id_role))
+                            <b>
+                                <i>
+                                    Upload Syarat Dahulu untuk membayar
+                                </i>
+                            </b>
+                        @else
+                        <a href="/owner/deskripsi_rumah/paymentHarga/{{ $desk->id }}"
+                            class="btn btn-warning btn-sm">
+                            <i class="fas fa-monesy"></i> payment
+                        </a>
+                        @endif
+
 
                         </div>
                     </div>
@@ -244,7 +286,7 @@
 
         </div>
     </div>
-</div>
+
 
 
 

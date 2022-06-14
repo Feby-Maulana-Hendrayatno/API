@@ -25,7 +25,7 @@ class LandingPageWebController extends Controller
     public function properties()
     {
         $data = [
-            "perumahan" => Perumahan::orderBy("id", "DESC")->get()
+            "foto_syarat" => DeskripsiRumah::orderBy("id", "DESC")->get()
         ];
 
         return view("Landing.properties", $data);
@@ -34,7 +34,7 @@ class LandingPageWebController extends Controller
     public function blog()
     {
         $data = [
-            "perumahan" => Perumahan::orderBy("id", "DESC")->get()
+            "foto_syarat" => Perumahan::orderBy("id", "DESC")->get()
         ];
 
         return view("Landing.blog", $data);
@@ -43,7 +43,7 @@ class LandingPageWebController extends Controller
     public function about()
     {
         $data = [
-            "perumahan" => Perumahan::orderBy("id", "DESC")->get()
+            "foto_syarat" => DeskripsiRumah::orderBy("id", "DESC")->get()
         ];
 
         return view("Landing.about", $data);
@@ -51,12 +51,23 @@ class LandingPageWebController extends Controller
 
 
 
-    public function property()
+    // public function property()
+    // {
+    //     $data = [
+    //         "foto_syarat" => DeskripsiRumah::orderBy("id", "DESC")->get()
+    //     ];
+
+    //     return view("Landing.upload_syarat.index", $data);
+    // }
+
+    public function bayar()
     {
         $data = [
-            "perumahan" => Perumahan::orderBy("id", "DESC")->get()
+            "foto_syarat" => DeskripsiRumah::orderBy("id", "DESC")->get()
         ];
 
-        return view("Landing.upload_syarat.index", $data);
+        return view("Landing.view-list", $data);
     }
+
+    
 }

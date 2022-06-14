@@ -5,31 +5,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500"> 
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href={{url("Landing/https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500")}}>
+    <link rel="stylesheet" href={{url("Landing/fonts/icomoon/style.css")}}>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/mediaelementplayer.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-    <link rel="stylesheet" href="css/fl-bigmug-line.css">
-    
-  
-    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href={{url("Landing/css/bootstrap.min.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/magnific-popup.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/jquery-ui.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/owl.carousel.min.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/owl.theme.default.min.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/bootstrap-datepicker.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/mediaelementplayer.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/animate.css")}}>
+    <link rel="stylesheet" href={{url("Landing/fonts/flaticon/font/flaticon.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/fl-bigmug-line.css")}}>
 
-    <link rel="stylesheet" href="css/style.css">
-    
+
+    <link rel="stylesheet" href={{url("Landing/css/aos.css")}}>
+
+    <link rel="stylesheet" href={{url("Landing/css/style.css")}}>
+
   </head>
   <body>
-  
+
   <div class="site-loader"></div>
-    
-  
+
+
   <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -65,14 +65,14 @@
                 </ul>
               </nav>
             </div>
-           
+
 
           </div>
         </div>
       </div>
     </div>
 
-    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(Landing/images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
           <div class="col-md-10">
@@ -82,61 +82,26 @@
       </div>
     </div>
 
+
     <div class="site-section">
       <div class="container">
         <div class="row">
+            @foreach ($foto_syarat as $desk)
           <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <a href="#"><img src="images/img_4.jpg" alt="Image" class="img-fluid"></a>
+            <a href="#"><img src="{{ url('storage/' . $desk->foto) }}" alt="Image" class="img-fluid"></a>
             <div class="p-4 bg-white">
-              <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
+              <h2 class="h3 text-black mb-3"><a href="#">{{$desk->nama_perumahan }}</a></h2>
+              <span class="d-block text-secondary small text-uppercase">{{$desk->alamat }}</span>
+              <p ><a href="#">{{$desk->uraian }}</a></p>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <a href="#"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-            <div class="p-4 bg-white">
-              <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-            <a href="#"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
-            <div class="p-4 bg-white">
-              <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
-            </div>
-          </div>
-
-
-          <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <a href="#"><img src="images/img_5.jpg" alt="Image" class="img-fluid"></a>
-            <div class="p-4 bg-white">
-              <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-6" data-aos="fade-up" data-aos-delay="200">
-            <a href="#"><img src="images/img_2.jpg" alt="Image" class="img-fluid"></a>
-            <div class="p-4 bg-white">
-              <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-7" data-aos="fade-up" data-aos-delay="300">
-            <a href="#"><img src="images/img_3.jpg" alt="Image" class="img-fluid"></a>
-            <div class="p-4 bg-white">
-              <span class="d-block text-secondary small text-uppercase">Jan 20th, 2019</span>
-              <h2 class="h5 text-black mb-3"><a href="#">Art Gossip by Mike Charles</a></h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias enim, ipsa exercitationem veniam quae sunt.</p>
-            </div>
-          </div>
-
+          @endforeach
         </div>
+
+
+
+
+
 
         <div class="row" data-aos="fade-up">
           <div class="col-md-12 text-center">
@@ -149,13 +114,14 @@
               <span>...</span>
               <a href="#">10</a>
             </div>
-          </div>  
+          </div>
         </div>
-       
+
       </div>
+
     </div>
 
-    
+
     <footer class="site-footer">
       <div class="container">
         <div class="row">
@@ -165,8 +131,8 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
             </div>
 
-            
-            
+
+
           </div>
           <div class="col-lg-4 mb-5 mb-lg-0">
             <div class="row mb-5">
@@ -202,38 +168,38 @@
                   <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
                 </div>
 
-            
+
 
           </div>
-          
+
         </div>
         <div class="row pt-5 mt-5 text-center">
           <div class="col-md-12">
             <p>
-            Copyright &copy;<script data-cfasync="false" ></script><script>document.write(new Date().getFullYear());</script> Kelompok 4 <i class="icon-heart text-danger" aria-hidden="true"></i> 
+            Copyright &copy;<script data-cfasync="false" ></script><script>document.write(new Date().getFullYear());</script> Kelompok 4 <i class="icon-heart text-danger" aria-hidden="true"></i>
             </p>
           </div>
-          
+
         </div>
       </div>
     </footer>
 
   </div>
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/mediaelement-and-player.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.countdown.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/bootstrap-datepicker.min.js"></script>
-  <script src="js/aos.js"></script>
+  <script src={{url("Landing/js/jquery-3.3.1.min.js")}}></script>
+  <script src={{url("Landing/js/jquery-migrate-3.0.1.min.js")}}></script>
+  <script src={{url("Landing/js/jquery-ui.js")}}></script>
+  <script src={{url("Landing/js/popper.min.js")}}></script>
+  <script src={{url("Landing/js/bootstrap.min.js")}}></script>
+  <script src={{url("Landing/js/owl.carousel.min.js")}}></script>
+  <script src={{url("Landing/js/mediaelement-and-player.min.js")}}></script>
+  <script src={{url("Landing/js/jquery.stellar.min.js")}}></script>
+  <script src={{url("Landing/js/jquery.countdown.min.js")}}></script>
+  <script src={{url("Landing/js/jquery.magnific-popup.min.js")}}></script>
+  <script src={{url("Landing/js/bootstrap-datepicker.min.js")}}></script>
+  <script src={{url("Landing/js/aos.js")}}></script>
 
-  <script src="js/main.js"></script>
-    
+  <script src={{url("Landing/js/main.js")}}></script>
+
   </body>
 </html>
