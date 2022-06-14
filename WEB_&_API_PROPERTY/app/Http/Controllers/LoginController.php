@@ -37,6 +37,9 @@ class LoginController extends Controller
             }else if ($data == 0) {
                 return redirect("/")->with("sukses", "Anda Berhasil Login");
 
+            }else if ($data == 3) {
+                return redirect("/")->with("sukses", "Anda Berhasil Login");
+
             }
 
         } else {
