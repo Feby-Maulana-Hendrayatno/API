@@ -231,7 +231,7 @@
                                             </i>
                                         </b>
                                     @else
-                                    {{$desk->getPerum->alamat}}
+                                    {{$desk->getAlamat->alamat}}
                                     @endif
                             </span>
                             <strong class="property-price text-primary mb-3 d-block text-success">{{ currency_IDR($desk->harga) }}</strong>
@@ -256,7 +256,7 @@
                                 </i>
                             </b>
                         @else
-                        <a href="/owner/deskripsi_rumah/paymentHarga/{{ $desk->id }}"
+                        <a href="/bayar/paymentHarga/{{ $desk->id }}"
                             class="btn btn-warning btn-sm">
                             <i class="fas fa-monesy"></i> payment
                         </a>

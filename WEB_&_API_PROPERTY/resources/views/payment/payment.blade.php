@@ -179,21 +179,29 @@
                 <img src="{{ url('storage/' . $edit->foto) }}" alt="Image" class="img-fluid">
               </a>
               <div class="p-4 property-body">
+                <h2 class="property-title"><a href="#">
 
-
-
-
-
-
-
-
-                <h2 class="property-title"><a href="#">{{$edit->getPerum->nama_perumahan}} </a></h2>
-
-
-
-
-
-                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> {{$edit->alamat_id}} </span>
+                    @if (empty($edit->getPerum->nama_perumahan))
+                    <b>
+                        <i>
+                            Perumahan Belum terdaftar
+                        </i>
+                    </b>
+                @else
+                {{$edit->getPerum->nama_perumahan}}
+                @endif
+                </a></h2>
+                <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span>
+                @if (empty($edit->getAlamat->alamat))
+                                        <b>
+                                            <i>
+                                                Perumahan Belum terdaftar
+                                            </i>
+                                        </b>
+                                    @else
+                                    {{$edit->getAlamat->alamat}}
+                                    @endif
+                </span>
                 <h5>
                 <li>
                      Tipe Rumah {{$edit->type}}

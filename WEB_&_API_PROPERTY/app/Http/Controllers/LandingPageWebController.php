@@ -49,6 +49,15 @@ class LandingPageWebController extends Controller
         return view("Landing.about", $data);
     }
 
+    public function upload()
+    {
+        $data = [
+            "foto_syarat" => DeskripsiRumah::orderBy("id", "DESC")->get()
+        ];
+
+        return view("Landing.upload", $data);
+    }
+
 
 
     // public function property()
@@ -69,5 +78,5 @@ class LandingPageWebController extends Controller
         return view("Landing.view-list", $data);
     }
 
-    
+
 }

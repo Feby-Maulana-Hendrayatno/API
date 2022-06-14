@@ -18,6 +18,7 @@ class DeskripsiRumahSeeder extends Seeder
     {
         DeskripsiRumah::create([
             "perumahan_id" => "1",
+            "alamat_id" => "1",
             "id" => "1",
             "foto" => "image/c3Hnv0Ow1M7ZeIm4ysD12qOAlpMBAFifSZjtObik.jpg",
 			"type" => "45",
@@ -39,6 +40,7 @@ class DeskripsiRumahSeeder extends Seeder
 
         DeskripsiRumah::create([
             "perumahan_id" => "1",
+            "alamat_id" => "1",
             "id" => "2",
 			"type" => "35",
             "foto" => "image/Ad1FjLv05Viv8msgUf45Dt01tDa0d1fWHqrXPow5.jpg",

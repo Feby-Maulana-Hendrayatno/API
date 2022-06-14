@@ -213,7 +213,7 @@
                                             </i>
                                         </b>
                                     @else
-                                    {{$desk->getPerum->alamat}}
+                                    {{$desk->getAlamat->alamat}}
                                     @endif
                             </span>
                             <strong class="property-price text-primary mb-3 d-block text-success">{{ currency_IDR($desk->harga) }}</strong>

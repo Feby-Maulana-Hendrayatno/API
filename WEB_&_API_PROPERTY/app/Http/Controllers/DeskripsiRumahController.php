@@ -73,6 +73,8 @@ class DeskripsiRumahController extends Controller
         return view("owner.deskripsi_rumah.edit_deskripsi", $data);
     }
 
+
+
     public function simpan(Request $request)
     {
         if ($request->file("foto")) {

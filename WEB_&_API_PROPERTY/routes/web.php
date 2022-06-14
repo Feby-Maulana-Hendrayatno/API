@@ -235,6 +235,7 @@ Route::get("/", [LandingPageWebController::class, "index"]);
 Route::get("/properties", [LandingPageWebController::class, "properties"]);
 Route::get("/blog", [LandingPageWebController::class, "blog"]);
 Route::get("/about", [LandingPageWebController::class, "about"]);
+Route::get("/upload_syarat", [LandingPageWebController::class, "upload"]);
 
 
 
@@ -242,7 +243,6 @@ Route::prefix("bayar")->group(function() {
     Route::post('/paymentHarga/{id}', [DeskripsiRumahController::class, 'payment_post']);
     Route::get("/paymentHarga/{id}", [DeskripsiRumahController::class, "payment"]);
     Route::get("/", [LandingPageWebController::class, "bayar"]);
-    Route::get("/edit/{id}", [DeskripsiRumahController::class, "edit"]);
 });
 
 
