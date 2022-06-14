@@ -51,15 +51,35 @@
 
                 <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
 
-                <ul class="site-menu js-clone-nav d-none d-lg-block">
+                {{-- <ul class="site-menu js-clone-nav d-none d-lg-block">
                   <li>
-                    <a href="index.html">Home</a>
+                    <a href="home.html">Home</a>
                   </li>
                   <li>
                     <a href="properties.html">Properties</a>
                   </li>
                   <li><a href="blog.html">Blog</a></li>
-                  <li><a href="about.html">About</a></li>
+                  <li><a href="about.html">About</a></li> --}}
+                  <ul class="site-menu js-clone-nav d-none d-lg-block">
+                    <li class="active">
+                        <a href={{url("/")}}>Home</a>
+                    </li>
+                    <li >
+                        <a href={{url("/properties")}}>Properties</a>
+                    </li>
+                    <li><a href={{url("/blog")}}>Blog</a></li>
+                    <li><a href={{url("/about")}}>About</a></li>
+
+                    @if(empty(auth()->user()->name))
+                    {{-- <li class="nav-item"><a class="nav-link" href="{{ url('/admin/login') }}"> Login </a></li> --}}
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/login') }}"> Login </a></li>
+                    @else
+                    {{-- <li class="nav-item"><a class="nav-link" href="{{ url('/pengunjung/full-calender/') }}">Events</a></li> --}}
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/admin/logout') }}"> Logout </a></li>
+                    @endif
+
+                </ul>
+
 
                 </ul>
               </nav>
@@ -207,7 +227,7 @@
                                     <span class="property-specs-number">{{ $desk->stock }}</span>
 
                                 </li>
-        
+
                             </ul>
                             <a href="/owner/deskripsi_rumah/paymentHarga/{{ $desk->id }}"
                                 class="btn btn-warning btn-sm">

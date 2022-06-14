@@ -5,24 +5,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500">
-    <link rel="stylesheet" href={{url("fonts/icomoon/style.css")}}>
+    <link rel="stylesheet" qhref="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500">
+    <link rel="stylesheet" href={{url("Landing/fonts/icomoon/style.css")}}>
 
-    <link rel="stylesheet" href={{url("css/bootstrap.min.css")}}>
-    <link rel="stylesheet" href={{url("css/magnific-popup.css")}}>
-    <link rel="stylesheet" href={{url("css/jquery-ui.css")}}>
-    <link rel="stylesheet" href={{url("css/owl.carousel.min.css")}}>
-    <link rel="stylesheet" href={{url("css/owl.theme.default.min.css")}}>
-    <link rel="stylesheet" href={{url("css/bootstrap-datepicker.css")}}>
-    <link rel="stylesheet" href={{url("css/mediaelementplayer.css")}}>
-    <link rel="stylesheet" href={{url("css/animate.css")}}>
-    <link rel="stylesheet" href={{url("fonts/flaticon/font/flaticon.css")}}>
-    <link rel="stylesheet" href={{url("css/fl-bigmug-line.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/bootstrap.min.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/magnific-popup.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/jquery-ui.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/owl.carousel.min.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/owl.theme.default.min.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/bootstrap-datepicker.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/mediaelementplayer.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/animate.css")}}>
+    <link rel="stylesheet" href={{url("Landing/fonts/flaticon/font/flaticon.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/fl-bigmug-line.css")}}>
 
 
-    <link rel="stylesheet" href={{url("css/aos.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/aos.css")}}>
 
-    <link rel="stylesheet" href={{url("css/style.css")}}>
+    <link rel="stylesheet" href={{url("Landing/css/style.css")}}>
 
   </head>
   <body>
@@ -53,14 +53,21 @@
 
                 <ul class="site-menu js-clone-nav d-none d-lg-block">
                   <li>
-                    <a href="index.html">Home</a>
+                    <a href="/">Home</a>
                   </li>
                   <li >
-                    <a href="properties.html">Properties</a>
+                    <a href="/properties">Properties</a>
                   </li>
-                  <li><a href="blog.html">Blog</a></li>
-                  <li class="active"><a href="about.html">About</a></li>
+                  <li><a href="/blog">Blog</a></li>
+                  <li class="active"><a href="/about">About</a></li>
 
+                  @if(empty(auth()->user()->name))
+                  {{-- <li class="nav-item"><a class="nav-link" href="{{ url('/admin/login') }}"> Login </a></li> --}}
+                  <li class="nav-item"><a class="nav-link" href="{{ url('/login') }}"> Login </a></li>
+                  @else
+                  {{-- <li class="nav-item"><a class="nav-link" href="{{ url('/pengunjung/full-calender/') }}">Events</a></li> --}}
+                  <li class="nav-item"><a class="nav-link" href="{{ url('/admin/logout') }}"> Logout </a></li>
+                  @endif
                 </ul>
               </nav>
             </div>
@@ -80,7 +87,6 @@
         </div>
       </div>
     </div>
-
 
 
     <div class="site-section">
@@ -215,21 +221,21 @@
 
   </div>
 
-  <script src={{url("js/jquery-3.3.1.min.js")}}></script>
-  <script src={{url("js/jquery-migrate-3.0.1.min.js")}}></script>
-  <script src={{url("js/jquery-ui.js")}}></script>
-  <script src={{url("js/popper.min.js")}}></script>
-  <script src={{url("js/bootstrap.min.js")}}></script>
-  <script src={{url("js/owl.carousel.min.js")}}></script>
-  <script src={{url("js/mediaelement-and-player.min.js")}}></script>
-  <script src={{url("js/jquery.stellar.min.js")}}></script>
-  <script src={{url("js/jquery.countdown.min.js")}}></script>
-  <script src={{url("js/jquery.magnific-popup.min.js")}}></script>
-  <script src={{url("js/bootstrap-datepicker.min.js")}}></script>
-  <script src={{url("js/aos.js")}}></script>
-  <script src={{url("js/circleaudioplayer.js")}}></script>
+  <script src={{url("Landing/js/jquery-3.3.1.min.js")}}></script>
+  <script src={{url("Landing/js/jquery-migrate-3.0.1.min.js")}}></script>
+  <script src={{url("Landing/js/jquery-ui.js")}}></script>
+  <script src={{url("Landing/js/popper.min.js")}}></script>
+  <script src={{url("Landing/js/bootstrap.min.js")}}></script>
+  <script src={{url("Landing/js/owl.carousel.min.js")}}></script>
+  <script src={{url("Landing/js/mediaelement-and-player.min.js")}}></script>
+  <script src={{url("Landing/js/jquery.stellar.min.js")}}></script>
+  <script src={{url("Landing/js/jquery.countdown.min.js")}}></script>
+  <script src={{url("Landing/js/jquery.magnific-popup.min.js")}}></script>
+  <script src={{url("Landing/js/bootstrap-datepicker.min.js")}}></script>
+  <script src={{url("Landing/js/aos.js")}}></script>
+  <script src={{url("Landing/js/circleaudioplayer.js")}}></script>
 
-  <script src={{url("js/main.js")}}></script>
+  <script src={{url("Landing/js/main.js")}}></script>
 
   </body>
 </html>
