@@ -57,14 +57,14 @@
                     </div>
                 @endif
                 <div class="card">
-                    <div class="card-header">
+                    {{-- <div class="card-header">
                         <h3 class="card-title">
                             <button type="button" class="btn btn-success col fileinput-button dz-clickable"
                                 data-toggle="modal" data-target="#modal-default" title="Tambah Data">
                                 <i class="fa fa-plus"></i> Tambah Data
                             </button>
                         </h3>
-                    </div>
+                    </div> --}}
                     <div class="card-body">
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
@@ -85,9 +85,9 @@
                                             <img src="{{ url('storage/' . $desk->image) }}" width="200">
                                         </td>
                                         <td class="text-center">
-                                            <button onclick="editSyarat({{ $desk->id }})" type="button" class="btn btn-success text-white btn-sm" data-toggle="modal" data-target="#modal-default-edit" title="Detail Data">
+                                            {{-- <button onclick="editSyarat({{ $desk->id }})" type="button" class="btn btn-success text-white btn-sm" data-toggle="modal" data-target="#modal-default-edit" title="Detail Data">
                                                 <i class="fa fa-clipboard"> Edit </i>
-                                            </button>
+                                            </button> --}}
                                             <button id="deleteSyarat" data-id="{{ $desk->id }}"
                                                 class="btn btn-danger btn-sm">
                                                 <i class="fa fa-trash"></i> Hapus

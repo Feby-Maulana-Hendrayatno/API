@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        function viewImage()
+        {
+            const image = document.querySelector('#imageyy');
+            const imgPreview = document.querySelector('.img-preview');
+
+            imgPreview.style.display = 'block';
+
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(image.files[0]);
+
+            oFReader.onload = function(oFREvent) {
+                imgPreview.src = oFREvent.target.result;
+            }
+        }
+    </script>
     <title>Proyek 3 Propertiku</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -203,7 +219,14 @@
     <div class="site-section site-section-sm bg-light">
         <div class="container">
             <div class="row mb-5">
+
+
+
                 @foreach ($foto_syarat as $desk)
+                    @php
+                        $stok = $desk->stock - $stock_baru;
+                    @endphp
+                        @if ($stok >= 1)
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="property-entry h-100">
                         <a href="property-details.html" class="property-thumbnail">
@@ -243,11 +266,8 @@
                                 <li>
                                     <span class="property-specs">Stock</span>
                                     <span class="property-specs-number">{{ $desk->stock }}</span>
-
                                 </li>
-
                             </ul>
-
                             {{-- @if (empty($desk->getAlamat->alamat)) --}}
                             @if(empty(auth()->user()->id_role))
                             <b>
@@ -261,12 +281,15 @@
                             <i class="fas fa-monesy"></i> payment
                         </a>
                         @endif
-
-
                         </div>
                     </div>
                 </div>
+                @else
+
+                @endif
                 @endforeach
+
+
 
 
             </div>

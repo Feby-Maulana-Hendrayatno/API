@@ -14,9 +14,17 @@ class AkunController extends Controller
             "data_akun" => User::orderBy("name", "ASC")->get(),
             "data_role" => Role::orderBy("nama_role", "DESC")->get(),
         ];
-
-
         return view("admin.users.akun", $data);
+    }
+
+    public function index_owner()
+    {
+        $data = [
+            // "data_akun" => User::orderBy("name", "ASC")->get(),
+            "data_akun" => User::where("id_role", "0")->where("id_role", "3")->get(),
+            "data_role" => Role::orderBy("nama_role", "DESC")->get(),
+        ];
+        return view("owner.update_role.index", $data);
     }
 
     public function tambah(Request $request)
@@ -27,6 +35,7 @@ class AkunController extends Controller
             "id_role" => $request->id_role,
             "password" => bcrypt($request->password)
         ]);
+        
         return redirect()->back()->with(["message" => "<script>Swal.fire('Berhasil', 'Data Berhasil di Simpan', 'success');</script>"]);
     }
 
@@ -60,5 +69,27 @@ class AkunController extends Controller
         ]);
         return redirect("/users")->with(["message" => "<script>Swal.fire('Berhasil', 'Data Berhasil di update', 'success');</script>"]);
         // return redirect("/users");
+    }
+
+
+
+    public function edit_by_owner(Request $request)
+    {
+        $data = [
+            "edit" => User::where("id", $request->id)->first(),
+        ];
+
+        return view("owner.update_role.edit", $data);
+    }
+
+
+
+    public function simpan_by_owner(Request $request)
+    {
+        User::where("id", $request->id)->update([
+            "id_role" => $request->id_role,
+        ]);
+
+        return redirect()->back()->with(["message" => "<script>Swal.fire('Berhasil', 'Data Berhasil di update', 'success');</script>"]);
     }
 }

@@ -14,7 +14,7 @@ class SyaratController extends Controller
             "syarat" => Syarat::where('id_user', Auth::user()->id)->get()
         ];
 
-        return view("/owner/syarat/data_syarat", $data);
+        return view("owner.syarat.data_syarat", $data);
     }
 
     public function tambah(Request $request)

@@ -94,69 +94,139 @@
       <div class="row mb-5 justify-content-center"  data-aos="fade-up" >
         <div class="col-md-7">
           <div class="site-section-title text-center">
-            <h2>Kelompok 4</h2>
+            <h2>Upload Syarat</h2>
           </div>
+          <div class="card-header">
+            <h3 class="card-title">
+                <button type="button" class="btn btn-success col fileinput-button dz-clickable"
+                    data-toggle="modal" data-target="#modal-default" title="Tambah Data">
+                    <i class="fa fa-plus"></i> Tambah Data
+                </button>
+            </h3>
+        </div>
         </div>
       </div>
       <div class="row">
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5"  data-aos="fade-up" data-aos-delay="200">
+
+        @foreach ($foto_syarat as $desk)
+        <div class="col-md-6 col-lg-4 mb-5 mb-lg-5"  data-aos="fade-up" data-aos-delay="300">
             <div class="team-member">
 
-              <img src="images/person_1.jpg" alt="Image" class="img-fluid rounded mb-4">
+              <img src="{{ url('storage/' . $desk->image) }}" alt="Image" class="img-fluid rounded mb-4">
 
               <div class="text">
-
-                <h2 class="mb-2 font-weight-light text-black h4">Feby Maulana Hendrayatno</h2>
-                <span class="d-block mb-3 text-white-opacity-05">Full Stack Programmer</span>
-                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi dolorem totam non quis facere blanditiis praesentium est. Totam atque corporis nisi, veniam non. Tempore cupiditate, vitae minus obcaecati provident beatae!</p> -->
-                <p>
+                <h2 class="mb-2 font-weight-light text-black h4">{{ $desk->nama_pengguna }}</h2>
+                {{-- <span class="d-block mb-3 text-white-opacity-05">Front End Programmer </span> --}}
+                {{-- <p>
                   <a href="#" class="text-black p-2"><span class="icon-facebook"></span></a>
                   <a href="#" class="text-black p-2"><span class="icon-twitter"></span></a>
                   <a href="#" class="text-black p-2"><span class="icon-linkedin"></span></a>
-                </p>
+                </p> --}}
+                <td class="text-center">
+                    <button onclick="editSyarat({{ $desk->id }})" type="button" class="btn btn-warning text-white btn-sm" data-toggle="modal" data-target="#modal-default-edit" title="Detail Data">
+                        <i class="fa fa-clipboard"> Edit </i>
+                    </button>
+                    <button id="deleteSyarat" data-id="{{ $desk->id }}"
+                        class="btn btn-danger btn-sm">
+                        <i class="fa fa-trash"></i> Hapus
+                    </button>
+                </td>
               </div>
 
             </div>
           </div>
+        @endforeach
 
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5"  data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member">
 
-              <img src="images/person_2.jpg" alt="Image" class="img-fluid rounded mb-4">
 
-              <div class="text">
 
-                <h2 class="mb-2 font-weight-light text-black h4">Mona Rosanah</h2>
-                <span class="d-block mb-3 text-white-opacity-05">Front End Programmer </span>
-                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, cumque vitae voluptates culpa earum similique corrupti itaque veniam doloribus amet perspiciatis recusandae sequi nihil tenetur ad, modi quos id magni!</p> -->
-                <p>
-                  <a href="#" class="text-black p-2"><span class="icon-facebook"></span></a>
-                  <a href="#" class="text-black p-2"><span class="icon-twitter"></span></a>
-                  <a href="#" class="text-black p-2"><span class="icon-linkedin"></span></a>
-                </p>
-              </div>
 
+
+
+            <!-- Tambah Data -->
+    <div class="modal fade" id="modal-default">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">kemp
+                    <h4 class="modal-title">Tambah Data</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="POST" action="{{ url('/owner/foto_syarat/tambah_foto_syarat') }}"
+                    enctype="multipart/form-data">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Foto </label>
+                            <img class="img-preview img-fluid mb-3 col-sm-5">
+                            <input multiple type="file" name="image[]" class="form-control" id="foto"
+                                placeholder="Masukan Foto/Gambar" required onchange="viewImage()">
+                            <div class="text-danger">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="reset" class="btn btn-social btn-warning btn-flat btn-sm" title="Reset">
+                            <i class="fa fa-refresh"></i> Reset
+                        </button>
+                        <button type="submit" class="btn btn-social btn-success btn-flat bt-sm" title="Tambah Data">
+                            <i class="fa fa-plus"></i> Tambah
+                        </button>
+                    </div>
+                </form>
             </div>
-          </div>
+        </div>
+    </div>
+    <!-- END -->
 
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5"  data-aos="fade-up" data-aos-delay="400">
-            <div class="team-member">
 
-              <img src="images/person_3.jpg" alt="Image" class="img-fluid rounded mb-4">
 
-              <div class="text">
 
-                <h2 class="mb-2 font-weight-light text-black h4">Nazmah Zafirah</h2>
-                <span class="d-block mb-3 text-white-opacity-05">Back End Programmer</span>
-                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores illo iusto, inventore, iure dolorum officiis modi repellat nobis, praesentium perspiciatis, explicabo. Atque cupiditate, voluptates pariatur odit officia libero veniam quo.</p> -->
-                <p>
-                  <a href="#" class="text-black p-2"><span class="icon-facebook"></span></a>
-                  <a href="#" class="text-black p-2"><span class="icon-twitter"></span></a>
-                  <a href="#" class="text-black p-2"><span class="icon-linkedin"></span></a>
-                </p>
-              </div>
+
+        <!-- Edit Data -->
+        <div class="modal fade" id="modal-default-edit">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Edit Data</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form method="POST" action="{{ url('/about/simpan') }}" enctype="multipart/form-data">
+                        @method('PUT')
+                        @csrf
+                        <div class="modal-body" id="modal-content-edit">
+
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.modal-content -->
             </div>
-          </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- END -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
     </div>
     </div>
@@ -234,8 +304,128 @@
   <script src={{url("Landing/js/bootstrap-datepicker.min.js")}}></script>
   <script src={{url("Landing/js/aos.js")}}></script>
   <script src={{url("Landing/js/circleaudioplayer.js")}}></script>
-
   <script src={{url("Landing/js/main.js")}}></script>
+
+  <script src="/template/plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="/template/plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Select2 -->
+<script src="{{ url('/template') }}/plugins/select2/js/select2.full.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+$.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="/template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="/template/plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="/template/plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="/template/plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="/template/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="/template/plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="/template/plugins/moment/moment.min.js"></script>
+<script src="/template/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="/template/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="/template/plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="/template/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/template/dist/js/adminlte.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="/template/dist/js/demo.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="/template/dist/js/pages/dashboard.js"></script>
+<script src="/template/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/template/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="/template/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="/template/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="/template/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="/template/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="/template/plugins/jszip/jszip.min.js"></script>
+<script src="/template/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="/template/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="/template/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="/template/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="/template/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script>
+$(function () {
+    $('.select2').select2(),
+    $('.select2bs4').select2({
+        theme: 'bootstrap4'
+    }),
+    $("#example1").DataTable({
+        "responsive": true, "lengthChange": true, "autoWidth": false
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+    });
+});
+</script>
+
+
+
+
+    <script type="text/javascript">
+        function editSyarat(id) {
+            $.ajax({
+                url: "{{ url('/about/edit') }}",
+                type: "GET",
+                data: {
+                    id: id
+                },
+                success: function(data) {
+                    $("#modal-content-edit").html(data);
+                    return true;
+                }
+            });
+        }
+
+
+        $(document).ready(function() {
+            $("#table-1").dataTable();
+            $('body').on('click', '#deleteSyarat', function() {
+                let id = $(this).data('id');
+                Swal.fire({
+                    title: 'Anda Yakin Hapus File?',
+                    text: "Data tidak bisa dikembalikan!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Ya, Hapus!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form_string =
+                            "<form method=\"POST\" action=\"{{ url('/about/hapus/') }}/" +
+                            id +
+                            "\" accept-charset=\"UTF-8\"><input name=\"_method\" type=\"hidden\" value=\"DELETE\"><input name=\"_token\" type=\"hidden\" value=\"{{ csrf_token() }}\"></form>"
+                        form = $(form_string)
+                        form.appendTo('body');
+                        form.submit();
+                    } else {
+                        Swal.fire('Selamat!', 'Data anda tidak jadi dihapus', 'error');
+                    }
+                })
+            })
+        })
+    </script>
+    <script src="{{ url('sweetalert/dist/sweetalert2.all.min.js') }}"></script>
+    @if (session('message'))
+        {!! session('message') !!}
+    @endif
+
 
   </body>
 </html>

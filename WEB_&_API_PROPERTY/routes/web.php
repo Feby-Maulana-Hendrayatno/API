@@ -223,8 +223,14 @@ Route::prefix("owner")->group(function() {
         Route::post("/tambah_foto_syarat", [FotoSyaratController::class, "tambah"]);
         Route::delete("/hapus/{id}", [FotoSyaratController::class, "hapus"]);
         Route::put("/simpan", [FotoSyaratController::class, "simpan"]);
+    });
 
-
+    Route::prefix("update_role")->group(function() {
+        Route::get("/index", [AkunController::class, "index_owner"]);
+        Route::post("/tambah/", [AkunController::class, "tambah"]);
+        Route::post("/hapus", [AkunController::class, "hapus"]);
+        Route::get("/edit", [AkunController::class, "edit_by_owner"]);
+        Route::put("/simpan", [AkunController::class, "simpan_by_owner"]);
     });
 });
 
@@ -244,6 +250,15 @@ Route::prefix("bayar")->group(function() {
     Route::get("/paymentHarga/{id}", [DeskripsiRumahController::class, "payment"]);
     Route::get("/", [LandingPageWebController::class, "bayar"]);
 });
+
+
+Route::prefix("about")->group(function() {
+Route::get("/edit", [FotoSyaratController::class, "edit"]);
+Route::post("/tambah_foto_syarat", [FotoSyaratController::class, "tambah"]);
+Route::delete("/hapus/{id}", [FotoSyaratController::class, "hapus"]);
+Route::put("/simpan", [FotoSyaratController::class, "simpan"]);
+});
+
 
 
 

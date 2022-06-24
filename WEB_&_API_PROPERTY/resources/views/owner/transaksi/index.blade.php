@@ -67,6 +67,7 @@ Data Transaksi
                                 <th class="text-center"> Harga </th>
                                 <th class="text-center"> MeTode Pembayaran </th>
                                 <th class="text-center"> Validasi </th>
+                                <th class="text-center"> Aksi </th>
                             </tr>
                         </thead>
                         <tbody>

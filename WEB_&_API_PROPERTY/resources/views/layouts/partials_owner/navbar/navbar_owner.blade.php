@@ -79,7 +79,14 @@
                                         <p>Transaksi</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="/owner/update_role/index" class="nav-link">
+                                        <i class="	fas fa-handshake" aria-hidden="true"></i>
+                                        <p> Update Buyer</p>
+                                    </a>
+                                </li>
                         </li>
+
                         {{-- <br>
                         <li class="nav-header">Akun</li>
                         <li class="nav-item">

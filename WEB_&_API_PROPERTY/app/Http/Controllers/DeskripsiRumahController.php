@@ -9,12 +9,13 @@ use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\support\Facades\DB;
 
-class DeskripsiRumahController extends Controller
+class   DeskripsiRumahController extends Controller
 {
     public function index()
     {
         $data = [
             "deskripsi" => DeskripsiRumah::where('id_user', Auth::user()->id)->get(),
+            "stock_baru" => DB::table('orders')->count('id'),   
         ];
 
 
