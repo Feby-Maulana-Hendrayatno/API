@@ -29,6 +29,7 @@ class ApiRumahController extends Controller
     public function update(Request $request, $id)
     {
         $data = DeskripsiRumah::find($id);
+        $data->update($request->all());
         return response()->json(['message' => 'Success', 'data' => $data]);
     }
 
