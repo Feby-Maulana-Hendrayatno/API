@@ -11,6 +11,8 @@ use App\Http\Controllers\ApiSyaratController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ApiPerumahanController;
 use App\Http\Controllers\ApiPaymentController;
+use App\Http\Controllers\ApiRumahController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -110,7 +112,14 @@ Route::prefix('perumahan')->group(function () {
     Route::controller(ApiPerumahanController::class)->group(function () {
         Route::get('data', 'index');
         Route::get('data/{id}', 'detail');
+        Route::get('data', 'index');
+    });
+});
 
+Route::prefix('rumah')->group(function () {
+    Route::controller(ApiRumahController::class)->group(function () {
+        Route::get('data', 'index');
+        Route::get('data/{id}', 'detail');
     });
 });
 

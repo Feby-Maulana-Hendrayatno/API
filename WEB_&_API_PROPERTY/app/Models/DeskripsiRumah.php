@@ -23,6 +23,4 @@ class DeskripsiRumah extends Model
         return $this->belongsTo("App\Models\Perumahan", "alamat_id", "id" );
     }
 
-
-
 }
