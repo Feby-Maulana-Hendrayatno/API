@@ -112,7 +112,10 @@ Route::prefix('perumahan')->group(function () {
     Route::controller(ApiPerumahanController::class)->group(function () {
         Route::get('data', 'index');
         Route::get('data/{id}', 'detail');
-        Route::get('data', 'index');
+        Route::post('data', 'store');
+        Route::put('data/{id}', 'update');
+        Route::delete('data/{id}', 'destroy');
+
     });
 });
 
@@ -120,6 +123,9 @@ Route::prefix('rumah')->group(function () {
     Route::controller(ApiRumahController::class)->group(function () {
         Route::get('data', 'index');
         Route::get('data/{id}', 'detail');
+        Route::post('data', 'store');
+        Route::put('data/{id}', 'update');
+        Route::delete('data/{id}', 'destroy');
     });
 });
 
